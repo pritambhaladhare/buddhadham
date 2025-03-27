@@ -1,6 +1,5 @@
 import Hero from '@/components/home/Hero';
 import ImpactStats from '@/components/home/ImpactStats';
-import AboutSection from '@/components/home/AboutSection';
 import OurWorkSection from '@/components/home/OurWorkSection';
 import ImpactStory from '@/components/home/ImpactStory';
 import SupportSection from '@/components/home/SupportSection';
@@ -13,7 +12,6 @@ const Home = () => {
     <>
       <Hero />
       <ImpactStats />
-      <AboutSection />
       <OurWorkSection />
       <ImpactStory />
       <SupportSection />
