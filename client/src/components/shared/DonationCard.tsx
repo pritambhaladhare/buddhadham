@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 
 interface DonationOption {
   title: string;
@@ -46,7 +47,7 @@ const DonationCard = ({ option }: DonationCardProps) => {
       <div className={`h-3 ${colorClass.bg}`}></div>
       <div className="p-8 text-center">
         <div className="mb-4 flex justify-center">
-          <i className='bx bxs-lotus text-3xl text-orange-500'></i>
+          <PeepalLeaf color="#f97316" size={28} />
         </div>
         <h3 className="font-heading text-2xl font-bold text-orange-900 mb-4">{option.title}</h3>
         <p className="mb-6 text-gray-700">{option.description}</p>

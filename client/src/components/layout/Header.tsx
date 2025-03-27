@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { NAV_LINKS } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
+import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 
 const Header = () => {
   const [location] = useLocation();
@@ -18,7 +19,7 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <Link href="/">
               <div className="w-12 h-12 flex items-center justify-center">
-                <span className="text-orange-500 text-3xl"><i className='bx bxs-leaf'></i></span>
+                <PeepalLeaf color="#f97316" size={36} />
               </div>
             </Link>
             <div>

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'wouter';
 import { NAV_LINKS } from '@/lib/constants';
+import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 
 interface MobileMenuProps {
   isOpen: boolean;
