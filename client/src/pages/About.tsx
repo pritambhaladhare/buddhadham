@@ -23,8 +23,7 @@ const About = () => {
             {/* Text content */}
             <div className="lg:w-1/2">
               <h1 className="font-heading text-4xl lg:text-5xl font-bold mb-8 leading-tight text-gray-900">
-                It's not about what we do.<br />
-                It's about how we serve.
+                About Us – Buddha Dhaam
               </h1>
               
               <div className="space-y-6">
@@ -68,7 +67,7 @@ const About = () => {
                 <div className="pt-6">
                   <Link href="/get-involved">
                     <Button className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-md">
-                      Support Our Mission 🌿
+                      🌿 Support our mission today!
                     </Button>
                   </Link>
                 </div>
