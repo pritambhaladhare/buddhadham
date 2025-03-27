@@ -16,9 +16,11 @@ const SupportSection = () => {
           subtitle="Your dana (offering) helps preserve Buddha's teachings and support monks"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex justify-center">
           {DONATION_OPTIONS.map((option, index) => (
-            <DonationCard key={index} option={option} />
+            <div key={index} className="max-w-md">
+              <DonationCard option={option} />
+            </div>
           ))}
         </div>
         

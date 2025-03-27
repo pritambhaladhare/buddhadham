@@ -84,20 +84,6 @@ export const WORK_CATEGORIES = [
 // Donation options
 export const DONATION_OPTIONS = [
   {
-    title: "One-Time Gift",
-    description: "Support our monks and temples with a one-time dana (offering).",
-    color: "saffron",
-    options: ["$25", "$50", "$100"],
-    buttonText: "Make an Offering"
-  },
-  {
-    title: "Sponsor a Monk",
-    description: "Provide for a monk's food, robes, and shelter needs through direct support.",
-    color: "deepRed",
-    options: ["$30", "$60", "$108"],
-    buttonText: "Sponsor Now"
-  },
-  {
     title: "Temple Restoration",
     description: "Help preserve ancient Buddhist temples and sacred sites for future generations.",
     color: "gold",
