@@ -91,6 +91,52 @@ const About = () => {
         </div>
       </section>
       
+      {/* Leadership Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-3xl font-bold mb-2 text-gray-900">Our Leadership</h2>
+            <div className="w-24 h-1 bg-orange-500 mx-auto"></div>
+          </div>
+          
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div className="md:w-1/3">
+              <div className="relative">
+                <img 
+                  src="/src/assets/images/namita-founder.png" 
+                  alt="Namita Bhaladhare – Founder, Buddha Dhaam" 
+                  className="rounded-lg shadow-lg mx-auto"
+                />
+                <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-orange-100 rounded-full opacity-70 -z-10"></div>
+              </div>
+            </div>
+            
+            <div className="md:w-2/3">
+              <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Namita Bhaladhare – Founder, Buddha Dhaam</h3>
+              <div className="space-y-4 text-gray-700">
+                <p>
+                  I believe that my true purpose in life is to serve the Buddha and protect the Dhamma. Through Buddha Dhaam, I am fulfilling this sacred calling—providing support to monks, preserving Buddhist heritage, and ensuring the timeless wisdom of the Buddha continues to flourish. This mission is more than an organization; it is a devotion, a path, and a responsibility that I am honored to walk.
+                </p>
+                <p>
+                  With a background in media, philanthropy, and Buddhist studies, I am committed to creating a global movement of compassion, service, and spiritual preservation. Through Buddha Dhaam, I aim to inspire others to join in this noble cause, ensuring that monks, sacred sites, and Buddhist traditions receive the care and reverence they deserve.
+                </p>
+                <div className="pt-4 flex space-x-4">
+                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                    <i className='bx bxl-linkedin text-2xl'></i>
+                  </a>
+                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                    <i className='bx bxl-twitter text-2xl'></i>
+                  </a>
+                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                    <i className='bx bx-envelope text-2xl'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Join Our Mission Section */}
       <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
