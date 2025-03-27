@@ -29,12 +29,9 @@ export const COLORS = {
 
 // Navigation links
 export const NAV_LINKS = [
-  { title: "Home", path: "/" },
   { title: "About Us", path: "/about" },
-  { title: "Our Work", path: "/our-work" },
   { title: "Get Involved", path: "/get-involved" },
-  { title: "Blog", path: "/blog" },
-  { title: "Contact", path: "/contact" }
+  { title: "Contact Us", path: "/contact" }
 ];
 
 // Impact statistics
