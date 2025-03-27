@@ -39,10 +39,10 @@ export const NAV_LINKS = [
 
 // Impact statistics
 export const IMPACT_STATS = [
-  { number: "1000+", label: "Monks Supported Monthly" },
-  { number: "25", label: "Sacred Sites Protected" },
-  { number: "500+", label: "Peepal Trees Planted" },
-  { number: "12", label: "Monasteries Restored" }
+  { number: "2500+", label: "Monks Supported" },
+  { number: "4", label: "Sacred Sites Served" },
+  { number: "108", label: "Plantation Projects" },
+  { number: "6", label: "Restoration Projects" }
 ];
 
 // Our work categories
