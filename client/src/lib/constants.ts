@@ -87,7 +87,7 @@ export const DONATION_OPTIONS = [
   {
     title: "Temple Restoration",
     description: "Help preserve ancient Buddhist temples and sacred sites for future generations.",
-    color: "gold",
+    color: "gold" as const,
     checklistItems: [
       "Restore monastery buildings",
       "Preserve ancient Buddha statues",

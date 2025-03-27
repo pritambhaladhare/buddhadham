@@ -76,16 +76,21 @@ const About = () => {
             {/* Image */}
             <div className="lg:w-1/2 relative mt-10 lg:mt-0">
               <img 
-                src="https://images.unsplash.com/photo-1627040582828-096d87d6ec68?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-                alt="Buddhist monks at a monastery" 
+                src="/src/assets/images/mahabodhi-temple.jpg" 
+                alt="Mahabodhi Temple - Buddha's Sacred Enlightenment Site" 
                 className="rounded-2xl shadow-xl w-full object-cover z-10 relative"
-                style={{ height: "500px" }}
+                style={{ height: "560px" }}
               />
               
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-300 rounded-full opacity-50 -mr-8 -mt-8 z-0"></div>
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-200 rounded-full opacity-70 z-0"></div>
               <div className="absolute top-1/3 -left-6 w-12 h-12 bg-pink-200 rounded-full opacity-60 z-0"></div>
+              
+              {/* Caption */}
+              <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-4 py-2 rounded-lg text-sm z-20">
+                Mahabodhi Temple, Bodhgaya - Site of Buddha's Enlightenment
+              </div>
             </div>
           </div>
         </div>
@@ -115,10 +120,10 @@ const About = () => {
               <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Namita Bhaladhare – Founder, Buddha Dhaam</h3>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  I believe that my true purpose in life is to serve the Buddha and protect the Dhamma. Through Buddha Dhaam, I am fulfilling this sacred calling—providing support to monks, preserving Buddhist heritage, and ensuring the timeless wisdom of the Buddha continues to flourish. This mission is more than an organization; it is a devotion, a path, and a responsibility that I am honored to walk.
+                  I feel deeply grateful to have the opportunity to serve the Buddha and support the monastic community. Buddha Dhaam is not just an initiative—it is a heartfelt devotion, a way for me to contribute to the preservation of the Dhamma and give back to those who dedicate their lives to spiritual practice.
                 </p>
                 <p>
-                  With a background in media, philanthropy, and Buddhist studies, I am committed to creating a global movement of compassion, service, and spiritual preservation. Through Buddha Dhaam, I aim to inspire others to join in this noble cause, ensuring that monks, sacred sites, and Buddhist traditions receive the care and reverence they deserve.
+                  With a humble commitment to this path, I strive to ensure that monks receive the care they need, sacred sites are protected, and Buddhist traditions continue to thrive. This work is only possible with the kindness and support of many, and I am honored to walk this journey alongside all those who share in this mission.
                 </p>
                 <div className="pt-4 flex space-x-4">
                   <a href="#" className="text-orange-500 hover:text-orange-600">
