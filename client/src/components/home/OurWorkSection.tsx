@@ -5,14 +5,21 @@ import { WORK_CATEGORIES } from '@/lib/constants';
 
 const OurWorkSection = () => {
   return (
-    <section id="our-work" className="py-20 bg-white">
+    <section id="our-work" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <SectionTitle 
           title="Our Sacred Work" 
-          subtitle="Preserving traditions, serving monastic communities, and protecting Buddhist heritage"
+          subtitle="Serving monks, preserving traditions, and protecting Buddhist heritage across sacred sites"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-2 mb-10 max-w-3xl mx-auto text-center">
+          <p className="text-gray-700 leading-relaxed">
+            Our work is rooted in the Buddha's teachings of compassion and service, focusing exclusively on supporting 
+            monks and preserving the sacred places where Buddhism flourishes.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {WORK_CATEGORIES.map((category, index) => (
             <WorkCard 
               key={index}
@@ -22,6 +29,14 @@ const OurWorkSection = () => {
               link={`/our-work#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
             />
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <Link href="/our-work">
+            <button className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-md">
+              Explore More Sacred Work
+            </button>
+          </Link>
         </div>
       </div>
     </section>

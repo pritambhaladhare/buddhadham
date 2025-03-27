@@ -46,33 +46,38 @@ export const IMPACT_STATS = [
 export const WORK_CATEGORIES = [
   {
     title: "Food & Medical Aid",
-    description: "Delivering essential nourishment and healthcare to monks in need throughout sacred sites.",
-    image: "https://images.unsplash.com/photo-1577285930803-df9418bede68?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    description: "Providing daily meals, medicines, and healthcare support to Buddhist monks at sacred pilgrimage sites.",
+    image: "https://images.unsplash.com/photo-1575312022514-e629c5b44f5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Monastery & Stupa Restoration",
-    description: "Preserving and revitalizing historic Buddhist sites to maintain sacred heritage.",
-    image: "https://images.unsplash.com/photo-1543158266-0066955047b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    title: "Water & Refreshments",
+    description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
+    image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Tripitaka Chanting & Spiritual Events",
-    description: "Organizing large-scale recitations and ceremonies to sustain Buddhist traditions.",
+    title: "Ancient Stupa Restoration",
+    description: "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations.",
+    image: "https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    title: "Regular Tripitaka Chanting",
+    description: "Organizing monks in large-scale recitations of sacred Buddhist texts to preserve spiritual traditions.",
     image: "https://images.unsplash.com/photo-1584283367830-9e92d08a3488?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Environmental Sustainability",
-    description: "Planting sacred Peepal trees and promoting eco-conscious initiatives across Buddhist sites.",
+    title: "Sacred Tree & Site Beautification",
+    description: "Planting and caring for Bodhi trees while enhancing the beauty of monasteries and Buddhist pilgrimage sites.",
     image: "https://images.unsplash.com/photo-1569144157591-c60f3f82f137?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "Pilgrim & Monastic Welfare",
-    description: "Providing water, lodging, and essential support services for monks and pilgrims.",
-    image: "https://images.unsplash.com/photo-1564529895062-72ee0563d880?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    description: "Supporting both resident and traveling monks with accommodation, robes, and other essential needs.",
+    image: "https://images.unsplash.com/photo-1562180346-1106b46173e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Sacred Scripture Preservation",
-    description: "Protecting and digitizing ancient Buddhist texts to preserve wisdom for future generations.",
-    image: "https://images.unsplash.com/photo-1519682577862-22b62b24e493?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    title: "Meditation App",
+    description: "Bringing ancient Buddhist meditation techniques to modern practitioners through our mobile application.",
+    image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   }
 ];
 
