@@ -84,28 +84,28 @@ export const WORK_CATEGORIES = [
 export const DONATION_OPTIONS = [
   {
     title: "One-Time Gift",
-    description: "Support our immediate needs with a one-time contribution of any amount.",
+    description: "Support our monks and temples with a one-time dana (offering).",
     color: "saffron",
     options: ["$25", "$50", "$100"],
-    buttonText: "Donate Now"
+    buttonText: "Make an Offering"
   },
   {
-    title: "Monthly Supporter",
-    description: "Join our sustaining circle with a monthly contribution to fund ongoing initiatives.",
+    title: "Sponsor a Monk",
+    description: "Provide for a monk's food, robes, and shelter needs through direct support.",
     color: "deepRed",
-    options: ["$10", "$25", "$50"],
-    buttonText: "Become a Monthly Supporter"
+    options: ["$30", "$60", "$108"],
+    buttonText: "Sponsor Now"
   },
   {
-    title: "Legacy Giving",
-    description: "Make a lasting impact by sponsoring a specific project or creating an endowment.",
+    title: "Temple Restoration",
+    description: "Help preserve ancient Buddhist temples and sacred sites for future generations.",
     color: "gold",
     checklistItems: [
-      "Monastery Restoration",
-      "Monastic Education Fund",
-      "Sacred Tree Planting"
+      "Restore monastery buildings",
+      "Preserve ancient Buddha statues",
+      "Support sacred art conservation"
     ],
-    buttonText: "Discuss Legacy Options"
+    buttonText: "Support Restoration"
   }
 ];
 

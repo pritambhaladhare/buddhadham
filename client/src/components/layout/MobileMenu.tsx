@@ -30,31 +30,31 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
     <div 
       ref={menuRef}
-      className={`absolute w-full bg-[#F5F0E3] shadow-lg z-50 transition-transform duration-300 ease-in-out ${
+      className={`absolute w-full bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out ${
         isOpen ? 'transform translate-y-0' : 'transform -translate-y-full hidden'
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex flex-col space-y-3">
         {NAV_LINKS.map((link, index) => (
           <Link key={index} href={link.path}>
-            <a 
-              className={`font-body font-medium py-2 border-b border-[#3A2718]/10 ${
-                location === link.path ? 'text-[#9D2933]' : 'text-[#3A2718] hover:text-[#9D2933]'
+            <div 
+              className={`font-body font-medium py-2 border-b border-orange-100 cursor-pointer ${
+                location === link.path ? 'text-orange-500 font-bold' : 'text-orange-800 hover:text-orange-500'
               } transition`}
               onClick={onClose}
             >
               {link.title}
-            </a>
+            </div>
           </Link>
         ))}
         
         <Link href="/support">
-          <a
-            className="w-full py-3 bg-[#9D2933] text-white font-medium rounded-md hover:bg-[#7D1F29] transition shadow-md text-center"
+          <div
+            className="w-full py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition shadow-md text-center cursor-pointer"
             onClick={onClose}
           >
             Donate Now
-          </a>
+          </div>
         </Link>
       </div>
     </div>
