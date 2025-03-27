@@ -26,27 +26,52 @@ const OurWork = () => {
         </div>
       </div>
 
-      {/* Introduction Section */}
+      {/* Vision Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="text-orange-500">
-                <PeepalLeaf color="#f97316" size={28} />
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-10">
+              <div className="lg:w-1/2">
+                <h2 className="font-heading text-3xl font-bold text-orange-900 mb-6">
+                  Buddha Dhaam's Vision
+                </h2>
+                
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Buddha Dhaam is a non-profit organization dedicated to serving Buddhist 
+                  monks and preserving the sacred teachings of the Dharma. We provide 
+                  food, shelter, and medical aid to monks across revered pilgrimage sites 
+                  like Bodhgaya, Varanasi, Lumbini, and Kushinagar, ensuring their well-being 
+                  while upholding Buddhist traditions.
+                </p>
+                
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Beyond humanitarian aid, we focus on restoring ancient monasteries and 
+                  stupas, planting sacred trees, and organizing Tripitaka chanting 
+                  ceremonies to protect Buddhist heritage. Our initiatives also include 
+                  environmental sustainability, pilgrim support, and global Buddhist 
+                  engagement.
+                </p>
+
+                <div className="flex items-center">
+                  <div className="text-orange-500 mt-1">
+                    <PeepalLeaf color="#f97316" size={24} />
+                  </div>
+                  <p className="text-lg text-orange-700 font-medium ml-2">
+                    Join us in serving monks, preserving heritage, and sharing wisdom.
+                  </p>
+                </div>
               </div>
-              <h2 className="font-heading text-3xl font-bold text-orange-900">
-                Our Compassionate Initiatives
-              </h2>
+              
+              <div className="lg:w-1/2">
+                <img 
+                  src="/src/assets/images/about-vision.png" 
+                  alt="Buddha Dhaam's Vision" 
+                  className="rounded-lg shadow-xl w-full"
+                />
+              </div>
             </div>
             
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              The work of Buddha Dhaam spans across the most sacred Buddhist sites, 
-              focusing on the preservation of ancient traditions and support for monks 
-              who dedicate their lives to the Dharma. Our initiatives are rooted in 
-              the Buddha's teachings of compassion, selfless service, and wisdom.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
                 <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Mission</h3>
                 <p className="text-gray-700">
@@ -74,7 +99,7 @@ const OurWork = () => {
                   sites, and planted more than 108 sacred trees, creating a lasting impact on 
                   Buddhist heritage and the communities that preserve it.
                 </p>
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">2500+ Monks</span>
                   <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">6 Sacred Sites</span>
                   <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">108+ Trees</span>
@@ -173,6 +198,34 @@ const OurWork = () => {
               
               <TabsContent value="sites" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Add a special highlight for Mahabodhi Temple */}
+                  <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg col-span-1 md:col-span-2 lg:col-span-3">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="md:w-2/3 h-64 md:h-auto overflow-hidden">
+                        <img 
+                          src="/src/assets/images/mahabodhi-temple.jpg" 
+                          alt="Mahabodhi Temple" 
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+                      <div className="md:w-1/3 p-6 flex flex-col justify-center">
+                        <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Mahabodhi Temple Restoration</h3>
+                        <p className="text-gray-700 mb-4">
+                          One of our most sacred initiatives is the restoration and preservation of the Mahabodhi Temple, 
+                          the site of Buddha's enlightenment. This UNESCO World Heritage site is being carefully maintained 
+                          with traditional techniques to ensure its spiritual significance for generations to come.
+                        </p>
+                        <a 
+                          href="#stupa-restoration"
+                          className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
+                        >
+                          Learn more about our restoration work
+                          <i className='bx bx-right-arrow-alt ml-1'></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
                   {WORK_CATEGORIES.filter(c => 
                     c.title.includes('Stupa') || c.title.includes('Tree') || c.title.includes('Sacred')
                   ).map((category, index) => (
