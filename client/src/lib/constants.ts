@@ -32,7 +32,6 @@ export const NAV_LINKS = [
   { title: "Home", path: "/" },
   { title: "About Us", path: "/about" },
   { title: "Our Work", path: "/our-work" },
-  { title: "Support Us", path: "/support" },
   { title: "Get Involved", path: "/get-involved" },
   { title: "Blog", path: "/blog" },
   { title: "Contact", path: "/contact" }

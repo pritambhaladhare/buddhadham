@@ -21,9 +21,9 @@ const Hero = () => {
           Supporting monks and preserving Buddha's teachings across ancient sacred sites
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Link href="/support">
+          <Link href="/get-involved">
             <div className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-lg cursor-pointer">
-              Support Our Mission
+              Get Involved
             </div>
           </Link>
           <Link href="/our-work">
