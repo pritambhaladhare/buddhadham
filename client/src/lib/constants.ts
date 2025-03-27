@@ -47,37 +47,37 @@ export const WORK_CATEGORIES = [
   {
     title: "Food & Medical Aid",
     description: "Providing daily meals, medicines, and healthcare support to Buddhist monks at sacred pilgrimage sites.",
-    image: "https://images.unsplash.com/photo-1575312022514-e629c5b44f5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/food-distribution.jpg"
   },
   {
     title: "Water & Refreshments",
     description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
-    image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/water-distribution.jpg"
   },
   {
     title: "Ancient Stupa Restoration",
     description: "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations.",
-    image: "https://images.unsplash.com/photo-1573511860302-28c524319d2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/mahabodhi-stupa.jpg"
   },
   {
     title: "Regular Tripitaka Chanting",
     description: "Organizing monks in large-scale recitations of sacred Buddhist texts to preserve spiritual traditions.",
-    image: "https://images.unsplash.com/photo-1584283367830-9e92d08a3488?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/monks-tripitaka.jpg"
   },
   {
     title: "Sacred Tree & Site Beautification",
     description: "Planting and caring for Bodhi trees while enhancing the beauty of monasteries and Buddhist pilgrimage sites.",
-    image: "https://images.unsplash.com/photo-1569144157591-c60f3f82f137?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/buddha-garden.jpg"
   },
   {
     title: "Pilgrim & Monastic Welfare",
     description: "Supporting both resident and traveling monks with accommodation, robes, and other essential needs.",
-    image: "https://images.unsplash.com/photo-1562180346-1106b46173e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/monk-gathering.jpg"
   },
   {
     title: "Meditation App",
     description: "Bringing ancient Buddhist meditation techniques to modern practitioners through our mobile application.",
-    image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    image: "/src/assets/images/buddha-statue.jpg"
   }
 ];
 
@@ -141,19 +141,19 @@ export const LATEST_NEWS = [
     date: "JULY 2, 2023",
     title: "Medical Camp Serves 200 Monks in Bodhgaya",
     description: "Our recent medical camp provided essential healthcare services to monks from across the region...",
-    image: "https://images.unsplash.com/photo-1609227892222-39fa732a6296?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "/src/assets/images/monk-donation.jpg"
   },
   {
     date: "JUNE 15, 2023",
     title: "Ancient Stupa Restoration Complete After Three Years",
     description: "The painstaking restoration of the 9th century Dharmachakra Stupa has been completed...",
-    image: "https://images.unsplash.com/photo-1580697029043-9d58406d0063?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "/src/assets/images/mahabodhi-temple.jpg"
   },
   {
     date: "MAY 28, 2023",
     title: "New Scholarship Program Launched for Young Monks",
     description: "Buddha Dhaam has established a scholarship fund to support the education of novice monks...",
-    image: "https://images.unsplash.com/photo-1626906722153-73f12c76b5de?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "/src/assets/images/buddha-carving.jpg"
   }
 ];
 
@@ -163,13 +163,13 @@ export const TESTIMONIALS = [
     quote: "The work of Buddha Dhaam has transformed our monastery. With their support, we now have proper facilities for our monks to study and meditate. Their dedication to preserving our traditions is truly inspiring.",
     name: "Venerable Dhammapala",
     title: "Head Monk, Bodhi Monastery",
-    image: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+    image: "/src/assets/images/buddha-shrine.jpg"
   },
   {
     quote: "As a long-time supporter of Buddha Dhaam, I've witnessed firsthand the impact of their work. The restoration of ancient sites and the support they provide to monks ensures that Buddhist wisdom continues to flourish in its birthplace.",
     name: "Dr. Maya Sharma",
     title: "Monthly Supporter & Professor of Buddhist Studies",
-    image: "https://images.unsplash.com/photo-1604772659841-a1612f9ed995?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+    image: "/src/assets/images/monk-gathering.jpg"
   }
 ];
 

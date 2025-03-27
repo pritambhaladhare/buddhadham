@@ -21,7 +21,7 @@ const TestimonialsSection = () => {
                 {testimonial.quote}
               </p>
               <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
+                <div className="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-orange-300">
                   <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
