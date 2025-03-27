@@ -137,6 +137,93 @@ const About = () => {
         </div>
       </section>
       
+      {/* Our Work Section */}
+      <section className="py-16 bg-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-3xl font-bold mb-2 text-gray-900">Our Sacred Work</h2>
+            <div className="w-24 h-1 bg-orange-500 mx-auto"></div>
+          </div>
+          
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <p className="text-gray-700 leading-relaxed">
+              Our work is rooted in the Buddha's teachings of compassion and service, focusing exclusively on supporting 
+              monks and preserving the sacred places where Buddhism flourishes.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
+                <i className='bx bxs-bowl-rice'></i>
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Food & Medical Aid</h3>
+              <p className="text-gray-700 text-center">
+                Providing daily nutritious meals, medicine, and healthcare support to resident and traveling monks.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
+                <i className='bx bxs-droplet'></i>
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Water Distribution</h3>
+              <p className="text-gray-700 text-center">
+                Offering clean water and refreshments to pilgrims and monks at Mahabodhi Temple.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
+                <i className='bx bxs-temple'></i>
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Stupa Restoration</h3>
+              <p className="text-gray-700 text-center">
+                Preserving ancient Buddhist stupas and monasteries to maintain sacred heritage.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
+                <i className='bx bxs-book-open'></i>
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Tripitaka Chanting</h3>
+              <p className="text-gray-700 text-center">
+                Organizing large-scale recitations of sacred texts to preserve spiritual traditions.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
+                <i className='bx bxs-tree'></i>
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Sacred Tree Planting</h3>
+              <p className="text-gray-700 text-center">
+                Planting and caring for Bodhi trees while enhancing pilgrimage sites.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
+                <i className='bx bxs-spa'></i>
+              </div>
+              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Meditation App</h3>
+              <p className="text-gray-700 text-center">
+                Bringing ancient Buddhist meditation techniques to modern practitioners through digital tools.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-10">
+            <Link href="/our-work">
+              <button className="px-6 py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition shadow-md">
+                Explore All Our Initiatives
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
       {/* Join Our Mission Section */}
       <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
