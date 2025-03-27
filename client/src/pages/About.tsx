@@ -4,15 +4,11 @@ import { Button } from '@/components/ui/button';
 const About = () => {
   return (
     <div className="bg-orange-50 text-gray-800">
-      {/* Hero Section with Navigation tabs */}
-      <div className="border-b border-gray-200">
-        <div className="container mx-auto px-4 pt-32 pb-4">
-          <div className="flex flex-wrap gap-8 text-sm font-medium">
-            <div className="border-b-2 border-orange-500 pb-2 text-orange-500">About Us</div>
-            <div className="pb-2 hover:text-orange-500 cursor-pointer">Leadership</div>
-            <div className="pb-2 hover:text-orange-500 cursor-pointer">Our Impact</div>
-            <div className="pb-2 hover:text-orange-500 cursor-pointer">Sacred Sites</div>
-          </div>
+      {/* Hero Section with Banner */}
+      <div className="bg-orange-600 text-white">
+        <div className="container mx-auto px-4 pt-32 pb-12 text-center">
+          <h1 className="font-heading text-4xl lg:text-5xl font-bold mb-4">Our Mission & Vision</h1>
+          <p className="text-lg opacity-90 max-w-3xl mx-auto">Serving monks and preserving Buddhist heritage</p>
         </div>
       </div>
       
@@ -22,9 +18,12 @@ const About = () => {
           <div className="flex flex-col lg:flex-row items-start gap-16">
             {/* Text content */}
             <div className="lg:w-1/2">
-              <h1 className="font-heading text-4xl lg:text-5xl font-bold mb-8 leading-tight text-gray-900">
-                About Us – Buddha Dhaam
-              </h1>
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-8 leading-tight text-gray-900 flex items-center">
+                <span className="text-orange-500 mr-2">
+                  <i className='bx bxs-dharma-wheel text-3xl'></i>
+                </span>
+                Buddha Dhaam's Vision
+              </h2>
               
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
