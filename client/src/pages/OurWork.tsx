@@ -30,8 +30,8 @@ const OurWork = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-10">
-              <div className="lg:w-1/2">
+            <div className="flex flex-col gap-10">
+              <div>
                 <h2 className="font-heading text-3xl font-bold text-orange-900 mb-6">
                   Buddha Dhaam's Vision
                 </h2>
@@ -60,14 +60,6 @@ const OurWork = () => {
                     Join us in serving monks, preserving heritage, and sharing wisdom.
                   </p>
                 </div>
-              </div>
-              
-              <div className="lg:w-1/2">
-                <img 
-                  src="/src/assets/images/about-vision.png" 
-                  alt="Buddha Dhaam's Vision" 
-                  className="rounded-lg shadow-xl w-full"
-                />
               </div>
             </div>
             
