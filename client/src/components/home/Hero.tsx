@@ -2,63 +2,85 @@ import { Link } from 'wouter';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center text-white" 
-      style={{
-        background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1598548346543-f2aa5df22527?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
-      <div className="container mx-auto px-4 py-20 text-center">
-        <div className="mb-8 flex justify-center">
-          <div className="text-orange-400 text-5xl">
-            <i className='bx bxs-leaf'></i>
-          </div>
-        </div>
-        <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Preserving the Sacred <br/>Path of Dhamma
-        </h1>
-        <p className="font-accent text-xl md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed text-orange-100">
-          Supporting monks and preserving Buddha's teachings across ancient sacred sites
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <Link href="/get-involved">
-            <div className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-lg cursor-pointer">
-              Get Involved
-            </div>
-          </Link>
-          <Link href="/our-work">
-            <div className="px-8 py-4 bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold rounded-lg transition duration-300 cursor-pointer">
-              Explore Our Work
-            </div>
-          </Link>
-        </div>
-        
-        <div className="mt-12 p-4 bg-white/10 backdrop-blur-sm rounded-lg max-w-md mx-auto">
-          <h3 className="text-xl font-bold mb-2">Free Meditation App</h3>
-          <p className="mb-4 text-sm">Find peace with our guided Buddhist meditation app</p>
-          <div className="flex justify-center space-x-4">
-            <a href="#" className="flex items-center justify-center bg-black/80 hover:bg-black text-white py-2 px-4 rounded-lg transition">
-              <i className='bx bxl-apple text-2xl mr-2'></i>
-              <div className="text-left">
-                <div className="text-xs">Download on the</div>
-                <div className="text-sm font-bold">App Store</div>
+    <section className="min-h-screen bg-orange-50 text-gray-900">
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex flex-col lg:flex-row items-center">
+          {/* Left content */}
+          <div className="lg:w-1/2 lg:pr-12 mb-12 lg:mb-0 text-center lg:text-left">
+            <div className="mb-4 inline-block">
+              <div className="text-orange-500 text-4xl">
+                <i className='bx bxs-lotus'></i>
               </div>
-            </a>
-            <a href="#" className="flex items-center justify-center bg-black/80 hover:bg-black text-white py-2 px-4 rounded-lg transition">
-              <i className='bx bxl-play-store text-2xl mr-2'></i>
-              <div className="text-left">
-                <div className="text-xs">Get it on</div>
-                <div className="text-sm font-bold">Google Play</div>
-              </div>
-            </a>
+            </div>
+            
+            <h1 className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-800">
+              Serving monks and<br/>preserving dhamma
+            </h1>
+            
+            <p className="text-xl max-w-xl mx-auto lg:mx-0 mb-8 text-gray-600">
+              Feel like your best self with meditations, stress-relieving exercises, sleep resources, and beyond.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
+              <Link href="/get-involved">
+                <div className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-md cursor-pointer">
+                  Get Involved
+                </div>
+              </Link>
+              <a href="#" className="px-8 py-4 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-lg transition duration-300 shadow-md cursor-pointer">
+                Try Free Meditation
+              </a>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
+              <a href="#" className="flex items-center justify-center bg-black text-white py-3 px-6 rounded-lg transition">
+                <i className='bx bxl-apple text-2xl mr-2'></i>
+                <div className="text-left">
+                  <div className="text-xs">Download on the</div>
+                  <div className="text-sm font-bold">App Store</div>
+                </div>
+              </a>
+              <a href="#" className="flex items-center justify-center bg-black text-white py-3 px-6 rounded-lg transition">
+                <i className='bx bxl-play-store text-2xl mr-2'></i>
+                <div className="text-left">
+                  <div className="text-xs">Get it on</div>
+                  <div className="text-sm font-bold">Google Play</div>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-        
-        <div className="mt-8">
-          <div className="flex items-center justify-center space-x-3">
-            <span className="h-px w-12 bg-orange-300"></span>
-            <span className="text-orange-300"><i className='bx bxs-down-arrow'></i></span>
-            <span className="h-px w-12 bg-orange-300"></span>
+          
+          {/* Right content - Phone mockups */}
+          <div className="lg:w-1/2 relative">
+            <div className="relative">
+              {/* Main phone */}
+              <div className="w-72 mx-auto lg:mx-0 lg:ml-auto relative z-10">
+                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-8 border-gray-100">
+                  <div className="bg-orange-500 h-16 flex items-center justify-center">
+                    <span className="text-white font-bold">Buddha Dhaam</span>
+                  </div>
+                  <div className="p-4">
+                    <div className="bg-orange-100 rounded-lg p-3 mb-3">
+                      <h4 className="font-bold text-sm mb-1">Morning Meditation</h4>
+                      <p className="text-xs text-gray-700">15 minutes of guided practice</p>
+                    </div>
+                    <div className="bg-orange-50 rounded-lg p-3 mb-3">
+                      <h4 className="font-bold text-sm mb-1">Mindful Breathing</h4>
+                      <p className="text-xs text-gray-700">10 minutes to center yourself</p>
+                    </div>
+                    <div className="bg-orange-50 rounded-lg p-3">
+                      <h4 className="font-bold text-sm mb-1">Evening Relaxation</h4>
+                      <p className="text-xs text-gray-700">Prepare for restful sleep</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-yellow-300 rounded-full opacity-70 -mr-8 -mt-8 hidden lg:block"></div>
+              <div className="absolute bottom-0 left-0 w-20 h-20 bg-orange-300 rounded-full opacity-70 -ml-10 -mb-10 hidden lg:block"></div>
+              <div className="absolute top-1/4 left-0 w-8 h-8 bg-pink-300 rounded-full opacity-70 -ml-4 hidden lg:block"></div>
+            </div>
           </div>
         </div>
       </div>
