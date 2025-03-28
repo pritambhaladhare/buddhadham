@@ -24,7 +24,7 @@ class MeditationSound {
     this.initialize();
     this.isPlaying = true;
     
-    // Base frequency (OM frequency - 136.1 Hz)
+    // Base frequency (meditation resonance - 136.1 Hz)
     const baseFreq = 136.1;
     
     // Create a beautiful chord with harmonics

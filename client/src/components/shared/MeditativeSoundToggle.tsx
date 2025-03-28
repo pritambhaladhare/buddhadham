@@ -114,7 +114,7 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
           animate={{ opacity: 1, width: 'auto' }}
           exit={{ opacity: 0, width: 0 }}
         >
-          {isPlaying ? 'OM Sound Playing' : 'Enable OM Chant'}
+          {isPlaying ? 'Meditation Sound Playing' : 'Enable Meditation Sound'}
         </motion.span>
       )}
     </motion.button>
