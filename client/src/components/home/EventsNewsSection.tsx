@@ -1,7 +1,6 @@
 import { Link } from 'wouter';
 import SectionTitle from '@/components/shared/SectionTitle';
 import { UPCOMING_EVENTS, LATEST_NEWS } from '@/lib/constants';
-import { Button } from '@/components/ui/button';
 
 const EventsNewsSection = () => {
   return (
@@ -33,10 +32,8 @@ const EventsNewsSection = () => {
                   <h4 className="font-heading font-bold text-lg">{event.title}</h4>
                   <p className="text-sm text-[#5D4230] mb-2">{event.location} • {event.time}</p>
                   <p className="mb-3">{event.description}</p>
-                  <Link href="/events">
-                    <a className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
-                      Learn more <i className='bx bx-right-arrow-alt ml-1'></i>
-                    </a>
+                  <Link href="/events" className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
+                    Learn more <i className='bx bx-right-arrow-alt ml-1'></i>
                   </Link>
                 </div>
               </div>
@@ -44,9 +41,9 @@ const EventsNewsSection = () => {
             
             <div className="mt-6 text-center">
               <Link href="/events">
-                <Button className="inline-block px-6 py-3 border-2 border-[#9D2933] text-[#9D2933] rounded-md font-bold hover:bg-[#9D2933] hover:text-white transition">
+                <span className="inline-block px-6 py-3 border-2 border-[#9D2933] text-[#9D2933] rounded-md font-bold hover:bg-[#9D2933] hover:text-white transition">
                   View All Events
-                </Button>
+                </span>
               </Link>
             </div>
           </div>
@@ -75,10 +72,8 @@ const EventsNewsSection = () => {
                   <span className="text-xs text-[#9D2933] font-bold">{item.date}</span>
                   <h4 className="font-heading font-bold text-lg mb-2">{item.title}</h4>
                   <p className="mb-3 text-sm">{item.description}</p>
-                  <Link href="/news">
-                    <a className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
-                      Read more <i className='bx bx-right-arrow-alt ml-1'></i>
-                    </a>
+                  <Link href="/news" className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
+                    Read more <i className='bx bx-right-arrow-alt ml-1'></i>
                   </Link>
                 </div>
               </div>
@@ -86,9 +81,9 @@ const EventsNewsSection = () => {
             
             <div className="mt-6 text-center">
               <Link href="/news">
-                <Button className="inline-block px-6 py-3 border-2 border-[#9D2933] text-[#9D2933] rounded-md font-bold hover:bg-[#9D2933] hover:text-white transition">
+                <span className="inline-block px-6 py-3 border-2 border-[#9D2933] text-[#9D2933] rounded-md font-bold hover:bg-[#9D2933] hover:text-white transition">
                   View All News
-                </Button>
+                </span>
               </Link>
             </div>
           </div>

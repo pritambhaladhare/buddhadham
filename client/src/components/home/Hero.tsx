@@ -106,8 +106,16 @@ const Hero = () => {
   const words = text.split(' ');
 
   return (
-    <section className="min-h-screen bg-orange-50 text-gray-900 overflow-hidden">
-      <div className="container mx-auto px-4 py-16">
+    <section className="min-h-screen bg-[var(--parchment)] text-[var(--bodhi-bark)] overflow-hidden">
+      <div className="relative">
+        {/* Sanskrit-inspired decorative border at top */}
+        <div className="absolute top-0 left-0 w-full h-6 overflow-hidden">
+          <div className="w-full h-full bg-[var(--saffron)] opacity-20"></div>
+          <div className="absolute top-0 left-0 w-full h-6 border-t-4 border-[var(--deep-saffron)] opacity-30"></div>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 py-20">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left content */}
           <motion.div 
@@ -116,10 +124,18 @@ const Hero = () => {
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
           >
-
+            {/* Decorative Om symbol */}
+            <motion.div
+              className="mb-4 text-center lg:text-left"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.15 }}
+              transition={{ delay: 0.2, duration: 1 }}
+            >
+              <span className="inline-block text-4xl text-[var(--monk-robe)] font-serif">ॐ</span>
+            </motion.div>
             
             <motion.h1 
-              className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-800"
+              className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight text-[var(--bodhi-bark)]"
               variants={headerVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
@@ -136,13 +152,13 @@ const Hero = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-xl max-w-xl mx-auto lg:mx-0 mb-8 text-gray-600"
+              className="text-xl max-w-xl mx-auto lg:mx-0 mb-8 text-[var(--temple-stone)]"
               variants={fadeIn}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               transition={{ delay: 0.9 }}
             >
-              Feel like your best self with meditations, stress-relieving exercises, sleep resources, and beyond.
+              Embrace the path of peace and enlightenment through the teachings of Lord Buddha and support those who walk in his footsteps.
             </motion.p>
             
             <motion.div 
@@ -156,7 +172,7 @@ const Hero = () => {
                 <AnimatedButton 
                   variant="primary"
                   size="lg"
-                  className="shadow-orange-200/50"
+                  className="shadow-[var(--monk-robe)]/30 bg-[var(--deep-saffron)] border-[var(--monk-robe)]/10 hover:bg-[var(--saffron)]"
                 >
                   <span className="flex items-center">
                     <i className='bx bxs-heart mr-2'></i> Get Involved
@@ -166,7 +182,7 @@ const Hero = () => {
               <AnimatedButton 
                 variant="secondary"
                 size="lg"
-                className="shadow-gray-300/50"
+                className="shadow-[var(--temple-stone)]/30 border-[var(--saffron)]/20 hover:bg-[var(--parchment)]"
                 onClick={() => {}}
               >
                 <span className="flex items-center">
@@ -183,8 +199,8 @@ const Hero = () => {
               transition={{ delay: 1.3 }}
             >
               <motion.a 
-                href="#" 
-                className="flex items-center justify-center bg-black text-white py-3 px-6 rounded-lg"
+                href="#download-app" 
+                className="flex items-center justify-center bg-[var(--monk-robe)] text-white py-3 px-6 rounded-lg border border-[var(--deep-saffron)]/20"
                 variants={buttonHoverVariants}
                 initial="idle"
                 whileHover="hover"
@@ -196,8 +212,8 @@ const Hero = () => {
                 </div>
               </motion.a>
               <motion.a 
-                href="#" 
-                className="flex items-center justify-center bg-black text-white py-3 px-6 rounded-lg"
+                href="#download-app" 
+                className="flex items-center justify-center bg-[var(--bodhi-bark)] text-white py-3 px-6 rounded-lg border border-[var(--deep-saffron)]/20"
                 variants={buttonHoverVariants}
                 initial="idle"
                 whileHover="hover"
@@ -233,57 +249,60 @@ const Hero = () => {
                   }
                 }}
               >
-                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border-8 border-gray-100">
-                  <div className="bg-orange-500 h-16 flex items-center justify-center">
-                    <span className="text-white font-bold">Buddha Dhaam</span>
+                <div className="bg-[var(--ivory)] rounded-3xl shadow-xl overflow-hidden border-8 border-[var(--parchment)]">
+                  <div className="bg-[var(--monk-robe)] h-16 flex items-center justify-center relative">
+                    <span className="text-white font-bold font-heading">Buddha Dhaam</span>
+                    <div className="absolute top-0 right-0 h-8 w-8 flex items-center justify-center">
+                      <i className='bx bxs-leaf text-[var(--saffron)] text-xl'></i>
+                    </div>
                   </div>
                   <div className="p-4">
                     <motion.div 
-                      className="bg-orange-100 rounded-lg p-3 mb-3"
+                      className="bg-[var(--parchment)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
                       variants={meditationCardVariants}
                       initial="hidden"
                       animate={isVisible ? "visible" : "hidden"}
                       custom={0}
                     >
-                      <h4 className="font-bold text-sm mb-1">Morning Meditation</h4>
-                      <p className="text-xs text-gray-700">15 minutes of guided practice</p>
+                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">Vipassana Meditation</h4>
+                      <p className="text-xs text-[var(--temple-stone)]">20 minutes of silent awareness</p>
                     </motion.div>
                     <motion.div 
-                      className="bg-orange-50 rounded-lg p-3 mb-3"
+                      className="bg-[var(--ivory)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
                       variants={meditationCardVariants}
                       initial="hidden"
                       animate={isVisible ? "visible" : "hidden"}
                       custom={1}
                     >
-                      <h4 className="font-bold text-sm mb-1">Mindful Breathing</h4>
-                      <p className="text-xs text-gray-700">10 minutes to center yourself</p>
+                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">Anapana Breathing</h4>
+                      <p className="text-xs text-[var(--temple-stone)]">10 minutes of breath awareness</p>
                     </motion.div>
                     <motion.div 
-                      className="bg-orange-50 rounded-lg p-3 mb-3"
+                      className="bg-[var(--ivory)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
                       variants={meditationCardVariants}
                       initial="hidden"
                       animate={isVisible ? "visible" : "hidden"}
                       custom={2}
                     >
-                      <h4 className="font-bold text-sm mb-1">Evening Relaxation</h4>
-                      <p className="text-xs text-gray-700">Prepare for restful sleep</p>
+                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">Metta Meditation</h4>
+                      <p className="text-xs text-[var(--temple-stone)]">Cultivate loving-kindness</p>
                     </motion.div>
                     
                     <motion.div
-                      className="bg-orange-100 rounded-lg p-3"
+                      className="bg-[var(--parchment)] rounded-lg p-3 border border-[var(--saffron)]/20"
                       variants={meditationCardVariants}
                       initial="hidden"
                       animate={isVisible ? "visible" : "hidden"}
                       custom={3}
                     >
                       <div className="flex justify-center items-center">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-2">
-                          <i className='bx bx-play text-orange-500'></i>
+                        <div className="w-8 h-8 bg-[var(--monk-robe)] rounded-full flex items-center justify-center mr-2">
+                          <i className='bx bx-play text-white'></i>
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-sm">Start Session</h4>
+                          <h4 className="font-bold text-sm text-[var(--bodhi-bark)]">Begin Practice</h4>
                           <div className="flex">
-                            <div className="h-1 bg-orange-500 rounded-full w-3/4 mt-1"></div>
+                            <div className="h-1 bg-[var(--deep-saffron)] rounded-full w-3/4 mt-1"></div>
                             <div className="h-1 bg-gray-200 rounded-full w-1/4 mt-1 ml-1"></div>
                           </div>
                         </div>
@@ -295,21 +314,21 @@ const Hero = () => {
               
               {/* Decorative elements */}
               <motion.div 
-                className="absolute top-0 right-0 w-16 h-16 bg-yellow-300 rounded-full opacity-70 -mr-8 -mt-8 hidden lg:block"
+                className="absolute top-0 right-0 w-16 h-16 bg-[var(--enlightenment-gold)] rounded-full opacity-70 -mr-8 -mt-8 hidden lg:block"
                 variants={bubbleVariants}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 custom={0}
               />
               <motion.div 
-                className="absolute bottom-0 left-0 w-20 h-20 bg-orange-300 rounded-full opacity-70 -ml-10 -mb-10 hidden lg:block"
+                className="absolute bottom-0 left-0 w-20 h-20 bg-[var(--deep-saffron)] rounded-full opacity-70 -ml-10 -mb-10 hidden lg:block"
                 variants={bubbleVariants}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 custom={1}
               />
               <motion.div 
-                className="absolute top-1/4 left-0 w-8 h-8 bg-pink-300 rounded-full opacity-70 -ml-4 hidden lg:block"
+                className="absolute top-1/4 left-0 w-8 h-8 bg-[var(--monk-robe)] rounded-full opacity-70 -ml-4 hidden lg:block"
                 variants={bubbleVariants}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
