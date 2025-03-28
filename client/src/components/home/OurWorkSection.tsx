@@ -19,7 +19,9 @@ const OurWorkSection = () => {
               title={category.title}
               description={category.description}
               image={category.image}
-              link={`/our-work#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+              link={category.title === "Meditation App" 
+                ? "/#download-app" 
+                : `/our-work#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
             />
           ))}
         </div>

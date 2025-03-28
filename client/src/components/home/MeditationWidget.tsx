@@ -113,6 +113,74 @@ const MeditationWidget = () => {
             </ScrollRevealContainer>
           </div>
         </div>
+        
+        {/* Download App Section */}
+        <div id="download-app" className="mt-16 bg-orange-50 rounded-xl p-8 shadow-lg max-w-5xl mx-auto">
+          <ScrollRevealContainer effect="fade-up">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/2 mb-6 md:mb-0">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  Buddha Dhaam Mobile App
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. 🙏
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <motion.a 
+                    href="#" 
+                    className="bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <i className='bx bxl-apple text-2xl'></i>
+                    <div>
+                      <div className="text-xs">Download on the</div>
+                      <div className="font-semibold">App Store</div>
+                    </div>
+                  </motion.a>
+                  <motion.a 
+                    href="#" 
+                    className="bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <i className='bx bxl-play-store text-2xl'></i>
+                    <div>
+                      <div className="text-xs">Get it on</div>
+                      <div className="font-semibold">Google Play</div>
+                    </div>
+                  </motion.a>
+                </div>
+              </div>
+              <div className="md:w-1/2 flex justify-center">
+                <motion.div
+                  className="relative w-64 h-80 md:w-72 md:h-96 bg-gray-200 rounded-[36px] border-[8px] border-gray-800 shadow-xl overflow-hidden"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="absolute w-32 h-6 bg-gray-800 top-0 left-1/2 transform -translate-x-1/2 rounded-b-lg"></div>
+                  <div className="w-full h-full flex items-center justify-center bg-orange-100">
+                    <div className="text-center p-4">
+                      <div className="w-20 h-20 mx-auto rounded-full bg-orange-500 flex items-center justify-center mb-4">
+                        <i className='bx bxs-meditation text-white text-3xl'></i>
+                      </div>
+                      <h4 className="text-lg font-bold text-orange-800">Buddha Dhaam</h4>
+                      <p className="text-sm text-orange-700 mt-2">Track your meditation progress</p>
+                      <div className="mt-6 flex justify-center">
+                        <div className="w-full max-w-xs bg-white rounded-lg p-3 shadow-sm">
+                          <div className="h-4 w-3/4 bg-orange-200 rounded mb-2"></div>
+                          <div className="h-4 w-1/2 bg-orange-200 rounded mb-2"></div>
+                          <div className="h-4 w-4/5 bg-orange-200 rounded"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </ScrollRevealContainer>
+        </div>
       </div>
     </section>
   );

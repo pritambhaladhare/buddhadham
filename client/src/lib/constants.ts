@@ -78,7 +78,7 @@ export const WORK_CATEGORIES = [
   },
   {
     title: "Meditation App",
-    description: "Bringing ancient Buddhist meditation techniques to modern practitioners through our mobile application.",
+    description: "Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. 🙏",
     image: "/src/assets/images/buddha-statue.jpg"
   }
 ];
