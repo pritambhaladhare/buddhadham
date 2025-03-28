@@ -32,7 +32,7 @@ const EventsNewsSection = () => {
                   <h4 className="font-heading font-bold text-lg">{event.title}</h4>
                   <p className="text-sm text-[#5D4230] mb-2">{event.location} • {event.time}</p>
                   <p className="mb-3">{event.description}</p>
-                  <Link href="/events" className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
+                  <Link href="/our-work" className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
                     Learn more <i className='bx bx-right-arrow-alt ml-1'></i>
                   </Link>
                 </div>
@@ -40,7 +40,7 @@ const EventsNewsSection = () => {
             ))}
             
             <div className="mt-6 text-center">
-              <Link href="/events">
+              <Link href="/our-work">
                 <span className="inline-block px-6 py-3 border-2 border-[#9D2933] text-[#9D2933] rounded-md font-bold hover:bg-[#9D2933] hover:text-white transition">
                   View All Events
                 </span>
