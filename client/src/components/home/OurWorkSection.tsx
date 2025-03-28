@@ -24,10 +24,16 @@ const OurWorkSection = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center flex flex-col md:flex-row justify-center gap-4">
           <Link href="/our-work">
             <button className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition duration-300 shadow-md">
               Explore More Sacred Work
+            </button>
+          </Link>
+          <Link href="/sacred-map">
+            <button className="px-8 py-3 bg-[#D2691E] hover:bg-[#A0522D] text-white font-bold rounded-lg transition duration-300 shadow-md flex items-center justify-center gap-2">
+              <i className='bx bx-map-alt text-xl'></i>
+              View Sacred Sites Map
             </button>
           </Link>
         </div>

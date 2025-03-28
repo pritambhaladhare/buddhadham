@@ -12,6 +12,7 @@ import Support from "@/pages/Support";
 import GetInvolved from "@/pages/GetInvolved";
 import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
+import SacredMap from "@/pages/SacredMap";
 
 // Import layout components
 import Header from "@/components/layout/Header";
@@ -30,6 +31,7 @@ function Router() {
           <Route path="/get-involved" component={GetInvolved} />
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
+          <Route path="/sacred-map" component={SacredMap} />
           {/* Fallback to 404 */}
           <Route component={NotFound} />
         </Switch>
