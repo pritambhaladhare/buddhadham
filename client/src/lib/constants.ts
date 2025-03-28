@@ -59,7 +59,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Ancient Stupa Restoration",
     description: "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations.",
-    image: "/src/assets/images/mahabodhi-stupa.jpg"
+    image: "/src/assets/images/buddha-carving.jpg"
   },
   {
     title: "Regular Tripitaka Chanting",
