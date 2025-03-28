@@ -98,26 +98,31 @@ const OurWork = () => {
               <div className="relative z-10">
                 <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Impact</h3>
                 <p className="text-gray-700 mb-4">
-                  Through our initiatives, we have supported over 2,500 monks, restored 6 ancient 
-                  sites, and planted more than 108 sacred trees, creating a lasting impact on 
-                  the heritage of teaching of lord buddha and the communities that preserve it.
+                  Through our initiatives, we have supported 2,598+ monks, served 1,422+ meals, 
+                  conducted 100+ medical camps, and provided healthcare to 100+ pilgrims, creating 
+                  a lasting impact on the monastic community and the heritage of teaching of lord buddha.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <motion.span 
                     className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                  >2500+ Monks</motion.span>
+                  >2598+ Monks</motion.span>
                   <motion.span 
                     className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                  >6 Sacred Sites</motion.span>
+                  >1422+ Meals</motion.span>
                   <motion.span 
                     className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                  >108+ Trees</motion.span>
+                  >100+ Medical Camps</motion.span>
+                  <motion.span 
+                    className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >100+ Pilgrim Aid</motion.span>
                 </div>
               </div>
               <motion.div 
