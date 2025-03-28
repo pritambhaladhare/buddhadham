@@ -14,6 +14,11 @@ import Blog from "@/pages/Blog";
 import Contact from "@/pages/Contact";
 import SacredMap from "@/pages/SacredMap";
 
+// Member Portal pages
+import MemberLogin from "@/pages/MemberLogin";
+import MemberRegister from "@/pages/MemberRegister";
+import MemberDashboard from "@/pages/MemberDashboard";
+
 // Import layout components
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -32,6 +37,12 @@ function Router() {
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
           <Route path="/sacred-map" component={SacredMap} />
+          
+          {/* Member Portal Routes */}
+          <Route path="/member-login" component={MemberLogin} />
+          <Route path="/member-register" component={MemberRegister} />
+          <Route path="/member-dashboard" component={MemberDashboard} />
+          
           {/* Fallback to 404 */}
           <Route component={NotFound} />
         </Switch>

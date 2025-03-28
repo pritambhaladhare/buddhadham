@@ -1,10 +1,158 @@
-import type { Express } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { contactSchema, donationSchema, memberSchema, memberBenefitSchema, newsletterSchema, volunteerSchema } from "@shared/schema";
+import { contactSchema, donationSchema, memberSchema, memberBenefitSchema, newsletterSchema, volunteerSchema, insertUserSchema } from "@shared/schema";
 import nodemailer from "nodemailer";
+import session from "express-session";
+import memorystore from "memorystore";
+import bcrypt from "bcryptjs";
+
+// Extend the Session interface to include user property
+declare module 'express-session' {
+  interface Session {
+    user?: {
+      id: number;
+      username: string;
+      role: string;
+    };
+  }
+}
+
+// Type for authenticated requests
+interface AuthenticatedRequest extends Request {
+  user?: {
+    id: number;
+    username: string;
+    role: string;
+  }
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Setup session middleware
+  const MemoryStore = memorystore(session);
+  app.use(
+    session({
+      cookie: { maxAge: 86400000 }, // 24 hours
+      store: new MemoryStore({
+        checkPeriod: 86400000 // prune expired entries every 24h
+      }),
+      resave: false,
+      saveUninitialized: false,
+      secret: process.env.SESSION_SECRET || "buddha-dhaam-secret"
+    })
+  );
+  
+  // Authentication middleware
+  const authenticate = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+    if (req.session && req.session.user) {
+      req.user = req.session.user;
+      next();
+    } else {
+      res.status(401).json({ success: false, message: "Unauthorized" });
+    }
+  };
+  
+  // Authentication Routes
+  
+  // Register a new user
+  app.post('/api/auth/register', async (req, res) => {
+    try {
+      // Validate the user data
+      const userData = insertUserSchema.parse(req.body);
+      
+      // Check if username already exists
+      const existingUser = await storage.getUserByUsername(userData.username);
+      if (existingUser) {
+        return res.status(400).json({ success: false, message: "Username already taken" });
+      }
+      
+      // Check if email already exists
+      if (userData.email) {
+        const existingEmail = await storage.getUserByEmail(userData.email);
+        if (existingEmail) {
+          return res.status(400).json({ success: false, message: "Email already registered" });
+        }
+      }
+      
+      // Hash the password
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(userData.password, salt);
+      
+      // Create the user with hashed password
+      const user = await storage.createUser({
+        ...userData,
+        password: hashedPassword
+      });
+      
+      // Return success without the password
+      const { password, ...userWithoutPassword } = user;
+      return res.status(201).json({
+        success: true,
+        message: "User registered successfully",
+        user: userWithoutPassword
+      });
+    } catch (error: any) {
+      console.error("Error registering user:", error);
+      return res.status(400).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Login
+  app.post('/api/auth/login', async (req, res) => {
+    try {
+      const { username, password } = req.body;
+      
+      // Find the user
+      const user = await storage.getUserByUsername(username);
+      if (!user) {
+        return res.status(400).json({ success: false, message: "Invalid username or password" });
+      }
+      
+      // Verify password
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(400).json({ success: false, message: "Invalid username or password" });
+      }
+      
+      // Create session
+      (req as any).session.user = {
+        id: user.id,
+        username: user.username,
+        role: user.role || 'user'
+      };
+      
+      // Return user info without password
+      const { password: _, ...userWithoutPassword } = user;
+      return res.status(200).json({
+        success: true,
+        message: "Login successful",
+        user: userWithoutPassword
+      });
+    } catch (error: any) {
+      console.error("Error logging in:", error);
+      return res.status(400).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Get current user
+  app.get('/api/auth/me', authenticate, (req: AuthenticatedRequest, res) => {
+    return res.status(200).json({
+      success: true,
+      user: req.user
+    });
+  });
+  
+  // Logout
+  app.post('/api/auth/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).json({ success: false, message: "Could not log out" });
+      }
+      res.clearCookie('connect.sid');
+      return res.status(200).json({ success: true, message: "Logged out successfully" });
+    });
+  });
+  
   // Contact form submission
   app.post('/api/contact/send', async (req, res) => {
     try {
@@ -122,8 +270,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Member Portal API Routes
   
-  // Create new member
-  app.post('/api/members', async (req, res) => {
+  // Create new member - must be authenticated
+  app.post('/api/members', authenticate, async (req: AuthenticatedRequest, res) => {
     try {
       const validatedData = memberSchema.parse(req.body);
       
@@ -141,8 +289,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Get member by ID
-  app.get('/api/members/:id', async (req, res) => {
+  // Get member by ID - authenticated
+  app.get('/api/members/:id', authenticate, async (req: AuthenticatedRequest, res) => {
     try {
       const memberId = parseInt(req.params.id);
       if (isNaN(memberId)) {
@@ -164,8 +312,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Get member by user ID
-  app.get('/api/members/user/:userId', async (req, res) => {
+  // Get member by user ID - authenticated
+  app.get('/api/members/user/:userId', authenticate, async (req: AuthenticatedRequest, res) => {
     try {
       const userId = parseInt(req.params.userId);
       if (isNaN(userId)) {
@@ -187,8 +335,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Update member
-  app.patch('/api/members/:id', async (req, res) => {
+  // Update member - authenticated
+  app.patch('/api/members/:id', authenticate, async (req: AuthenticatedRequest, res) => {
     try {
       const memberId = parseInt(req.params.id);
       if (isNaN(memberId)) {
@@ -212,8 +360,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Get all members
-  app.get('/api/members', async (req, res) => {
+  // Get all members - restricted to admin
+  app.get('/api/members', authenticate, async (req: AuthenticatedRequest, res) => {
+    // Check if user is admin
+    if (req.user?.role !== 'admin') {
+      return res.status(403).json({ success: false, message: "Access denied" });
+    }
     try {
       const members = await storage.getMembers();
       
