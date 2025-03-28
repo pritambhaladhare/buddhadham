@@ -27,11 +27,11 @@ const About = () => {
               
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Buddha Dhaam is a non-profit organization dedicated to serving Buddhist monks and preserving the sacred teachings of the Dharma. We provide food, shelter, and medical aid to monks across revered pilgrimage sites like Bodhgaya, Varanasi, Lumbini, and Kushinagar, ensuring their well-being while upholding Buddhist traditions.
+                  Buddha Dhaam is a non-profit organization dedicated to serving monks and preserving the sacred teachings of lord buddha. We provide food, shelter, and medical aid to monks across revered pilgrimage sites like Bodhgaya, Varanasi, Lumbini, and Kushinagar, ensuring their well-being while upholding sacred traditions.
                 </p>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Beyond humanitarian aid, we focus on restoring ancient monasteries and stupas, planting sacred trees, and organizing Tripitaka chanting ceremonies to protect Buddhist heritage. Our initiatives also include environmental sustainability, pilgrim support, and global Buddhist engagement.
+                  Beyond humanitarian aid, we focus on restoring ancient monasteries and stupas, planting sacred trees, and organizing Tripitaka chanting ceremonies to protect the heritage of teaching of lord buddha. Our initiatives also include environmental sustainability, pilgrim support, and global spiritual engagement.
                 </p>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -153,7 +153,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center mb-10">
             <p className="text-gray-700 leading-relaxed">
               Our work is rooted in the Buddha's teachings of compassion and service, focusing exclusively on supporting 
-              monks and preserving the sacred places where Buddhism flourishes.
+              monks and preserving the sacred places where teaching of lord buddha flourishes.
             </p>
           </div>
           

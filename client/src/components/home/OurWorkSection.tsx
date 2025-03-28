@@ -9,15 +9,8 @@ const OurWorkSection = () => {
       <div className="container mx-auto px-4">
         <SectionTitle 
           title="Our Sacred Work" 
-          subtitle="Serving monks, preserving traditions, and protecting Buddhist heritage across sacred sites"
+          subtitle="Serving monks, preserving traditions, and protecting heritage of teaching of lord buddha across sacred sites"
         />
-        
-        <div className="mt-1 mb-6 max-w-3xl mx-auto text-center">
-          <p className="text-gray-700 leading-relaxed">
-            Our work is rooted in the Buddha's teachings of compassion and service, focusing exclusively on supporting 
-            monks and preserving the sacred places where Buddhism flourishes.
-          </p>
-        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {WORK_CATEGORIES.map((category, index) => (

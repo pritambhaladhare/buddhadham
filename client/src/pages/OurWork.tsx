@@ -41,19 +41,19 @@ const OurWork = () => {
                 </h2>
                 
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Buddha Dhaam is a non-profit organization dedicated to serving Buddhist 
-                  monks and preserving the sacred teachings of the Dharma. We provide 
+                  Buddha Dhaam is a non-profit organization dedicated to serving 
+                  monks and preserving the sacred teachings of lord buddha. We provide 
                   food, shelter, and medical aid to monks across revered pilgrimage sites 
                   like Bodhgaya, Varanasi, Lumbini, and Kushinagar, ensuring their well-being 
-                  while upholding Buddhist traditions.
+                  while upholding sacred traditions.
                 </p>
                 
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                   Beyond humanitarian aid, we focus on restoring ancient monasteries and 
                   stupas, planting sacred trees, and organizing Tripitaka chanting 
-                  ceremonies to protect Buddhist heritage. Our initiatives also include 
-                  environmental sustainability, pilgrim support, and global Buddhist 
-                  engagement.
+                  ceremonies to protect heritage of teaching of lord buddha. Our initiatives also include 
+                  environmental sustainability, pilgrim support, and global engagement with 
+                  the teaching of lord buddha.
                 </p>
 
                 <div className="flex items-center">
@@ -76,7 +76,7 @@ const OurWork = () => {
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500 h-full">
                   <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Mission</h3>
                   <p className="text-gray-700">
-                    To preserve and protect Buddhist heritage across sacred sites while 
+                    To preserve and protect heritage of teaching of lord buddha across sacred sites while 
                     providing essential support to the monastic community that maintains 
                     these traditions.
                   </p>
@@ -102,7 +102,7 @@ const OurWork = () => {
                   <p className="text-gray-700 mb-4">
                     Through our initiatives, we have supported over 2,500 monks, restored 6 ancient 
                     sites, and planted more than 108 sacred trees, creating a lasting impact on 
-                    Buddhist heritage and the communities that preserve it.
+                    the heritage of teaching of lord buddha and the communities that preserve it.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <motion.span 
@@ -418,14 +418,14 @@ const OurWork = () => {
                               category.title.includes('Water') ?
                               'Cooling refreshments during hot summer months at pilgrimage sites' :
                               category.title.includes('Stupa') ?
-                              'Documentation and preservation of ancient Buddhist art and carvings' :
+                              'Documentation and preservation of ancient art and carvings related to teaching of lord buddha' :
                               category.title.includes('Tripitaka') ?
                               'Preservation of the Buddha\'s teachings through oral tradition' :
                               category.title.includes('Tree') ?
-                              'Educational programs about the significance of sacred trees in Buddhism' :
+                              'Educational programs about the significance of sacred trees in teaching of lord buddha' :
                               category.title.includes('Welfare') ?
                               'Support for educational needs and study materials' :
-                              'Guided meditations led by experienced Buddhist monks'
+                              'Guided meditations led by experienced monks dedicated to the teaching of lord buddha'
                             }
                           </div>
                         </div>
@@ -497,7 +497,7 @@ const OurWork = () => {
           <h2 className="font-heading text-3xl font-bold mb-6">Support Our Sacred Work</h2>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
             Your contributions help us continue our mission of serving monks, 
-            preserving Buddhist heritage, and maintaining sacred traditions. Join us 
+            preserving heritage of teaching of lord buddha, and maintaining sacred traditions. Join us 
             in making a lasting impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
