@@ -51,16 +51,6 @@ const FloatingElement = ({
 );
 
 const Home = () => {
-  const [showSanskritDivider, setShowSanskritDivider] = useState(false);
-  
-  useEffect(() => {
-    // Add the Sanskrit divider after a short delay for visual interest
-    const timer = setTimeout(() => {
-      setShowSanskritDivider(true);
-    }, 800);
-    
-    return () => clearTimeout(timer);
-  }, []);
   
   return (
     <>
@@ -78,19 +68,17 @@ const Home = () => {
         <FloatingElement delay={8} y={500} x={200} duration={12}>
           <div className="w-6 h-6 rounded-full bg-orange-100/20 blur-sm"></div>
         </FloatingElement>
-        
-        {/* Sanskrit symbols - OM */}
-        <FloatingElement delay={15} y={700} x={400} duration={20} rotationRange={10}>
-          <div className="text-orange-200/10 text-7xl font-serif">ॐ</div>
+        <FloatingElement delay={15} y={700} x={400} duration={20}>
+          <div className="w-12 h-12 rounded-full bg-orange-100/10 blur-md"></div>
         </FloatingElement>
-        <FloatingElement delay={25} y={200} x={800} duration={25} rotationRange={15}>
-          <div className="text-orange-100/10 text-8xl font-serif">ॐ</div>
+        <FloatingElement delay={25} y={200} x={800} duration={25}>
+          <div className="w-14 h-14 rounded-full bg-orange-50/10 blur-md"></div>
         </FloatingElement>
       </div>
       
       <Hero />
       
-      {showSanskritDivider && <div className="sanskrit-divider mx-auto max-w-5xl mt-10"></div>}
+      <div className="section-divider mx-auto max-w-5xl mt-10"></div>
       
       <ImpactStats />
       <OurWorkSection />

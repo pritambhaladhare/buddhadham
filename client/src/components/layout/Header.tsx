@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
+import { useTranslation } from 'react-i18next';
 import { NAV_LINKS } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
 import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import SimplifiedMantraText from '@/components/animation/SimplifiedMantraText';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 
 const Header = () => {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
   
   const { scrollY } = useScroll();
   const headerOpacity = useTransform(scrollY, [0, 50], [1, 0.98]);
@@ -115,7 +118,7 @@ const Header = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1, duration: 0.5 }}
                   >
-                    Buddha Dhaam
+                    {t('common.siteTitle')}
                   </motion.h1>
                   <motion.p 
                     className="text-xs text-orange-600 italic"
@@ -123,7 +126,7 @@ const Header = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                   >
-                    Serving Monks, Preserving Dharma
+                    {t('common.tagline')}
                   </motion.p>
                 </div>
               </motion.div>
@@ -142,7 +145,7 @@ const Header = () => {
                     <span className={`nav-link font-body font-medium ${
                       location === link.path ? 'text-orange-500' : 'text-orange-800'
                     }`}>
-                      {link.title}
+                      {t(`common.navigation.${link.title.toLowerCase().replace(' ', '')}`)}
                     </span>
                     
                     {/* Active indicator line */}
@@ -169,19 +172,23 @@ const Header = () => {
               <i className='bx bx-menu text-2xl'></i>
             </motion.button>
             
-            <Link href="/support">
-              <div className="hidden md:block">
-                <AnimatedButton
-                  variant="primary"
-                  size="sm"
-                  className="shadow-orange-200/50"
-                >
-                  <span className="flex items-center">
-                    <i className='bx bxs-heart text-lg mr-1'></i> Donate Now
-                  </span>
-                </AnimatedButton>
-              </div>
-            </Link>
+            <div className="hidden md:flex items-center gap-2">
+              <LanguageSwitcher />
+              
+              <Link href="/support">
+                <div>
+                  <AnimatedButton
+                    variant="primary"
+                    size="sm"
+                    className="shadow-orange-200/50"
+                  >
+                    <span className="flex items-center">
+                      <i className='bx bxs-heart text-lg mr-1'></i> {t('common.buttons.donate')}
+                    </span>
+                  </AnimatedButton>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
         

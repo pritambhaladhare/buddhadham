@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import { 
@@ -96,13 +97,14 @@ const buttonHoverVariants = {
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useTranslation();
   
   useEffect(() => {
     // Set animation to visible after component mounts
     setIsVisible(true);
   }, []);
 
-  const text = "Serving monks and preserving dhamma";
+  const text = t('home.hero.title');
   const words = text.split(' ');
 
   return (
@@ -158,7 +160,7 @@ const Hero = () => {
               animate={isVisible ? "visible" : "hidden"}
               transition={{ delay: 0.9 }}
             >
-              Embrace the path of peace and enlightenment through the teachings of Lord Buddha and support those who walk in his footsteps.
+              {t('home.hero.description')}
             </motion.p>
             
             <motion.div 
@@ -175,7 +177,7 @@ const Hero = () => {
                   className="shadow-[var(--monk-robe)]/30 bg-[var(--deep-saffron)] border-[var(--monk-robe)]/10 hover:bg-[var(--saffron)]"
                 >
                   <span className="flex items-center">
-                    <i className='bx bxs-heart mr-2'></i> Get Involved
+                    <i className='bx bxs-heart mr-2'></i> {t('home.hero.buttonGetInvolved')}
                   </span>
                 </AnimatedButton>
               </Link>
@@ -186,7 +188,7 @@ const Hero = () => {
                 onClick={() => {}}
               >
                 <span className="flex items-center">
-                  <i className='bx bx-meditation mr-2'></i> Try Free Meditation
+                  <i className='bx bx-meditation mr-2'></i> {t('home.hero.buttonTryMeditation')}
                 </span>
               </AnimatedButton>
             </motion.div>
@@ -207,8 +209,8 @@ const Hero = () => {
               >
                 <i className='bx bxl-apple text-2xl mr-2'></i>
                 <div className="text-left">
-                  <div className="text-xs">Download on the</div>
-                  <div className="text-sm font-bold">App Store</div>
+                  <div className="text-xs">{t('home.hero.downloadOn')}</div>
+                  <div className="text-sm font-bold">{t('home.hero.appStore')}</div>
                 </div>
               </motion.a>
               <motion.a 
@@ -220,8 +222,8 @@ const Hero = () => {
               >
                 <i className='bx bxl-play-store text-2xl mr-2'></i>
                 <div className="text-left">
-                  <div className="text-xs">Get it on</div>
-                  <div className="text-sm font-bold">Google Play</div>
+                  <div className="text-xs">{t('home.hero.getItOn')}</div>
+                  <div className="text-sm font-bold">{t('home.hero.googlePlay')}</div>
                 </div>
               </motion.a>
             </motion.div>
@@ -251,7 +253,7 @@ const Hero = () => {
               >
                 <div className="bg-[var(--ivory)] rounded-3xl shadow-xl overflow-hidden border-8 border-[var(--parchment)]">
                   <div className="bg-[var(--monk-robe)] h-16 flex items-center justify-center relative">
-                    <span className="text-white font-bold font-heading">Buddha Dhaam</span>
+                    <span className="text-white font-bold font-heading">{t('common.siteName')}</span>
                     <div className="absolute top-0 right-0 h-8 w-8 flex items-center justify-center">
                       <i className='bx bxs-leaf text-[var(--saffron)] text-xl'></i>
                     </div>
@@ -264,8 +266,8 @@ const Hero = () => {
                       animate={isVisible ? "visible" : "hidden"}
                       custom={0}
                     >
-                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">Vipassana Meditation</h4>
-                      <p className="text-xs text-[var(--temple-stone)]">20 minutes of silent awareness</p>
+                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">{t('home.hero.meditation1Title')}</h4>
+                      <p className="text-xs text-[var(--temple-stone)]">{t('home.hero.meditation1Description')}</p>
                     </motion.div>
                     <motion.div 
                       className="bg-[var(--ivory)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
@@ -274,8 +276,8 @@ const Hero = () => {
                       animate={isVisible ? "visible" : "hidden"}
                       custom={1}
                     >
-                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">Anapana Breathing</h4>
-                      <p className="text-xs text-[var(--temple-stone)]">10 minutes of breath awareness</p>
+                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">{t('home.hero.meditation2Title')}</h4>
+                      <p className="text-xs text-[var(--temple-stone)]">{t('home.hero.meditation2Description')}</p>
                     </motion.div>
                     <motion.div 
                       className="bg-[var(--ivory)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
@@ -284,8 +286,8 @@ const Hero = () => {
                       animate={isVisible ? "visible" : "hidden"}
                       custom={2}
                     >
-                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">Metta Meditation</h4>
-                      <p className="text-xs text-[var(--temple-stone)]">Cultivate loving-kindness</p>
+                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">{t('home.hero.meditation3Title')}</h4>
+                      <p className="text-xs text-[var(--temple-stone)]">{t('home.hero.meditation3Description')}</p>
                     </motion.div>
                     
                     <motion.div
@@ -300,7 +302,7 @@ const Hero = () => {
                           <i className='bx bx-play text-white'></i>
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-sm text-[var(--bodhi-bark)]">Begin Practice</h4>
+                          <h4 className="font-bold text-sm text-[var(--bodhi-bark)]">{t('home.hero.beginPractice')}</h4>
                           <div className="flex">
                             <div className="h-1 bg-[var(--deep-saffron)] rounded-full w-3/4 mt-1"></div>
                             <div className="h-1 bg-gray-200 rounded-full w-1/4 mt-1 ml-1"></div>

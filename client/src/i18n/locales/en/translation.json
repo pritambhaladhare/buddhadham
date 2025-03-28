@@ -1,6 +1,7 @@
 {
   "common": {
     "siteTitle": "Buddha Dhaam",
+    "siteName": "Buddha Dhaam",
     "tagline": "Serving monks and preserving dhamma",
     "siteDescription": "Embrace the path of peace and enlightenment through the teachings of Lord Buddha and support those who walk in his footsteps.",
     "navigation": {
@@ -44,7 +45,14 @@
       "downloadOn": "Download on the",
       "appStore": "App Store",
       "getItOn": "Get it on",
-      "googlePlay": "Google Play"
+      "googlePlay": "Google Play",
+      "meditation1Title": "Vipassana Meditation",
+      "meditation1Description": "20 minutes of silent awareness",
+      "meditation2Title": "Anapana Breathing",
+      "meditation2Description": "10 minutes of breath awareness",
+      "meditation3Title": "Metta Meditation",
+      "meditation3Description": "Cultivate loving-kindness",
+      "beginPractice": "Begin Practice"
     },
     "ourWork": {
       "title": "Our Work",

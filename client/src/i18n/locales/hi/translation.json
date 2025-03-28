@@ -1,0 +1,105 @@
+{
+  "common": {
+    "siteTitle": "बुद्ध धाम",
+    "siteName": "बुद्ध धाम",
+    "tagline": "भिक्षुओं की सेवा और धम्म का संरक्षण",
+    "siteDescription": "भगवान बुद्ध के उपदेशों के माध्यम से शांति और ज्ञान के मार्ग को अपनाएं और उनके पदचिह्नों पर चलने वालों का समर्थन करें।",
+    "navigation": {
+      "home": "होम",
+      "about": "हमारे बारे में",
+      "ourWork": "हमारा कार्य",
+      "sacredMap": "पवित्र मानचित्र",
+      "getInvolved": "जुड़ें",
+      "contact": "संपर्क",
+      "support": "समर्थन",
+      "blog": "ब्लॉग",
+      "memberPortal": "सदस्य पोर्टल"
+    },
+    "buttons": {
+      "readMore": "अधिक पढ़ें",
+      "getInvolved": "जुड़ें",
+      "learnMore": "और जानें",
+      "subscribe": "सदस्यता लें",
+      "submit": "जमा करें",
+      "donate": "दान करें",
+      "tryMeditation": "निःशुल्क ध्यान का प्रयास करें",
+      "enableSound": "ध्यान ध्वनि सक्षम करें",
+      "disableSound": "ध्यान ध्वनि अक्षम करें",
+      "downloadApp": "ऐप डाउनलोड करें"
+    },
+    "footer": {
+      "contactUs": "संपर्क करें",
+      "locations": "स्थान",
+      "quickLinks": "त्वरित लिंक",
+      "copyright": "© {{year}} बुद्ध धाम। सर्वाधिकार सुरक्षित।",
+      "termsAndConditions": "नियम और शर्तें",
+      "privacyPolicy": "गोपनीयता नीति"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "भिक्षुओं की सेवा और धम्म का संरक्षण",
+      "description": "भगवान बुद्ध के उपदेशों के माध्यम से शांति और ज्ञान के मार्ग को अपनाएं और उनके पदचिह्नों पर चलने वालों का समर्थन करें।",
+      "buttonGetInvolved": "जुड़ें",
+      "buttonTryMeditation": "निःशुल्क ध्यान का प्रयास करें",
+      "downloadOn": "पर डाउनलोड करें",
+      "appStore": "ऐप स्टोर",
+      "getItOn": "इस पर प्राप्त करें",
+      "googlePlay": "गूगल प्ले",
+      "meditation1Title": "विपश्यना ध्यान",
+      "meditation1Description": "मौन जागरूकता के 20 मिनट",
+      "meditation2Title": "आनापान श्वास",
+      "meditation2Description": "श्वास जागरूकता के 10 मिनट",
+      "meditation3Title": "मेत्ता ध्यान",
+      "meditation3Description": "प्रेम-दया का विकास",
+      "beginPractice": "अभ्यास शुरू करें"
+    },
+    "ourWork": {
+      "title": "हमारा कार्य",
+      "subtitle": "भिक्षु समुदाय का समर्थन और पवित्र स्थलों का संरक्षण",
+      "description": "बुद्ध धाम भिक्षुओं और भिक्षुणियों के लिए प्रत्यक्ष समर्थन, पवित्र बौद्ध स्थलों के संरक्षण, और दुनिया भर में अभ्यासकर्ताओं के आध्यात्मिक कल्याण को बढ़ावा देने पर केंद्रित है।",
+      "viewAllWork": "सभी कार्य देखें"
+    },
+    "impactStats": {
+      "title": "हमारा प्रभाव",
+      "monksSupported": "समर्थित भिक्षु",
+      "sacredSites": "सेवित पवित्र स्थल",
+      "plantationProjects": "वृक्षारोपण परियोजनाएँ",
+      "restorationProjects": "पुनरुद्धार परियोजनाएँ"
+    },
+    "supportSection": {
+      "title": "हमारे मिशन का समर्थन करें",
+      "subtitle": "आपका योगदान भिक्षुओं और पवित्र स्थलों के साथ हमारे कार्य को बनाए रखने में मदद करता है।",
+      "recurringDonation": "स्थायी प्रभाव डालने के लिए एक आवर्ती दाता बनें"
+    },
+    "eventsNews": {
+      "upcomingEvents": "आगामी कार्यक्रम",
+      "latestNews": "नवीनतम समाचार",
+      "viewAllEvents": "सभी कार्यक्रम देखें",
+      "viewAllNews": "सभी समाचार देखें"
+    },
+    "newsletterSection": {
+      "title": "जुड़े रहें",
+      "subtitle": "हमारे कार्य और आगामी कार्यक्रमों पर अपडेट प्राप्त करने के लिए हमारे न्यूज़लेटर से जुड़ें",
+      "firstName": "पहला नाम",
+      "lastName": "अंतिम नाम",
+      "email": "ईमेल पता",
+      "interests": "रुचियाँ",
+      "monasteryRestoration": "मठ पुनरुद्धार",
+      "monkSupport": "भिक्षु समर्थन",
+      "sacredEvents": "पवित्र कार्यक्रम",
+      "volunteerOpportunities": "स्वयंसेवक अवसर"
+    }
+  },
+  "memberPortal": {
+    "login": {
+      "title": "सदस्य लॉगिन",
+      "username": "उपयोगकर्ता नाम",
+      "password": "पासवर्ड",
+      "forgotPassword": "पासवर्ड भूल गए?",
+      "loginButton": "लॉग इन",
+      "noAccount": "खाता नहीं है?",
+      "signUp": "साइन अप करें"
+    }
+  }
+}
