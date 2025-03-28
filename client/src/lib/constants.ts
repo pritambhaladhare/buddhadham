@@ -100,33 +100,33 @@ export const DONATION_OPTIONS = [
 // Upcoming events
 export const UPCOMING_EVENTS = [
   {
-    date: { month: "JUL", day: "15" },
+    date: { month: "DEC", day: "15" },
     title: "Annual Tripitaka Chanting Ceremony",
-    location: "Bodhgaya, Bihar",
+    location: "Saranath, Varanasi",
     time: "9:00 AM - 4:00 PM",
     description: "Join hundreds of monks in this sacred recitation of Buddhist scriptures."
   },
   {
-    date: { month: "AUG", day: "03" },
+    date: { month: "SEP", day: "03" },
     title: "Sacred Tree Planting Ceremony",
-    location: "Lumbini, Nepal",
+    location: "Bodhgaya, Bihar",
     time: "10:00 AM",
-    description: "Help us plant 108 Peepal trees to honor the Buddha's birthplace."
+    description: "Help us plant 108 Peepal trees to honor the Buddha's place of enlightenment."
   },
   {
-    date: { month: "SEP", day: "21" },
-    title: "Monastery Restoration Inauguration",
-    location: "Varanasi, Uttar Pradesh",
+    date: { month: "NOV", day: "21" },
+    title: "Serving Monks During Winter",
+    location: "Bodhgaya, Bihar",
     time: "11:00 AM",
-    description: "Celebration of the newly restored Vajrasana Monastery with a blessing ceremony."
+    description: "Join our initiative to provide warm clothes and necessities to monks during the winter months."
   }
 ];
 
 // Latest news
 export const LATEST_NEWS = [
   {
-    date: "JULY 2, 2023",
-    title: "Medical Camp Serves 200 Monks in Bodhgaya",
+    date: "MAY, 2024",
+    title: "Medical Camp Serves 100 Monks in Bodhgaya",
     description: "Our recent medical camp provided essential healthcare services to monks from across the region...",
     image: "/src/assets/images/monk-donation.jpg"
   },
