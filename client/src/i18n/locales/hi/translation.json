@@ -66,7 +66,7 @@
       "monksMedicalAid": "भिक्षु चिकित्सा सहायता",
       "sacredSites": "सेवित पवित्र स्थल",
       "plantationProjects": "वृक्षारोपण परियोजनाएँ",
-      "restorationProjects": "पुनरुद्धार परियोजनाएँ"
+      "preservationProjects": "संरक्षण परियोजनाएँ"
     },
     "supportSection": {
       "title": "हमारे मिशन का समर्थन करें",
@@ -86,7 +86,7 @@
       "lastName": "अंतिम नाम",
       "email": "ईमेल पता",
       "interests": "रुचियाँ",
-      "monasteryRestoration": "मठ पुनरुद्धार",
+      "monasteryRestoration": "मठ संरक्षण",
       "monkSupport": "भिक्षु समर्थन",
       "sacredEvents": "पवित्र कार्यक्रम",
       "volunteerOpportunities": "स्वयंसेवक अवसर"

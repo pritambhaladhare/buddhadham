@@ -67,7 +67,7 @@ export const WORK_CATEGORIES = [
     ]
   },
   {
-    title: "Ancient Stupa Restoration",
+    title: "Ancient Stupa Preservation",
     description: "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations.",
     image: "/src/assets/images/buddha-carving.jpg",
     highlights: [
@@ -121,15 +121,15 @@ export const WORK_CATEGORIES = [
 // Donation options
 export const DONATION_OPTIONS = [
   {
-    title: "Temple Restoration",
+    title: "Temple Preservation",
     description: "Help preserve ancient Buddhist temples and sacred sites for future generations.",
     color: "gold" as const,
     checklistItems: [
-      "Restore monastery buildings",
+      "Preserve monastery buildings",
       "Preserve ancient Buddha statues",
       "Support sacred art conservation"
     ],
-    buttonText: "Support Restoration"
+    buttonText: "Support Preservation"
   }
 ];
 
@@ -189,7 +189,7 @@ export const TESTIMONIALS = [
     image: "/src/assets/images/buddha-shrine.jpg"
   },
   {
-    quote: "As a long-time supporter of Buddha Dhaam, I've witnessed firsthand the impact of their work. The restoration of ancient sites and the support they provide to monks ensures that Buddhist wisdom continues to flourish in its birthplace.",
+    quote: "As a long-time supporter of Buddha Dhaam, I've witnessed firsthand the impact of their work. The preservation of ancient sites and the support they provide to monks ensures that Buddhist wisdom continues to flourish in its birthplace.",
     name: "Dr. Maya Sharma",
     title: "Monthly Supporter & Professor of Buddhist Studies",
     image: "/src/assets/images/monk-gathering.jpg"

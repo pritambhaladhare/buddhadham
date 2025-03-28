@@ -66,7 +66,7 @@
       "monksMedicalAid": "Monks Medical Aid",
       "sacredSites": "Sacred Sites Served",
       "plantationProjects": "Plantation Projects",
-      "restorationProjects": "Restoration Projects"
+      "restorationProjects": "Preservation Projects"
     },
     "supportSection": {
       "title": "Support Our Mission",
@@ -86,7 +86,7 @@
       "lastName": "Last Name",
       "email": "Email Address",
       "interests": "Interests",
-      "monasteryRestoration": "Monastery Restoration",
+      "monasteryRestoration": "Monastery Preservation",
       "monkSupport": "Monk Support",
       "sacredEvents": "Sacred Events",
       "volunteerOpportunities": "Volunteer Opportunities"
@@ -126,8 +126,8 @@
         "title": "Water & Refreshments",
         "description": "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites."
       },
-      "stupaRestoration": {
-        "title": "Ancient Stupa Restoration",
+      "stupaPreservation": {
+        "title": "Ancient Stupa Preservation",
         "description": "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations."
       },
       "tripitakaChanting": {
@@ -174,15 +174,15 @@
   "support": {
     "title": "Support Our Work",
     "donationOptions": {
-      "templeRestoration": {
-        "title": "Temple Restoration",
+      "templePreservation": {
+        "title": "Temple Preservation",
         "description": "Help preserve ancient Buddhist temples and sacred sites for future generations.",
         "items": [
-          "Restore monastery buildings",
+          "Preserve monastery buildings",
           "Preserve ancient Buddha statues",
           "Support sacred art conservation"
         ],
-        "button": "Support Restoration"
+        "button": "Support Preservation"
       }
     },
     "recurringDonation": {

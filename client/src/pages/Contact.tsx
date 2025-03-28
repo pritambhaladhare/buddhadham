@@ -358,7 +358,7 @@ const Contact = () => {
               
               <div className="border-b border-[#3A2718]/10 pb-4">
                 <h3 className="font-heading text-xl font-bold text-[#3A2718] mb-2">How are donations utilized?</h3>
-                <p>Donations directly support our programs, including food and medical aid for monks, monastery restoration projects, tree planting initiatives, and educational resources. Our annual reports provide detailed breakdowns of fund allocation.</p>
+                <p>Donations directly support our programs, including food and medical aid for monks, monastery preservation projects, tree planting initiatives, and educational resources. Our annual reports provide detailed breakdowns of fund allocation.</p>
               </div>
               
               <div className="border-b border-[#3A2718]/10 pb-4">

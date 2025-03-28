@@ -66,7 +66,7 @@
       "monksMedicalAid": "僧侣医疗援助",
       "sacredSites": "服务的圣地",
       "plantationProjects": "种植项目",
-      "restorationProjects": "修复项目"
+      "preservationProjects": "保护项目"
     },
     "supportSection": {
       "title": "支持我们的使命",
@@ -86,7 +86,7 @@
       "lastName": "姓",
       "email": "电子邮件地址",
       "interests": "兴趣",
-      "monasteryRestoration": "寺院修复",
+      "monasteryRestoration": "寺院保护",
       "monkSupport": "僧侣支持",
       "sacredEvents": "神圣活动",
       "volunteerOpportunities": "志愿机会"

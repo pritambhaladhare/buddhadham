@@ -134,7 +134,7 @@ const GetInvolved = () => {
                   </li>
                   <li className="flex items-start">
                     <i className='bx bx-check-circle text-[#E67E22] mr-2 mt-1'></i>
-                    <span>Assist with monastery restoration projects</span>
+                    <span>Assist with monastery preservation projects</span>
                   </li>
                   <li className="flex items-start">
                     <i className='bx bx-check-circle text-[#E67E22] mr-2 mt-1'></i>
@@ -171,7 +171,7 @@ const GetInvolved = () => {
                   </li>
                   <li className="flex items-start">
                     <i className='bx bx-check-circle text-[#9D2933] mr-2 mt-1'></i>
-                    <span>Restoration project partnerships</span>
+                    <span>Site preservation project partnerships</span>
                   </li>
                 </ul>
               </div>
@@ -299,7 +299,7 @@ const GetInvolved = () => {
                           checked={volunteerForm.interests.restoration}
                           onCheckedChange={() => handleCheckboxChange('restoration')}
                         />
-                        <Label htmlFor="restoration">Monastery Restoration</Label>
+                        <Label htmlFor="restoration">Monastery Preservation</Label>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Checkbox 

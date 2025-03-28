@@ -66,7 +66,7 @@
       "monksMedicalAid": "ความช่วยเหลือทางการแพทย์แก่พระภิกษุ",
       "sacredSites": "สถานที่ศักดิ์สิทธิ์ที่ให้บริการ",
       "plantationProjects": "โครงการปลูกต้นไม้",
-      "restorationProjects": "โครงการบูรณะ"
+      "preservationProjects": "โครงการอนุรักษ์"
     },
     "supportSection": {
       "title": "สนับสนุนภารกิจของเรา",
@@ -86,7 +86,7 @@
       "lastName": "นามสกุล",
       "email": "อีเมล",
       "interests": "ความสนใจ",
-      "monasteryRestoration": "การบูรณะวัด",
+      "monasteryRestoration": "การอนุรักษ์วัด",
       "monkSupport": "สนับสนุนพระสงฆ์",
       "sacredEvents": "กิจกรรมศักดิ์สิทธิ์",
       "volunteerOpportunities": "โอกาสอาสาสมัคร"
