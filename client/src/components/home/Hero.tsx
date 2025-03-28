@@ -124,14 +124,14 @@ const Hero = () => {
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
           >
-            {/* Decorative Om symbol */}
+            {/* Decorative element (Om symbol removed) */}
             <motion.div
               className="mb-4 text-center lg:text-left"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.15 }}
               transition={{ delay: 0.2, duration: 1 }}
             >
-              <span className="inline-block text-4xl text-[var(--monk-robe)] font-serif">ॐ</span>
+              {/* Empty space where Om symbol was */}
             </motion.div>
             
             <motion.h1 
