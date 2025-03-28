@@ -72,17 +72,12 @@ const Header = () => {
 
   return (
     <div className="relative">
-      {/* Mantra banners */}
+      {/* Mantra banner */}
       <div className="bg-orange-100 py-2">
         <SimplifiedMantraText 
           text="Buddham saranam gacchami, dhammam saranam gacchami, sangham saranam gacchami"
           color="#ea580c"
-          className="text-lg font-medium mb-1"
-        />
-        <SimplifiedMantraText 
-          text="Lokah Samastah Sukhino Bhavantu"
-          color="#ea580c"
-          className="text-base font-medium"
+          className="text-lg font-medium"
         />
       </div>
     
