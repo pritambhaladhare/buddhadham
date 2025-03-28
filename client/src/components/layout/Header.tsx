@@ -5,7 +5,7 @@ import MobileMenu from './MobileMenu';
 import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import AnimatedButton from '@/components/animation/AnimatedButton';
-import MantraText from '@/components/animation/MantraText';
+import SimplifiedMantraText from '@/components/animation/SimplifiedMantraText';
 
 const Header = () => {
   const [location] = useLocation();
@@ -73,14 +73,11 @@ const Header = () => {
   return (
     <div className="relative">
       {/* Mantra banner */}
-      <div className="bg-orange-100 py-2 overflow-hidden">
-        <MantraText 
+      <div className="bg-orange-100 py-2">
+        <SimplifiedMantraText 
           text="Buddham saranam gacchami, dhammam saranam gacchami, sangham saranam gacchami"
-          speed="slow"
           color="#ea580c"
-          backgroundColor="rgba(249, 115, 22, 0.1)"
-          fontSize="0.9rem"
-          className="font-medium"
+          className="text-lg font-medium"
         />
       </div>
     
