@@ -63,10 +63,9 @@
     "impactStats": {
       "title": "ผลกระทบของเรา",
       "monksSupported": "พระภิกษุที่ได้รับการสนับสนุน",
+      "foodServed": "อาหารที่ให้บริการ",
       "monksMedicalAid": "ความช่วยเหลือทางการแพทย์แก่พระภิกษุ",
-      "sacredSites": "สถานที่ศักดิ์สิทธิ์ที่ให้บริการ",
-      "plantationProjects": "โครงการปลูกต้นไม้",
-      "preservationProjects": "โครงการอนุรักษ์"
+      "pilgrimMedicalAid": "ความช่วยเหลือทางการแพทย์แก่ผู้แสวงบุญ"
     },
     "supportSection": {
       "title": "สนับสนุนภารกิจของเรา",

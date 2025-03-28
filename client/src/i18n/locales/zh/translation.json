@@ -63,10 +63,9 @@
     "impactStats": {
       "title": "我们的影响",
       "monksSupported": "支持的僧侣数",
+      "foodServed": "提供的食物",
       "monksMedicalAid": "僧侣医疗援助",
-      "sacredSites": "服务的圣地",
-      "plantationProjects": "种植项目",
-      "preservationProjects": "保护项目"
+      "pilgrimMedicalAid": "朝圣者医疗援助"
     },
     "supportSection": {
       "title": "支持我们的使命",

@@ -129,10 +129,9 @@ const ImpactStats = () => {
                 transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
               >
                 {t(`home.impactStats.${stat.label === "Monks Supported" ? "monksSupported" : 
-                  stat.label === "Monks Medical Aid" ? "monksMedicalAid" :
-                  stat.label === "Sacred Sites Served" ? "sacredSites" : 
-                  stat.label === "Plantation Projects" ? "plantationProjects" : 
-                  "restorationProjects"}`)}
+                  stat.label === "Food Served" ? "foodServed" :
+                  stat.label === "Monk Medical Aid" ? "monksMedicalAid" : 
+                  "pilgrimMedicalAid"}`)}
               </motion.p>
               
               {/* Decorative icon in background */}
@@ -158,9 +157,9 @@ const ImpactStats = () => {
               >
                 <i className={`bx ${
                   index === 0 ? 'bxs-donate-heart' : 
-                  index === 1 ? 'bxs-heart' :
-                  index === 2 ? 'bxs-temple' :
-                  'bxs-book-open'
+                  index === 1 ? 'bxs-food-menu' :
+                  index === 2 ? 'bxs-first-aid' :
+                  'bxs-ambulance'
                 }`}></i>
               </motion.div>
             </motion.div>

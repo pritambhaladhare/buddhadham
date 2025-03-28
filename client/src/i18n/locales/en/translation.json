@@ -63,10 +63,9 @@
     "impactStats": {
       "title": "Our Impact",
       "monksSupported": "Monks Supported",
-      "monksMedicalAid": "Monks Medical Aid",
-      "sacredSites": "Sacred Sites Served",
-      "plantationProjects": "Plantation Projects",
-      "restorationProjects": "Preservation Projects"
+      "foodServed": "Food Served",
+      "monksMedicalAid": "Monk Medical Aid",
+      "pilgrimMedicalAid": "Pilgrim Medical Aid"
     },
     "supportSection": {
       "title": "Support Our Mission",
