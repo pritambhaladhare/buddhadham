@@ -157,7 +157,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                           transition: { duration: 0.2 }
                         }}
                       >
-                        {t(`common.navigation.${link.title.toLowerCase().replace(' ', '')}`)}
+                        {link.title}
                         {location === link.path && (
                           <i className='bx bxs-circle text-xs text-orange-400'></i>
                         )}

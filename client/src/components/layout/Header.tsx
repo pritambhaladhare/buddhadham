@@ -145,7 +145,7 @@ const Header = () => {
                     <span className={`nav-link font-body font-medium ${
                       location === link.path ? 'text-orange-500' : 'text-orange-800'
                     }`}>
-                      {t(`common.navigation.${link.title.toLowerCase().replace(' ', '')}`)}
+                      {link.title}
                     </span>
                     
                     {/* Active indicator line */}
