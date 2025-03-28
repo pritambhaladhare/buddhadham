@@ -390,7 +390,7 @@ const OurWork = () => {
               
               <div className="md:w-1/2 h-96 md:h-auto">
                 <img 
-                  src="/src/assets/images/meditation-app.jpg" 
+                  src="/src/assets/images/buddha-statue.jpg" 
                   alt="Buddha Dhaam Meditation App" 
                   className="w-full h-full object-cover"
                 />
