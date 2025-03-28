@@ -1,20 +1,59 @@
 import SectionTitle from '@/components/shared/SectionTitle';
 import DonationCard from '@/components/shared/DonationCard';
 import { DONATION_OPTIONS, OTHER_SUPPORT_OPTIONS } from '@/lib/constants';
+import { motion } from 'framer-motion';
+import MantraText from '@/components/animation/MantraText';
+import { ScaleUpSection } from '@/components/animation/AnimatedSection';
+import Particles from '@/components/animation/Particles';
 
 const SupportSection = () => {
   return (
-    <section id="support" className="py-20 bg-orange-50">
-      <div className="container mx-auto px-4">
+    <section id="support" className="py-20 bg-orange-50 relative">
+      {/* Particle effects */}
+      <Particles 
+        count={20} 
+        colors={['#FFA500', '#FFD700', '#FF8C00']} 
+        shape="leaf" 
+        speed={30}
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="mb-2 flex justify-center">
-          <div className="text-orange-500 text-3xl">
+          <motion.div 
+            className="text-orange-500 text-3xl"
+            animate={{ 
+              scale: [1, 1.2, 1],
+              rotateZ: [0, 10, -10, 0]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatDelay: 3
+            }}
+          >
             <i className='bx bxs-heart'></i>
-          </div>
+          </motion.div>
         </div>
+        
         <SectionTitle 
           title="Support Our Spiritual Mission" 
           subtitle="Your dana (offering) helps preserve Buddha's teachings and support monks"
         />
+        
+        <ScaleUpSection className="mb-8">
+          <div className="max-w-xl mx-auto p-4 rounded-lg bg-orange-100/50 text-center">
+            <p className="text-gray-600 italic mb-2">Meditate on the wisdom of</p>
+            <MantraText 
+              text="Lokah Samastah Sukhino Bhavantu" 
+              speed="medium" 
+              fontSize="1.25rem"
+              color="#f97316"
+              backgroundColor="rgba(249, 115, 22, 0.1)" 
+              className="font-medium" 
+            />
+            <p className="text-gray-600 italic mt-2">May all beings everywhere be happy and free</p>
+          </div>
+        </ScaleUpSection>
         
         <div className="flex justify-center">
           {DONATION_OPTIONS.map((option, index) => (

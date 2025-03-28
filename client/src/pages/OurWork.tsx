@@ -4,6 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { WORK_CATEGORIES } from '@/lib/constants';
 import PeepalLeaf from '@/assets/icons/PeepalLeaf';
+import ScrollRevealContainer from '@/components/animation/ScrollRevealContainer';
+import { FadeInSection, SlideInSection, ScaleUpSection } from '@/components/animation/AnimatedSection';
+import { motion } from 'framer-motion';
+import ParallaxEffect from '@/components/animation/ParallaxEffect';
 
 const OurWork = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -31,7 +35,7 @@ const OurWork = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col gap-10">
-              <div>
+              <ScrollRevealContainer effect="fade-up" threshold={0.1}>
                 <h2 className="font-heading text-3xl font-bold text-orange-900 mb-6">
                   Buddha Dhaam's Vision
                 </h2>
@@ -53,54 +57,83 @@ const OurWork = () => {
                 </p>
 
                 <div className="flex items-center">
-                  <div className="text-orange-500 mt-1">
+                  <motion.div 
+                    className="text-orange-500 mt-1"
+                    animate={{ rotate: [0, 10, 0, -10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  >
                     <PeepalLeaf color="#f97316" size={24} />
-                  </div>
+                  </motion.div>
                   <p className="text-lg text-orange-700 font-medium ml-2">
                     Join us in serving monks, preserving heritage, and sharing wisdom.
                   </p>
                 </div>
-              </div>
+              </ScrollRevealContainer>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
-                <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Mission</h3>
-                <p className="text-gray-700">
-                  To preserve and protect Buddhist heritage across sacred sites while 
-                  providing essential support to the monastic community that maintains 
-                  these traditions.
-                </p>
-              </div>
+              <ScrollRevealContainer effect="fade-right" delay={0.1} threshold={0.1}>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500 h-full">
+                  <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Mission</h3>
+                  <p className="text-gray-700">
+                    To preserve and protect Buddhist heritage across sacred sites while 
+                    providing essential support to the monastic community that maintains 
+                    these traditions.
+                  </p>
+                </div>
+              </ScrollRevealContainer>
               
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
-                <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Approach</h3>
-                <p className="text-gray-700">
-                  We take a holistic approach to our work, addressing both the immediate needs 
-                  of monks and pilgrims while investing in the long-term preservation of sacred 
-                  sites and traditions.
-                </p>
-              </div>
+              <ScrollRevealContainer effect="fade-left" delay={0.2} threshold={0.1}>
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500 h-full">
+                  <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Approach</h3>
+                  <p className="text-gray-700">
+                    We take a holistic approach to our work, addressing both the immediate needs 
+                    of monks and pilgrims while investing in the long-term preservation of sacred 
+                    sites and traditions.
+                  </p>
+                </div>
+              </ScrollRevealContainer>
             </div>
             
-            <div className="bg-gradient-to-r from-orange-100 to-orange-50 p-6 rounded-lg relative overflow-hidden mb-12">
-              <div className="relative z-10">
-                <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Impact</h3>
-                <p className="text-gray-700 mb-4">
-                  Through our initiatives, we have supported over 2,500 monks, restored 6 ancient 
-                  sites, and planted more than 108 sacred trees, creating a lasting impact on 
-                  Buddhist heritage and the communities that preserve it.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">2500+ Monks</span>
-                  <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">6 Sacred Sites</span>
-                  <span className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full">108+ Trees</span>
+            <ParallaxEffect direction="up" speed={0.2} className="overflow-visible">
+              <div className="bg-gradient-to-r from-orange-100 to-orange-50 p-6 rounded-lg relative overflow-hidden mb-12 shadow-lg">
+                <div className="relative z-10">
+                  <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Impact</h3>
+                  <p className="text-gray-700 mb-4">
+                    Through our initiatives, we have supported over 2,500 monks, restored 6 ancient 
+                    sites, and planted more than 108 sacred trees, creating a lasting impact on 
+                    Buddhist heritage and the communities that preserve it.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <motion.span 
+                      className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >2500+ Monks</motion.span>
+                    <motion.span 
+                      className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >6 Sacred Sites</motion.span>
+                    <motion.span 
+                      className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >108+ Trees</motion.span>
+                  </div>
                 </div>
+                <motion.div 
+                  className="absolute right-0 bottom-0 opacity-10"
+                  animate={{ 
+                    rotate: [0, 5, 0, -5, 0],
+                    scale: [1, 1.05, 1, 0.95, 1]
+                  }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <PeepalLeaf color="#000000" size={120} />
+                </motion.div>
               </div>
-              <div className="absolute right-0 bottom-0 opacity-10">
-                <PeepalLeaf color="#000000" size={120} />
-              </div>
-            </div>
+            </ParallaxEffect>
           </div>
         </div>
       </section>
@@ -135,26 +168,35 @@ const OurWork = () => {
               <TabsContent value="all" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {WORK_CATEGORIES.map((category, index) => (
-                    <div key={index} className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={category.image} 
-                          alt={category.title} 
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        />
+                    <ScrollRevealContainer 
+                      key={index} 
+                      effect="fade-up" 
+                      delay={index * 0.1} 
+                      threshold={0.1}
+                    >
+                      <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg h-full">
+                        <div className="h-48 overflow-hidden">
+                          <img 
+                            src={category.image} 
+                            alt={category.title} 
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
+                          <p className="text-gray-700 mb-4">{category.description}</p>
+                          <motion.a 
+                            href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400 }}
+                          >
+                            Learn more
+                            <i className='bx bx-right-arrow-alt ml-1'></i>
+                          </motion.a>
+                        </div>
                       </div>
-                      <div className="p-6">
-                        <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
-                        <p className="text-gray-700 mb-4">{category.description}</p>
-                        <a 
-                          href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
-                        >
-                          Learn more
-                          <i className='bx bx-right-arrow-alt ml-1'></i>
-                        </a>
-                      </div>
-                    </div>
+                    </ScrollRevealContainer>
                   ))}
                 </div>
               </TabsContent>
@@ -164,26 +206,35 @@ const OurWork = () => {
                   {WORK_CATEGORIES.filter(c => 
                     c.title.includes('Food') || c.title.includes('Water') || c.title.includes('Welfare')
                   ).map((category, index) => (
-                    <div key={index} className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={category.image} 
-                          alt={category.title} 
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        />
+                    <ScrollRevealContainer 
+                      key={index} 
+                      effect="fade-up" 
+                      delay={index * 0.1} 
+                      threshold={0.1}
+                    >
+                      <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg h-full">
+                        <div className="h-48 overflow-hidden">
+                          <img 
+                            src={category.image} 
+                            alt={category.title} 
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
+                          <p className="text-gray-700 mb-4">{category.description}</p>
+                          <motion.a 
+                            href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400 }}
+                          >
+                            Learn more
+                            <i className='bx bx-right-arrow-alt ml-1'></i>
+                          </motion.a>
+                        </div>
                       </div>
-                      <div className="p-6">
-                        <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
-                        <p className="text-gray-700 mb-4">{category.description}</p>
-                        <a 
-                          href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
-                        >
-                          Learn more
-                          <i className='bx bx-right-arrow-alt ml-1'></i>
-                        </a>
-                      </div>
-                    </div>
+                    </ScrollRevealContainer>
                   ))}
                 </div>
               </TabsContent>
@@ -191,56 +242,74 @@ const OurWork = () => {
               <TabsContent value="sites" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {/* Add a special highlight for Mahabodhi Temple */}
-                  <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg col-span-1 md:col-span-2 lg:col-span-3">
-                    <div className="flex flex-col md:flex-row">
-                      <div className="md:w-2/3 h-64 md:h-auto overflow-hidden">
-                        <img 
-                          src="/src/assets/images/mahabodhi-temple.jpg" 
-                          alt="Mahabodhi Temple" 
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                        />
-                      </div>
-                      <div className="md:w-1/3 p-6 flex flex-col justify-center">
-                        <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Mahabodhi Temple Restoration</h3>
-                        <p className="text-gray-700 mb-4">
-                          One of our most sacred initiatives is the restoration and preservation of the Mahabodhi Temple, 
-                          the site of Buddha's enlightenment. This UNESCO World Heritage site is being carefully maintained 
-                          with traditional techniques to ensure its spiritual significance for generations to come.
-                        </p>
-                        <a 
-                          href="#stupa-restoration"
-                          className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
-                        >
-                          Learn more about our restoration work
-                          <i className='bx bx-right-arrow-alt ml-1'></i>
-                        </a>
+                  <ScrollRevealContainer
+                    effect="fade-up" 
+                    delay={0.1} 
+                    threshold={0.1}
+                    className="col-span-1 md:col-span-2 lg:col-span-3"
+                  >
+                    <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
+                      <div className="flex flex-col md:flex-row">
+                        <div className="md:w-2/3 h-64 md:h-auto overflow-hidden">
+                          <img 
+                            src="/src/assets/images/mahabodhi-temple.jpg" 
+                            alt="Mahabodhi Temple" 
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                          />
+                        </div>
+                        <div className="md:w-1/3 p-6 flex flex-col justify-center">
+                          <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Mahabodhi Temple Restoration</h3>
+                          <p className="text-gray-700 mb-4">
+                            One of our most sacred initiatives is the restoration and preservation of the Mahabodhi Temple, 
+                            the site of Buddha's enlightenment. This UNESCO World Heritage site is being carefully maintained 
+                            with traditional techniques to ensure its spiritual significance for generations to come.
+                          </p>
+                          <motion.a 
+                            href="#stupa-restoration"
+                            className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400 }}
+                          >
+                            Learn more about our restoration work
+                            <i className='bx bx-right-arrow-alt ml-1'></i>
+                          </motion.a>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </ScrollRevealContainer>
                   
                   {WORK_CATEGORIES.filter(c => 
                     c.title.includes('Stupa') || c.title.includes('Tree') || c.title.includes('Sacred')
                   ).map((category, index) => (
-                    <div key={index} className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={category.image} 
-                          alt={category.title} 
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        />
+                    <ScrollRevealContainer 
+                      key={index} 
+                      effect="fade-up" 
+                      delay={(index + 1) * 0.1} 
+                      threshold={0.1}
+                    >
+                      <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg h-full">
+                        <div className="h-48 overflow-hidden">
+                          <img 
+                            src={category.image} 
+                            alt={category.title} 
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
+                          <p className="text-gray-700 mb-4">{category.description}</p>
+                          <motion.a 
+                            href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400 }}
+                          >
+                            Learn more
+                            <i className='bx bx-right-arrow-alt ml-1'></i>
+                          </motion.a>
+                        </div>
                       </div>
-                      <div className="p-6">
-                        <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
-                        <p className="text-gray-700 mb-4">{category.description}</p>
-                        <a 
-                          href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
-                        >
-                          Learn more
-                          <i className='bx bx-right-arrow-alt ml-1'></i>
-                        </a>
-                      </div>
-                    </div>
+                    </ScrollRevealContainer>
                   ))}
                 </div>
               </TabsContent>
@@ -250,26 +319,35 @@ const OurWork = () => {
                   {WORK_CATEGORIES.filter(c => 
                     c.title.includes('Tripitaka') || c.title.includes('Meditation')
                   ).map((category, index) => (
-                    <div key={index} className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                      <div className="h-48 overflow-hidden">
-                        <img 
-                          src={category.image} 
-                          alt={category.title} 
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        />
+                    <ScrollRevealContainer 
+                      key={index} 
+                      effect="fade-up" 
+                      delay={index * 0.1} 
+                      threshold={0.1}
+                    >
+                      <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg h-full">
+                        <div className="h-48 overflow-hidden">
+                          <img 
+                            src={category.image} 
+                            alt={category.title} 
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
+                          <p className="text-gray-700 mb-4">{category.description}</p>
+                          <motion.a 
+                            href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                            className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400 }}
+                          >
+                            Learn more
+                            <i className='bx bx-right-arrow-alt ml-1'></i>
+                          </motion.a>
+                        </div>
                       </div>
-                      <div className="p-6">
-                        <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">{category.title}</h3>
-                        <p className="text-gray-700 mb-4">{category.description}</p>
-                        <a 
-                          href={`#${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
-                        >
-                          Learn more
-                          <i className='bx bx-right-arrow-alt ml-1'></i>
-                        </a>
-                      </div>
-                    </div>
+                    </ScrollRevealContainer>
                   ))}
                 </div>
               </TabsContent>
@@ -283,125 +361,131 @@ const OurWork = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             {WORK_CATEGORIES.map((category, index) => (
-              <div 
+              <ScrollRevealContainer 
                 key={index}
-                id={category.title.toLowerCase().replace(/\s+/g, '-')}
-                className="mb-16 scroll-mt-32"
+                effect={index % 2 === 0 ? "fade-right" : "fade-left"}
+                delay={0.2}
+                threshold={0.1}
               >
-                <div className="flex flex-col md:flex-row gap-8">
-                  <div className="md:w-1/2">
-                    <img 
-                      src={category.image} 
-                      alt={category.title} 
-                      className="rounded-lg shadow-lg w-full h-80 object-cover"
-                    />
-                  </div>
-                  
-                  <div className="md:w-1/2">
-                    <h2 className="font-heading text-2xl font-bold mb-4 text-orange-900">{category.title}</h2>
-                    
-                    <p className="text-gray-700 mb-4">{category.description}</p>
-                    
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-start gap-2">
-                        <div className="text-orange-500 mt-1">
-                          <i className='bx bxs-check-circle'></i>
-                        </div>
-                        <div className="text-gray-700">
-                          {category.title.includes('Food') ? 
-                            'Provides nutritious meals to over 500 monks daily' : 
-                            category.title.includes('Water') ?
-                            'Distributes over 1,000 water bottles daily to pilgrims and monks' :
-                            category.title.includes('Stupa') ?
-                            'Careful restoration of ancient structures using traditional techniques' :
-                            category.title.includes('Tripitaka') ?
-                            'Gatherings of hundreds of monks for traditional chanting ceremonies' :
-                            category.title.includes('Tree') ?
-                            'Planting and maintaining Bodhi trees at sacred sites' :
-                            category.title.includes('Welfare') ?
-                            'Providing robes, accommodations, and essentials to traveling monks' :
-                            'Offering ancient wisdom through modern digital channels'
-                          }
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-2">
-                        <div className="text-orange-500 mt-1">
-                          <i className='bx bxs-check-circle'></i>
-                        </div>
-                        <div className="text-gray-700">
-                          {category.title.includes('Food') ? 
-                            'Healthcare support including medical camps and emergency services' : 
-                            category.title.includes('Water') ?
-                            'Cooling refreshments during hot summer months at pilgrimage sites' :
-                            category.title.includes('Stupa') ?
-                            'Documentation and preservation of ancient Buddhist art and carvings' :
-                            category.title.includes('Tripitaka') ?
-                            'Preservation of the Buddha\'s teachings through oral tradition' :
-                            category.title.includes('Tree') ?
-                            'Educational programs about the significance of sacred trees in Buddhism' :
-                            category.title.includes('Welfare') ?
-                            'Support for educational needs and study materials' :
-                            'Guided meditations led by experienced Buddhist monks'
-                          }
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-2">
-                        <div className="text-orange-500 mt-1">
-                          <i className='bx bxs-check-circle'></i>
-                        </div>
-                        <div className="text-gray-700">
-                          {category.title.includes('Food') ? 
-                            'Special nutritional support for elderly monks with health concerns' : 
-                            category.title.includes('Water') ?
-                            'Sustainable practices including reusable bottles and water stations' :
-                            category.title.includes('Stupa') ?
-                            'Training local craftsmen in traditional restoration techniques' :
-                            category.title.includes('Tripitaka') ?
-                            'Recording and archiving chanting ceremonies for future generations' :
-                            category.title.includes('Tree') ?
-                            'Creating green spaces for meditation and reflection' :
-                            category.title.includes('Welfare') ?
-                            'Community building activities to strengthen monastic bonds' :
-                            'Teaching mindfulness practices rooted in Buddhist tradition'
-                          }
-                        </div>
-                      </div>
+                <div 
+                  id={category.title.toLowerCase().replace(/\s+/g, '-')}
+                  className="mb-16 scroll-mt-32"
+                >
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/2">
+                      <img 
+                        src={category.image} 
+                        alt={category.title} 
+                        className="rounded-lg shadow-lg w-full h-80 object-cover"
+                      />
                     </div>
                     
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
-                        {category.title.includes('Food') ? 'Daily Service' : 
-                         category.title.includes('Water') ? 'Pilgrim Support' :
-                         category.title.includes('Stupa') ? 'Heritage Preservation' :
-                         category.title.includes('Tripitaka') ? 'Spiritual Tradition' :
-                         category.title.includes('Tree') ? 'Environmental' :
-                         category.title.includes('Welfare') ? 'Monastic Support' :
-                         'Digital Dharma'}
-                      </span>
-                      <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
-                        {category.title.includes('Food') ? 'Monk Welfare' : 
-                         category.title.includes('Water') ? 'Hydration' :
-                         category.title.includes('Stupa') ? 'Conservation' :
-                         category.title.includes('Tripitaka') ? 'Sacred Texts' :
-                         category.title.includes('Tree') ? 'Sacred Geography' :
-                         category.title.includes('Welfare') ? 'Accommodation' :
-                         'Mindfulness'}
-                      </span>
-                      <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
-                        {category.title.includes('Food') ? 'Healthcare' : 
-                         category.title.includes('Water') ? 'Compassion' :
-                         category.title.includes('Stupa') ? 'Sacred Sites' :
-                         category.title.includes('Tripitaka') ? 'Community' :
-                         category.title.includes('Tree') ? 'Sustainability' :
-                         category.title.includes('Welfare') ? 'Education' :
-                         'Meditation'}
-                      </span>
+                    <div className="md:w-1/2">
+                      <h2 className="font-heading text-2xl font-bold mb-4 text-orange-900">{category.title}</h2>
+                      
+                      <p className="text-gray-700 mb-4">{category.description}</p>
+                      
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-start gap-2">
+                          <div className="text-orange-500 mt-1">
+                            <i className='bx bxs-check-circle'></i>
+                          </div>
+                          <div className="text-gray-700">
+                            {category.title.includes('Food') ? 
+                              'Provides nutritious meals to over 500 monks daily' : 
+                              category.title.includes('Water') ?
+                              'Distributes over 1,000 water bottles daily to pilgrims and monks' :
+                              category.title.includes('Stupa') ?
+                              'Careful restoration of ancient structures using traditional techniques' :
+                              category.title.includes('Tripitaka') ?
+                              'Gatherings of hundreds of monks for traditional chanting ceremonies' :
+                              category.title.includes('Tree') ?
+                              'Planting and maintaining Bodhi trees at sacred sites' :
+                              category.title.includes('Welfare') ?
+                              'Providing robes, accommodations, and essentials to traveling monks' :
+                              'Offering ancient wisdom through modern digital channels'
+                            }
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-start gap-2">
+                          <div className="text-orange-500 mt-1">
+                            <i className='bx bxs-check-circle'></i>
+                          </div>
+                          <div className="text-gray-700">
+                            {category.title.includes('Food') ? 
+                              'Healthcare support including medical camps and emergency services' : 
+                              category.title.includes('Water') ?
+                              'Cooling refreshments during hot summer months at pilgrimage sites' :
+                              category.title.includes('Stupa') ?
+                              'Documentation and preservation of ancient Buddhist art and carvings' :
+                              category.title.includes('Tripitaka') ?
+                              'Preservation of the Buddha\'s teachings through oral tradition' :
+                              category.title.includes('Tree') ?
+                              'Educational programs about the significance of sacred trees in Buddhism' :
+                              category.title.includes('Welfare') ?
+                              'Support for educational needs and study materials' :
+                              'Guided meditations led by experienced Buddhist monks'
+                            }
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-start gap-2">
+                          <div className="text-orange-500 mt-1">
+                            <i className='bx bxs-check-circle'></i>
+                          </div>
+                          <div className="text-gray-700">
+                            {category.title.includes('Food') ? 
+                              'Special nutritional support for elderly monks with health concerns' : 
+                              category.title.includes('Water') ?
+                              'Sustainable practices including reusable bottles and water stations' :
+                              category.title.includes('Stupa') ?
+                              'Training local craftsmen in traditional restoration techniques' :
+                              category.title.includes('Tripitaka') ?
+                              'Recording and archiving chanting ceremonies for future generations' :
+                              category.title.includes('Tree') ?
+                              'Creating green spaces for meditation and reflection' :
+                              category.title.includes('Welfare') ?
+                              'Community building activities to strengthen monastic bonds' :
+                              'Teaching mindfulness practices rooted in Buddhist tradition'
+                            }
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
+                          {category.title.includes('Food') ? 'Daily Service' : 
+                           category.title.includes('Water') ? 'Pilgrim Support' :
+                           category.title.includes('Stupa') ? 'Heritage Preservation' :
+                           category.title.includes('Tripitaka') ? 'Spiritual Tradition' :
+                           category.title.includes('Tree') ? 'Environmental' :
+                           category.title.includes('Welfare') ? 'Monastic Support' :
+                           'Digital Dharma'}
+                        </span>
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
+                          {category.title.includes('Food') ? 'Monk Welfare' : 
+                           category.title.includes('Water') ? 'Hydration' :
+                           category.title.includes('Stupa') ? 'Conservation' :
+                           category.title.includes('Tripitaka') ? 'Sacred Texts' :
+                           category.title.includes('Tree') ? 'Sacred Geography' :
+                           category.title.includes('Welfare') ? 'Accommodation' :
+                           'Mindfulness'}
+                        </span>
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">
+                          {category.title.includes('Food') ? 'Healthcare' : 
+                           category.title.includes('Water') ? 'Compassion' :
+                           category.title.includes('Stupa') ? 'Sacred Sites' :
+                           category.title.includes('Tripitaka') ? 'Community' :
+                           category.title.includes('Tree') ? 'Sustainability' :
+                           category.title.includes('Welfare') ? 'Education' :
+                           'Meditation'}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollRevealContainer>
             ))}
           </div>
         </div>

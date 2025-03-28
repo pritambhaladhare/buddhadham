@@ -261,7 +261,7 @@ const Hero = () => {
                       <p className="text-xs text-gray-700">10 minutes to center yourself</p>
                     </motion.div>
                     <motion.div 
-                      className="bg-orange-50 rounded-lg p-3"
+                      className="bg-orange-50 rounded-lg p-3 mb-3"
                       variants={meditationCardVariants}
                       initial="hidden"
                       animate={isVisible ? "visible" : "hidden"}
@@ -269,6 +269,27 @@ const Hero = () => {
                     >
                       <h4 className="font-bold text-sm mb-1">Evening Relaxation</h4>
                       <p className="text-xs text-gray-700">Prepare for restful sleep</p>
+                    </motion.div>
+                    
+                    <motion.div
+                      className="bg-orange-100 rounded-lg p-3"
+                      variants={meditationCardVariants}
+                      initial="hidden"
+                      animate={isVisible ? "visible" : "hidden"}
+                      custom={3}
+                    >
+                      <div className="flex justify-center items-center">
+                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-2">
+                          <i className='bx bx-play text-orange-500'></i>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-sm">Start Session</h4>
+                          <div className="flex">
+                            <div className="h-1 bg-orange-500 rounded-full w-3/4 mt-1"></div>
+                            <div className="h-1 bg-gray-200 rounded-full w-1/4 mt-1 ml-1"></div>
+                          </div>
+                        </div>
+                      </div>
                     </motion.div>
                   </div>
                 </div>
