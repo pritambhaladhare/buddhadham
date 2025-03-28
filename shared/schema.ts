@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer, boolean, jsonb, timestamp, numeric } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, boolean, jsonb, timestamp, numeric, varchar, date } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -7,15 +7,83 @@ export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
+  email: text("email").unique(),
+  fullName: text("full_name"),
+  role: text("role").default("user"),
+  createdAt: timestamp("created_at").defaultNow().notNull()
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
+  email: true,
+  fullName: true,
+  role: true
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
+
+// Members table for recurring donors
+export const members = pgTable("members", {
+  id: serial("id").primaryKey(),
+  userId: integer("user_id").references(() => users.id).notNull(),
+  membershipLevel: text("membership_level").notNull(), // bronze, silver, gold, platinum
+  membershipStatus: text("membership_status").notNull().default("active"), // active, inactive, pending
+  startDate: date("start_date").notNull(),
+  renewalDate: date("renewal_date").notNull(),
+  donationAmount: numeric("donation_amount").notNull(),
+  donationFrequency: text("donation_frequency").notNull(), // monthly, quarterly, annually
+  address: text("address"),
+  city: text("city"),
+  state: text("state"),
+  country: text("country"),
+  postalCode: text("postal_code"),
+  phoneNumber: text("phone_number"),
+  preferences: jsonb("preferences").default({}),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull()
+});
+
+export const memberSchema = createInsertSchema(members).pick({
+  userId: true,
+  membershipLevel: true,
+  membershipStatus: true,
+  startDate: true,
+  renewalDate: true,
+  donationAmount: true,
+  donationFrequency: true,
+  address: true,
+  city: true,
+  state: true,
+  country: true,
+  postalCode: true,
+  phoneNumber: true,
+  preferences: true
+});
+
+export type InsertMember = z.infer<typeof memberSchema>;
+export type Member = typeof members.$inferSelect;
+
+// Member benefits table
+export const memberBenefits = pgTable("member_benefits", {
+  id: serial("id").primaryKey(),
+  membershipLevel: text("membership_level").notNull(),
+  benefitName: text("benefit_name").notNull(),
+  benefitDescription: text("benefit_description").notNull(),
+  isActive: boolean("is_active").default(true),
+  createdAt: timestamp("created_at").defaultNow().notNull()
+});
+
+export const memberBenefitSchema = createInsertSchema(memberBenefits).pick({
+  membershipLevel: true,
+  benefitName: true,
+  benefitDescription: true,
+  isActive: true
+});
+
+export type InsertMemberBenefit = z.infer<typeof memberBenefitSchema>;
+export type MemberBenefit = typeof memberBenefits.$inferSelect;
 
 // Contact messages table
 export const contactMessages = pgTable("contact_messages", {
