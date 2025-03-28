@@ -25,8 +25,8 @@ const BLOG_POSTS = [
   },
   {
     id: 3,
-    title: "Sacred Trees: The Living Legacy of Buddhism",
-    excerpt: "The significance of the Peepal tree in Buddhist tradition and why planting these sacred trees is a vital part of preserving Buddhist heritage for future generations.",
+    title: "Sacred Trees: The Living Legacy of Teaching of Lord Buddha",
+    excerpt: "The significance of the Peepal tree in the tradition of lord buddha and why planting these sacred trees is a vital part of preserving the heritage of teaching of lord buddha for future generations.",
     image: "https://images.unsplash.com/photo-1569144157591-c60f3f82f137?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     date: "July 10, 2023",
     category: "Environmental",
@@ -44,7 +44,7 @@ const BLOG_POSTS = [
   {
     id: 5,
     title: "Water for Pilgrims: A Basic Need with Sacred Significance",
-    excerpt: "How providing clean drinking water to pilgrims and monks has become a cornerstone of Buddha Dhaam's welfare initiatives at sacred Buddhist sites.",
+    excerpt: "How providing clean drinking water to pilgrims and monks has become a cornerstone of Buddha Dhaam's welfare initiatives at sacred sites of lord buddha.",
     image: "https://images.unsplash.com/photo-1564529895062-72ee0563d880?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     date: "June 5, 2023",
     category: "Pilgrim Welfare",
@@ -52,8 +52,8 @@ const BLOG_POSTS = [
   },
   {
     id: 6,
-    title: "Digital Preservation of Buddhist Texts",
-    excerpt: "The challenges and triumphs of digitizing ancient Buddhist manuscripts to ensure their wisdom remains accessible for future generations.",
+    title: "Digital Preservation of Sacred Texts",
+    excerpt: "The challenges and triumphs of digitizing ancient manuscripts of lord buddha's teachings to ensure their wisdom remains accessible for future generations.",
     image: "https://images.unsplash.com/photo-1519682577862-22b62b24e493?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     date: "May 18, 2023",
     category: "Preservation",
@@ -91,7 +91,7 @@ const Blog = () => {
           <div className="text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Blog & Resources</h1>
             <p className="font-accent text-xl text-[#D4AF37] max-w-3xl mx-auto">
-              In-depth articles, teachings, and educational content to spread Buddhist wisdom
+              In-depth articles, teachings, and educational content to spread wisdom of lord buddha
             </p>
           </div>
         </div>
@@ -192,7 +192,7 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Educational Resources" 
-            subtitle="Access free materials to deepen your understanding of Buddhist traditions"
+            subtitle="Access free materials to deepen your understanding of lord buddha's teachings"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -201,7 +201,7 @@ const Blog = () => {
                 <i className='bx bxs-book-open text-3xl text-[#E67E22]'></i>
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3A2718] mb-3">E-Books & Guides</h3>
-              <p className="mb-4">Free downloadable resources about Buddhist sites, traditions, and preservation efforts.</p>
+              <p className="mb-4">Free downloadable resources about sacred sites, traditions, and preservation efforts of lord buddha's heritage.</p>
               <Button className="bg-[#E67E22] hover:bg-[#C26B1D] text-white">
                 Browse Library
               </Button>
@@ -212,7 +212,7 @@ const Blog = () => {
                 <i className='bx bxs-video text-3xl text-[#9D2933]'></i>
               </div>
               <h3 className="font-heading text-xl font-bold text-[#3A2718] mb-3">Video Resources</h3>
-              <p className="mb-4">Educational videos showcasing our work, Buddhist ceremonies, and heritage sites.</p>
+              <p className="mb-4">Educational videos showcasing our work, sacred ceremonies, and heritage sites of lord buddha.</p>
               <Button className="bg-[#9D2933] hover:bg-[#7D1F29] text-white">
                 Watch Videos
               </Button>

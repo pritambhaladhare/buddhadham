@@ -184,7 +184,7 @@ const About = () => {
               </div>
               <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Stupa Restoration</h3>
               <p className="text-gray-700 text-center">
-                Preserving ancient Buddhist stupas and monasteries to maintain sacred heritage.
+                Preserving ancient stupas and monasteries to maintain sacred heritage of lord buddha.
               </p>
             </div>
             
@@ -214,7 +214,7 @@ const About = () => {
               </div>
               <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Meditation App</h3>
               <p className="text-gray-700 text-center">
-                Bringing ancient Buddhist meditation techniques to modern practitioners through digital tools.
+                Bringing ancient meditation techniques of teaching of lord buddha to modern practitioners through digital tools.
               </p>
             </div>
           </div>
@@ -234,7 +234,7 @@ const About = () => {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="font-heading text-3xl font-bold mb-6">Become a part of our compassionate mission</h2>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Whether through donations, volunteering, or partnerships, there are many ways to help preserve Buddhist heritage and support those who dedicate their lives to the Dharma.
+            Whether through donations, volunteering, or partnerships, there are many ways to help preserve heritage of lord buddha and support those who dedicate their lives to following the path of dhamma.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-involved">

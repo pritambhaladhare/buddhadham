@@ -17,7 +17,7 @@ const SectionTitle = ({ title, subtitle, light = false }: SectionTitleProps) => 
           {subtitle}
         </p>
       )}
-      <Lotus />
+
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
-import Lotus from '@/components/shared/Lotus';
+
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import { 
   FadeInSection, 
@@ -116,9 +116,7 @@ const Hero = () => {
             animate={isVisible ? "visible" : "hidden"}
             variants={fadeIn}
           >
-            <FloatingElement className="mb-6 inline-block">
-              <Lotus size={60} color="#f97316" />
-            </FloatingElement>
+
             
             <motion.h1 
               className="font-heading text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-800"

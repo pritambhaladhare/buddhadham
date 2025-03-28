@@ -24,7 +24,7 @@ const OurWork = () => {
             <h1 className="font-heading text-4xl lg:text-5xl font-bold mb-4">Our Sacred Work</h1>
             <p className="text-lg opacity-90 max-w-3xl mx-auto">
               Buddha Dhaam's initiatives focus on serving monks, preserving sacred sites, 
-              and ensuring the flourishing of Buddhist traditions
+              and ensuring the flourishing of teaching of lord buddha
             </p>
           </div>
         </div>
@@ -261,7 +261,7 @@ const OurWork = () => {
                           <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Mahabodhi Temple Restoration</h3>
                           <p className="text-gray-700 mb-4">
                             One of our most sacred initiatives is the restoration and preservation of the Mahabodhi Temple, 
-                            the site of Buddha's enlightenment. This UNESCO World Heritage site is being carefully maintained 
+                            the site of lord buddha's enlightenment. This UNESCO World Heritage site is being carefully maintained 
                             with traditional techniques to ensure its spiritual significance for generations to come.
                           </p>
                           <motion.a 
@@ -420,7 +420,7 @@ const OurWork = () => {
                               category.title.includes('Stupa') ?
                               'Documentation and preservation of ancient art and carvings related to teaching of lord buddha' :
                               category.title.includes('Tripitaka') ?
-                              'Preservation of the Buddha\'s teachings through oral tradition' :
+                              'Preservation of lord buddha\'s teachings through oral tradition' :
                               category.title.includes('Tree') ?
                               'Educational programs about the significance of sacred trees in teaching of lord buddha' :
                               category.title.includes('Welfare') ?
@@ -447,7 +447,7 @@ const OurWork = () => {
                               'Creating green spaces for meditation and reflection' :
                               category.title.includes('Welfare') ?
                               'Community building activities to strengthen monastic bonds' :
-                              'Teaching mindfulness practices rooted in Buddhist tradition'
+                              'Teaching mindfulness practices rooted in the tradition of lord buddha'
                             }
                           </div>
                         </div>
