@@ -132,8 +132,8 @@ export const LATEST_NEWS = [
   },
   {
     date: "JUNE 15, 2023",
-    title: "Ancient Stupa Restoration Complete After Three Years",
-    description: "The painstaking restoration of the 9th century Dharmachakra Stupa has been completed...",
+    title: "Every purnima and amavasya serving monks in bodhgaya temple",
+    description: "Our ongoing commitment to serve monks on sacred days of purnima and amavasya at the Bodhgaya temple...",
     image: "/src/assets/images/mahabodhi-temple.jpg"
   },
   {
