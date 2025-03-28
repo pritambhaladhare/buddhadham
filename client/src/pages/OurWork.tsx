@@ -241,42 +241,6 @@ const OurWork = () => {
               
               <TabsContent value="sites" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {/* Add a special highlight for Mahabodhi Temple */}
-                  <ScrollRevealContainer
-                    effect="fade-up" 
-                    delay={0.1} 
-                    threshold={0.1}
-                    className="col-span-1 md:col-span-2 lg:col-span-3"
-                  >
-                    <div className="bg-orange-50 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg">
-                      <div className="flex flex-col md:flex-row">
-                        <div className="md:w-2/3 h-64 md:h-auto overflow-hidden">
-                          <img 
-                            src="/src/assets/images/mahabodhi-temple.jpg" 
-                            alt="Mahabodhi Temple" 
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                          />
-                        </div>
-                        <div className="md:w-1/3 p-6 flex flex-col justify-center">
-                          <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Mahabodhi Temple Restoration</h3>
-                          <p className="text-gray-700 mb-4">
-                            One of our most sacred initiatives is the restoration and preservation of the Mahabodhi Temple, 
-                            the site of lord buddha's enlightenment. This UNESCO World Heritage site is being carefully maintained 
-                            with traditional techniques to ensure its spiritual significance for generations to come.
-                          </p>
-                          <motion.a 
-                            href="#stupa-restoration"
-                            className="text-orange-500 font-medium hover:text-orange-600 flex items-center"
-                            whileHover={{ x: 5 }}
-                            transition={{ type: "spring", stiffness: 400 }}
-                          >
-                            Learn more about our restoration work
-                            <i className='bx bx-right-arrow-alt ml-1'></i>
-                          </motion.a>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollRevealContainer>
                   
                   {WORK_CATEGORIES.filter(c => 
                     c.title.includes('Stupa') || c.title.includes('Tree') || c.title.includes('Sacred')
@@ -352,6 +316,86 @@ const OurWork = () => {
                 </div>
               </TabsContent>
             </Tabs>
+          </div>
+        </div>
+      </section>
+
+      {/* Meditation App Section */}
+      <section className="py-16 bg-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="md:w-1/2 p-8 md:p-12">
+                <h2 className="font-heading text-3xl font-bold mb-4 text-orange-900">Our Meditation App</h2>
+                <p className="text-gray-700 mb-6">
+                  Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. Experience the benefits of mindfulness through this simple yet powerful application.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-3">
+                    <div className="text-orange-500 mt-1 text-xl">
+                      <i className='bx bxs-check-circle'></i>
+                    </div>
+                    <p className="text-gray-700">Guided meditations led by experienced monks</p>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="text-orange-500 mt-1 text-xl">
+                      <i className='bx bxs-check-circle'></i>
+                    </div>
+                    <p className="text-gray-700">Daily tracking and progress visualization</p>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="text-orange-500 mt-1 text-xl">
+                      <i className='bx bxs-check-circle'></i>
+                    </div>
+                    <p className="text-gray-700">Soothing meditation sounds and timers</p>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="text-orange-500 mt-1 text-xl">
+                      <i className='bx bxs-check-circle'></i>
+                    </div>
+                    <p className="text-gray-700">Teachings based on lord buddha's wisdom</p>
+                  </div>
+                </div>
+                
+                <div className="flex flex-wrap gap-4">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-black text-white px-8 py-3 rounded-xl flex items-center gap-2"
+                  >
+                    <i className='bx bxl-apple text-2xl'></i>
+                    <div className="text-left">
+                      <div className="text-xs">Download on the</div>
+                      <div className="text-sm font-bold">App Store</div>
+                    </div>
+                  </motion.button>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-black text-white px-8 py-3 rounded-xl flex items-center gap-2"
+                  >
+                    <i className='bx bxl-play-store text-2xl'></i>
+                    <div className="text-left">
+                      <div className="text-xs">Get it on</div>
+                      <div className="text-sm font-bold">Google Play</div>
+                    </div>
+                  </motion.button>
+                </div>
+              </div>
+              
+              <div className="md:w-1/2 h-96 md:h-auto">
+                <img 
+                  src="/src/assets/images/meditation-app.jpg" 
+                  alt="Buddha Dhaam Meditation App" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
