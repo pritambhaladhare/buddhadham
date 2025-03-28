@@ -5,6 +5,7 @@ import { NAV_LINKS } from '@/lib/constants';
 import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import { StaggerContainer, StaggerItem } from '@/components/animation/AnimatedSection';
+import { useTranslation } from 'react-i18next';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ interface MobileMenuProps {
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const [location] = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
   
   // Animation variants
   const backdropVariants = {
@@ -124,7 +126,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       <PeepalLeaf color="#f97316" size={28} />
                     </motion.div>
                     <h3 className="font-heading text-xl font-bold text-orange-900">
-                      Buddha Dhaam
+                      {t('common.siteTitle')}
                     </h3>
                   </div>
                 </Link>
@@ -155,7 +157,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                           transition: { duration: 0.2 }
                         }}
                       >
-                        {link.title}
+                        {t(`common.navigation.${link.title.toLowerCase().replace(' ', '')}`)}
                         {location === link.path && (
                           <i className='bx bxs-circle text-xs text-orange-400'></i>
                         )}
@@ -173,7 +175,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       onClick={onClose}
                     >
                       <i className='bx bxs-heart'></i>
-                      <span>Donate Now</span>
+                      <span>{t('common.buttons.donate')}</span>
                     </AnimatedButton>
                   </Link>
                 </StaggerItem>
