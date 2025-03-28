@@ -4,10 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { WORK_CATEGORIES } from '@/lib/constants';
 import PeepalLeaf from '@/assets/icons/PeepalLeaf';
-import ScrollRevealContainer from '@/components/animation/ScrollRevealContainer';
+import { ScrollRevealContainer } from '@/components/animation/ScrollRevealContainer';
 import { FadeInSection, SlideInSection, ScaleUpSection } from '@/components/animation/AnimatedSection';
 import { motion } from 'framer-motion';
-import ParallaxEffect from '@/components/animation/ParallaxEffect';
 
 const OurWork = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -95,45 +94,43 @@ const OurWork = () => {
               </ScrollRevealContainer>
             </div>
             
-            <ParallaxEffect direction="up" speed={0.2} className="overflow-visible">
-              <div className="bg-gradient-to-r from-orange-100 to-orange-50 p-6 rounded-lg relative overflow-hidden mb-12 shadow-lg">
-                <div className="relative z-10">
-                  <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Impact</h3>
-                  <p className="text-gray-700 mb-4">
-                    Through our initiatives, we have supported over 2,500 monks, restored 6 ancient 
-                    sites, and planted more than 108 sacred trees, creating a lasting impact on 
-                    the heritage of teaching of lord buddha and the communities that preserve it.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <motion.span 
-                      className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >2500+ Monks</motion.span>
-                    <motion.span 
-                      className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >6 Sacred Sites</motion.span>
-                    <motion.span 
-                      className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >108+ Trees</motion.span>
-                  </div>
+            <div className="bg-gradient-to-r from-orange-100 to-orange-50 p-6 rounded-lg relative overflow-hidden mb-12 shadow-lg">
+              <div className="relative z-10">
+                <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Impact</h3>
+                <p className="text-gray-700 mb-4">
+                  Through our initiatives, we have supported over 2,500 monks, restored 6 ancient 
+                  sites, and planted more than 108 sacred trees, creating a lasting impact on 
+                  the heritage of teaching of lord buddha and the communities that preserve it.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <motion.span 
+                    className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >2500+ Monks</motion.span>
+                  <motion.span 
+                    className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >6 Sacred Sites</motion.span>
+                  <motion.span 
+                    className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >108+ Trees</motion.span>
                 </div>
-                <motion.div 
-                  className="absolute right-0 bottom-0 opacity-10"
-                  animate={{ 
-                    rotate: [0, 5, 0, -5, 0],
-                    scale: [1, 1.05, 1, 0.95, 1]
-                  }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <PeepalLeaf color="#000000" size={120} />
-                </motion.div>
               </div>
-            </ParallaxEffect>
+              <motion.div 
+                className="absolute right-0 bottom-0 opacity-10"
+                animate={{ 
+                  rotate: [0, 5, 0, -5, 0],
+                  scale: [1, 1.05, 1, 0.95, 1]
+                }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <PeepalLeaf color="#000000" size={120} />
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -241,7 +238,6 @@ const OurWork = () => {
               
               <TabsContent value="sites" className="mt-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  
                   {WORK_CATEGORIES.filter(c => 
                     c.title.includes('Stupa') || c.title.includes('Tree') || c.title.includes('Sacred')
                   ).map((category, index) => (
@@ -320,86 +316,6 @@ const OurWork = () => {
         </div>
       </section>
 
-      {/* Meditation App Section */}
-      <section className="py-16 bg-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="md:w-1/2 p-8 md:p-12">
-                <h2 className="font-heading text-3xl font-bold mb-4 text-orange-900">Our Meditation App</h2>
-                <p className="text-gray-700 mb-6">
-                  Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. Experience the benefits of mindfulness through this simple yet powerful application.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-start gap-3">
-                    <div className="text-orange-500 mt-1 text-xl">
-                      <i className='bx bxs-check-circle'></i>
-                    </div>
-                    <p className="text-gray-700">Guided meditations led by experienced monks</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="text-orange-500 mt-1 text-xl">
-                      <i className='bx bxs-check-circle'></i>
-                    </div>
-                    <p className="text-gray-700">Daily tracking and progress visualization</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="text-orange-500 mt-1 text-xl">
-                      <i className='bx bxs-check-circle'></i>
-                    </div>
-                    <p className="text-gray-700">Soothing meditation sounds and timers</p>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <div className="text-orange-500 mt-1 text-xl">
-                      <i className='bx bxs-check-circle'></i>
-                    </div>
-                    <p className="text-gray-700">Teachings based on lord buddha's wisdom</p>
-                  </div>
-                </div>
-                
-                <div className="flex flex-wrap gap-4">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-black text-white px-8 py-3 rounded-xl flex items-center gap-2"
-                  >
-                    <i className='bx bxl-apple text-2xl'></i>
-                    <div className="text-left">
-                      <div className="text-xs">Download on the</div>
-                      <div className="text-sm font-bold">App Store</div>
-                    </div>
-                  </motion.button>
-                  
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-black text-white px-8 py-3 rounded-xl flex items-center gap-2"
-                  >
-                    <i className='bx bxl-play-store text-2xl'></i>
-                    <div className="text-left">
-                      <div className="text-xs">Get it on</div>
-                      <div className="text-sm font-bold">Google Play</div>
-                    </div>
-                  </motion.button>
-                </div>
-              </div>
-              
-              <div className="md:w-1/2 h-96 md:h-auto">
-                <img 
-                  src="/src/assets/images/buddha-statue.jpg" 
-                  alt="Buddha Dhaam Meditation App" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Detailed Work Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -430,71 +346,86 @@ const OurWork = () => {
                       <p className="text-gray-700 mb-4">{category.description}</p>
                       
                       <div className="space-y-3 mb-6">
-                        <div className="flex items-start gap-2">
-                          <div className="text-orange-500 mt-1">
-                            <i className='bx bxs-check-circle'></i>
-                          </div>
-                          <div className="text-gray-700">
-                            {category.title.includes('Food') ? 
-                              'Provides nutritious meals to over 500 monks daily' : 
-                              category.title.includes('Water') ?
-                              'Distributes over 1,000 water bottles daily to pilgrims and monks' :
-                              category.title.includes('Stupa') ?
-                              'Careful restoration of ancient structures using traditional techniques' :
-                              category.title.includes('Tripitaka') ?
-                              'Gatherings of hundreds of monks for traditional chanting ceremonies' :
-                              category.title.includes('Tree') ?
-                              'Planting and maintaining Bodhi trees at sacred sites' :
-                              category.title.includes('Welfare') ?
-                              'Providing robes, accommodations, and essentials to traveling monks' :
-                              'Offering ancient wisdom through modern digital channels'
-                            }
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start gap-2">
-                          <div className="text-orange-500 mt-1">
-                            <i className='bx bxs-check-circle'></i>
-                          </div>
-                          <div className="text-gray-700">
-                            {category.title.includes('Food') ? 
-                              'Healthcare support including medical camps and emergency services' : 
-                              category.title.includes('Water') ?
-                              'Cooling refreshments during hot summer months at pilgrimage sites' :
-                              category.title.includes('Stupa') ?
-                              'Documentation and preservation of ancient art and carvings related to teaching of lord buddha' :
-                              category.title.includes('Tripitaka') ?
-                              'Preservation of lord buddha\'s teachings through oral tradition' :
-                              category.title.includes('Tree') ?
-                              'Educational programs about the significance of sacred trees in teaching of lord buddha' :
-                              category.title.includes('Welfare') ?
-                              'Support for educational needs and study materials' :
-                              'Guided meditations led by experienced monks dedicated to the teaching of lord buddha'
-                            }
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start gap-2">
-                          <div className="text-orange-500 mt-1">
-                            <i className='bx bxs-check-circle'></i>
-                          </div>
-                          <div className="text-gray-700">
-                            {category.title.includes('Food') ? 
-                              'Special nutritional support for elderly monks with health concerns' : 
-                              category.title.includes('Water') ?
-                              'Sustainable practices including reusable bottles and water stations' :
-                              category.title.includes('Stupa') ?
-                              'Training local craftsmen in traditional restoration techniques' :
-                              category.title.includes('Tripitaka') ?
-                              'Recording and archiving chanting ceremonies for future generations' :
-                              category.title.includes('Tree') ?
-                              'Creating green spaces for meditation and reflection' :
-                              category.title.includes('Welfare') ?
-                              'Community building activities to strengthen monastic bonds' :
-                              'Teaching mindfulness practices rooted in the tradition of lord buddha'
-                            }
-                          </div>
-                        </div>
+                        {category.highlights ? (
+                          // If category has highlights array, use those
+                          category.highlights.map((highlight, idx) => (
+                            <div key={idx} className="flex items-start gap-2">
+                              <div className="text-orange-500 mt-1">
+                                <i className='bx bxs-check-circle'></i>
+                              </div>
+                              <div className="text-gray-700">{highlight}</div>
+                            </div>
+                          ))
+                        ) : (
+                          // Otherwise use the default conditional rendering
+                          <>
+                            <div className="flex items-start gap-2">
+                              <div className="text-orange-500 mt-1">
+                                <i className='bx bxs-check-circle'></i>
+                              </div>
+                              <div className="text-gray-700">
+                                {category.title.includes('Food') ? 
+                                  'Provides nutritious meals to over 500 monks daily' : 
+                                  category.title.includes('Water') ?
+                                  'Distributes over 1,000 water bottles daily to pilgrims and monks' :
+                                  category.title.includes('Stupa') ?
+                                  'Careful restoration of ancient structures using traditional techniques' :
+                                  category.title.includes('Tripitaka') ?
+                                  'Gatherings of hundreds of monks for traditional chanting ceremonies' :
+                                  category.title.includes('Tree') ?
+                                  'Planting and maintaining Bodhi trees at sacred sites' :
+                                  category.title.includes('Welfare') ?
+                                  'Providing robes, accommodations, and essentials to traveling monks' :
+                                  'Offering ancient wisdom through modern digital channels'
+                                }
+                              </div>
+                            </div>
+                            
+                            <div className="flex items-start gap-2">
+                              <div className="text-orange-500 mt-1">
+                                <i className='bx bxs-check-circle'></i>
+                              </div>
+                              <div className="text-gray-700">
+                                {category.title.includes('Food') ? 
+                                  'Healthcare support including medical camps and emergency services' : 
+                                  category.title.includes('Water') ?
+                                  'Cooling refreshments during hot summer months at pilgrimage sites' :
+                                  category.title.includes('Stupa') ?
+                                  'Documentation and preservation of ancient art and carvings related to teaching of lord buddha' :
+                                  category.title.includes('Tripitaka') ?
+                                  'Preservation of lord buddha\'s teachings through oral tradition' :
+                                  category.title.includes('Tree') ?
+                                  'Educational programs about the significance of sacred trees in teaching of lord buddha' :
+                                  category.title.includes('Welfare') ?
+                                  'Support for educational needs and study materials' :
+                                  'Guided meditations led by experienced monks dedicated to the teaching of lord buddha'
+                                }
+                              </div>
+                            </div>
+                            
+                            <div className="flex items-start gap-2">
+                              <div className="text-orange-500 mt-1">
+                                <i className='bx bxs-check-circle'></i>
+                              </div>
+                              <div className="text-gray-700">
+                                {category.title.includes('Food') ? 
+                                  'Special nutritional support for elderly monks with health concerns' : 
+                                  category.title.includes('Water') ?
+                                  'Sustainable practices including reusable bottles and water stations' :
+                                  category.title.includes('Stupa') ?
+                                  'Training local craftsmen in traditional restoration techniques' :
+                                  category.title.includes('Tripitaka') ?
+                                  'Recording and archiving chanting ceremonies for future generations' :
+                                  category.title.includes('Tree') ?
+                                  'Creating green spaces for meditation and reflection' :
+                                  category.title.includes('Welfare') ?
+                                  'Community building activities to strengthen monastic bonds' :
+                                  'Teaching mindfulness practices rooted in the tradition of lord buddha'
+                                }
+                              </div>
+                            </div>
+                          </>
+                        )}
                       </div>
                       
                       <div className="flex flex-wrap gap-2">

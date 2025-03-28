@@ -47,38 +47,73 @@ export const IMPACT_STATS = [
 export const WORK_CATEGORIES = [
   {
     title: "Food & Medical Aid",
-    description: "Providing daily meals, medicines, and healthcare support to Buddhist monks at sacred pilgrimage sites.",
-    image: "/src/assets/images/food-distribution.jpg"
+    description: "Providing meals, medicines, and healthcare support to Buddhist monks at sacred pilgrimage sites.",
+    image: "/src/assets/images/food-distribution.jpg",
+    highlights: [
+      "Provides nutritious meals to over 500+ monks till now",
+      "Healthcare support including medical camps and emergency services",
+      "Special nutritional support for elderly monks with health concerns"
+    ]
   },
   {
     title: "Water & Refreshments",
     description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
-    image: "/src/assets/images/water-distribution.jpg"
+    image: "/src/assets/images/water-distribution.jpg",
+    highlights: [
+      "Distributes over 1,000 water bottles daily to pilgrims and monks", 
+      "Cooling refreshments during hot summer months at pilgrimage sites",
+      "Sustainable practices including reusable bottles and water stations"
+    ]
   },
   {
     title: "Ancient Stupa Restoration",
     description: "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations.",
-    image: "/src/assets/images/buddha-carving.jpg"
+    image: "/src/assets/images/buddha-carving.jpg",
+    highlights: [
+      "Careful restoration of ancient structures using traditional techniques",
+      "Documentation and preservation of ancient art and carvings related to teaching of lord buddha",
+      "Training local craftsmen in traditional restoration techniques"
+    ]
   },
   {
     title: "Regular Tripitaka Chanting",
     description: "Organizing monks in large-scale recitations of sacred Buddhist texts to preserve spiritual traditions.",
-    image: "/src/assets/images/monks-tripitaka.jpg"
+    image: "/src/assets/images/monks-tripitaka.jpg",
+    highlights: [
+      "Gatherings of hundreds of monks for traditional chanting ceremonies",
+      "Preservation of lord buddha's teachings through oral tradition",
+      "Recording and archiving chanting ceremonies for future generations"
+    ]
   },
   {
     title: "Sacred Tree & Site Beautification",
     description: "Planting and caring for Bodhi trees while enhancing the beauty of monasteries and Buddhist pilgrimage sites.",
-    image: "/src/assets/images/buddha-garden.jpg"
+    image: "/src/assets/images/buddha-garden.jpg",
+    highlights: [
+      "Planting and maintaining Bodhi trees at sacred sites",
+      "Educational programs about the significance of sacred trees in teaching of lord buddha",
+      "Creating green spaces for meditation and reflection"
+    ]
   },
   {
     title: "Pilgrim & Monastic Welfare",
     description: "Supporting both resident and traveling monks with accommodation, robes, and other essential needs.",
-    image: "/src/assets/images/monk-gathering.jpg"
+    image: "/src/assets/images/monk-gathering.jpg",
+    highlights: [
+      "Providing robes, accommodations, and essentials to traveling monks",
+      "Support for educational needs and study materials",
+      "Community building activities to strengthen monastic bonds"
+    ]
   },
   {
     title: "Meditation App",
     description: "Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. 🙏",
-    image: "/src/assets/images/buddha-statue.jpg"
+    image: "/src/assets/images/buddha-statue.jpg",
+    highlights: [
+      "Offering ancient wisdom through modern digital channels",
+      "Guided meditations led by experienced monks dedicated to the teaching of lord buddha",
+      "Teaching mindfulness practices rooted in the tradition of lord buddha"
+    ]
   }
 ];
 
