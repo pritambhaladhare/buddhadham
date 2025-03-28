@@ -131,7 +131,7 @@ export const LATEST_NEWS = [
     image: "/src/assets/images/monk-donation.jpg"
   },
   {
-    date: "JUNE 15, 2023",
+    date: "Every fortnight",
     title: "Every purnima and amavasya serving monks in bodhgaya temple",
     description: "Our ongoing commitment to serve monks on sacred days of purnima and amavasya at the Bodhgaya temple...",
     image: "/src/assets/images/mahabodhi-temple.jpg"
