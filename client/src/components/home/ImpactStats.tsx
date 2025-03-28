@@ -2,6 +2,7 @@ import { IMPACT_STATS } from '@/lib/constants';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { ScaleUpSection } from '@/components/animation/AnimatedSection';
+import { useTranslation } from 'react-i18next';
 
 // Enhanced CountUp animation with additional visual feedback
 const CountUp = ({ end, duration = 2 }: { end: number, duration?: number }) => {
@@ -43,6 +44,7 @@ const CountUp = ({ end, duration = 2 }: { end: number, duration?: number }) => {
 };
 
 const ImpactStats = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
   
@@ -126,7 +128,11 @@ const ImpactStats = () => {
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.5 + (index * 0.1) }}
               >
-                {stat.label}
+                {t(`home.impactStats.${stat.label === "Monks Supported" ? "monksSupported" : 
+                  stat.label === "Monks Medical Aid" ? "monksMedicalAid" :
+                  stat.label === "Sacred Sites Served" ? "sacredSites" : 
+                  stat.label === "Plantation Projects" ? "plantationProjects" : 
+                  "restorationProjects"}`)}
               </motion.p>
               
               {/* Decorative icon in background */}
@@ -152,7 +158,7 @@ const ImpactStats = () => {
               >
                 <i className={`bx ${
                   index === 0 ? 'bxs-donate-heart' : 
-                  index === 1 ? 'bxs-tree' :
+                  index === 1 ? 'bxs-heart' :
                   index === 2 ? 'bxs-temple' :
                   'bxs-book-open'
                 }`}></i>

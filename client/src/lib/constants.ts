@@ -39,6 +39,7 @@ export const NAV_LINKS = [
 // Impact statistics
 export const IMPACT_STATS = [
   { number: "2500+", label: "Monks Supported" },
+  { number: "100+", label: "Monks Medical Aid" },
   { number: "4", label: "Sacred Sites Served" }
 ];
 

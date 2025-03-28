@@ -163,35 +163,7 @@ const Hero = () => {
               {t('home.hero.description')}
             </motion.p>
             
-            <motion.div 
-              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
-              variants={fadeIn}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              transition={{ delay: 1.1 }}
-            >
-              <Link href="/get-involved">
-                <AnimatedButton 
-                  variant="primary"
-                  size="lg"
-                  className="shadow-[var(--monk-robe)]/30 bg-[var(--deep-saffron)] border-[var(--monk-robe)]/10 hover:bg-[var(--saffron)]"
-                >
-                  <span className="flex items-center">
-                    <i className='bx bxs-heart mr-2'></i> {t('home.hero.buttonGetInvolved')}
-                  </span>
-                </AnimatedButton>
-              </Link>
-              <AnimatedButton 
-                variant="secondary"
-                size="lg"
-                className="shadow-[var(--temple-stone)]/30 border-[var(--saffron)]/20 hover:bg-[var(--parchment)]"
-                onClick={() => {}}
-              >
-                <span className="flex items-center">
-                  <i className='bx bx-meditation mr-2'></i> {t('home.hero.buttonTryMeditation')}
-                </span>
-              </AnimatedButton>
-            </motion.div>
+            {/* Buttons removed as requested */}
             
             <motion.div 
               className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start"
