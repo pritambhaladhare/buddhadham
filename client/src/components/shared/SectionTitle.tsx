@@ -8,8 +8,8 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ title, subtitle, light = false }: SectionTitleProps) => {
   return (
-    <div className="text-center mb-16">
-      <h2 className={`font-heading text-3xl md:text-4xl font-bold ${light ? 'text-white' : 'text-[#3A2718]'} mb-4`}>
+    <div className="text-center mb-8">
+      <h2 className={`font-heading text-3xl md:text-4xl font-bold ${light ? 'text-white' : 'text-[#3A2718]'} mb-3`}>
         {title}
       </h2>
       {subtitle && (

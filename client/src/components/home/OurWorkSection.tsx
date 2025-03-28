@@ -12,7 +12,7 @@ const OurWorkSection = () => {
           subtitle="Serving monks, preserving traditions, and protecting Buddhist heritage across sacred sites"
         />
         
-        <div className="mt-2 mb-10 max-w-3xl mx-auto text-center">
+        <div className="mt-1 mb-6 max-w-3xl mx-auto text-center">
           <p className="text-gray-700 leading-relaxed">
             Our work is rooted in the Buddha's teachings of compassion and service, focusing exclusively on supporting 
             monks and preserving the sacred places where Buddhism flourishes.

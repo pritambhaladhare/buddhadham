@@ -7,7 +7,7 @@ interface LotusProps {
   animate?: boolean;
 }
 
-const Lotus = ({ size = 100, color = '#f97316', className = '', animate = true }: LotusProps) => {
+const Lotus = ({ size = 60, color = '#f97316', className = '', animate = true }: LotusProps) => {
   // Animation variants for petals
   const petalVariants = {
     initial: { rotate: 0, scale: 0.95 },
