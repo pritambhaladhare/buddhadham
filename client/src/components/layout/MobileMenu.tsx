@@ -145,24 +145,67 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               <StaggerContainer staggerDelay={0.1}>
                 {NAV_LINKS.map((link, index) => (
                   <StaggerItem key={index}>
-                    <Link href={link.path}>
-                      <motion.div 
-                        className={`font-body font-medium py-3 border-b border-orange-100 cursor-pointer flex items-center justify-between ${
-                          location === link.path ? 'text-orange-500 font-bold' : 'text-orange-800'
-                        }`}
-                        onClick={onClose}
-                        whileHover={{ 
-                          x: 5, 
-                          color: "#f97316", 
-                          transition: { duration: 0.2 }
-                        }}
-                      >
-                        {link.title}
-                        {location === link.path && (
-                          <i className='bx bxs-circle text-xs text-orange-400'></i>
-                        )}
-                      </motion.div>
-                    </Link>
+                    {link.hasDropdown ? (
+                      <div>
+                        <motion.div 
+                          className={`font-body font-medium py-3 border-b border-orange-100 cursor-pointer flex items-center justify-between ${
+                            location === link.path ? 'text-orange-500 font-bold' : 'text-orange-800'
+                          }`}
+                          whileHover={{ 
+                            x: 5, 
+                            color: "#f97316", 
+                            transition: { duration: 0.2 }
+                          }}
+                        >
+                          <Link href={link.path} onClick={onClose}>
+                            <span>{link.title}</span>
+                          </Link>
+                          <i className='bx bx-chevron-down text-lg text-orange-400'></i>
+                        </motion.div>
+                        
+                        <div className="pl-4 bg-orange-50/50">
+                          {link.dropdownItems?.map((item, idx) => (
+                            <Link key={idx} href={item.path}>
+                              <motion.div 
+                                className={`font-body font-medium py-2 border-b border-orange-100/50 cursor-pointer flex items-center justify-between ${
+                                  location === item.path ? 'text-orange-500' : 'text-orange-700'
+                                }`}
+                                onClick={onClose}
+                                whileHover={{ 
+                                  x: 5, 
+                                  color: "#f97316", 
+                                  transition: { duration: 0.2 }
+                                }}
+                              >
+                                {item.title}
+                                {location === item.path && (
+                                  <i className='bx bxs-circle text-xs text-orange-400'></i>
+                                )}
+                              </motion.div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link href={link.path}>
+                        <motion.div 
+                          className={`font-body font-medium py-3 border-b border-orange-100 cursor-pointer flex items-center justify-between ${
+                            location === link.path ? 'text-orange-500 font-bold' : 'text-orange-800'
+                          }`}
+                          onClick={onClose}
+                          whileHover={{ 
+                            x: 5, 
+                            color: "#f97316", 
+                            transition: { duration: 0.2 }
+                          }}
+                        >
+                          {link.title}
+                          {location === link.path && (
+                            <i className='bx bxs-circle text-xs text-orange-400'></i>
+                          )}
+                        </motion.div>
+                      </Link>
+                    )}
                   </StaggerItem>
                 ))}
                 

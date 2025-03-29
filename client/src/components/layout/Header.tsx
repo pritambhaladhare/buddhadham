@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { NAV_LINKS } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
+import DropdownMenu from './DropdownMenu';
 import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import AnimatedButton from '@/components/animation/AnimatedButton';
@@ -134,29 +135,38 @@ const Header = () => {
             
             <nav className="hidden md:flex space-x-8">
               {NAV_LINKS.map((link, index) => (
-                <Link key={index} href={link.path}>
-                  <motion.div
-                    className="cursor-pointer relative py-2"
-                    variants={navLinkVariants}
-                    initial="initial"
-                    whileHover="hover"
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <span className={`nav-link font-body font-medium ${
-                      location === link.path ? 'text-orange-500' : 'text-orange-800'
-                    }`}>
-                      {link.title}
-                    </span>
-                    
-                    {/* Active indicator line */}
-                    <motion.div 
-                      className="absolute bottom-0 left-0 h-[2px] bg-orange-500 rounded-full"
+                link.hasDropdown ? (
+                  <DropdownMenu 
+                    key={index}
+                    trigger={link.title}
+                    items={link.dropdownItems || []}
+                    isActive={location === link.path || link.dropdownItems?.some(item => item.path === location)}
+                  />
+                ) : (
+                  <Link key={index} href={link.path}>
+                    <motion.div
+                      className="cursor-pointer relative py-2"
+                      variants={navLinkVariants}
                       initial="initial"
-                      animate={location === link.path ? "active" : "initial"}
-                      variants={activeIndicatorVariants}
-                    />
-                  </motion.div>
-                </Link>
+                      whileHover="hover"
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <span className={`nav-link font-body font-medium ${
+                        location === link.path ? 'text-orange-500' : 'text-orange-800'
+                      }`}>
+                        {link.title}
+                      </span>
+                      
+                      {/* Active indicator line */}
+                      <motion.div 
+                        className="absolute bottom-0 left-0 h-[2px] bg-orange-500 rounded-full"
+                        initial="initial"
+                        animate={location === link.path ? "active" : "initial"}
+                        variants={activeIndicatorVariants}
+                      />
+                    </motion.div>
+                  </Link>
+                )
               ))}
             </nav>
             

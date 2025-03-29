@@ -29,11 +29,29 @@ export const COLORS = {
 
 // Navigation links
 export const NAV_LINKS = [
-  { title: "About", path: "/about" },
-  { title: "Our Work", path: "/our-work" },
+  { 
+    title: "Our Work", 
+    path: "/our-work",
+    hasDropdown: true,
+    dropdownItems: [
+      { title: "About", path: "/about" },
+      { title: "Our Projects", path: "/our-work" },
+      { title: "Leadership Team", path: "/about#leadership" },
+      { title: "Vision & Mission", path: "/about#vision" }
+    ]
+  },
   { title: "Pilgrimage Guide", path: "/pilgrimage-guide" },
-  { title: "Get Involved", path: "/get-involved" },
-  { title: "Contact", path: "/contact" }
+  { 
+    title: "Get Involved", 
+    path: "/get-involved",
+    hasDropdown: true,
+    dropdownItems: [
+      { title: "Ways to Help", path: "/get-involved" },
+      { title: "Volunteer", path: "/get-involved#volunteer" },
+      { title: "Become a Member", path: "/get-involved#membership" },
+      { title: "Contact Us", path: "/contact" }
+    ]
+  }
 ];
 
 // Impact statistics
