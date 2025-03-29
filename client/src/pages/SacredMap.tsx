@@ -8,12 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-// Import new images
-import lumbiniImg from '@assets/Lumbini1.jpg';
-import sarnathImg from '@assets/Saranath.jpg';
-import kushinagarImg from '@assets/Kushinagar.jpg';
-import bodhgayaImg from '@assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg';
-
 // Pilgrimage sites data
 const PILGRIMAGE_SITES = [
   {
@@ -29,7 +23,7 @@ const PILGRIMAGE_SITES = [
       'Bring modest clothing suitable for temple visits',
       'Many monasteries built by different Buddhist nations can be toured in a single day'
     ],
-    imageSrc: lumbiniImg,
+    imageSrc: "https://static.buddhadhaam.org/Lumbini1.jpg",
     focusAreas: ['Environmental Preservation', 'Monastic Support'],
     spiritualPractices: 'Meditation in the sacred garden, circumambulation of the Maya Devi Temple, paying respects at the birthplace marker stone.'
   },
@@ -46,7 +40,7 @@ const PILGRIMAGE_SITES = [
       'Visit the Giant Buddha statue and surrounding gardens',
       'Explore the international monasteries built in various national architectural styles'
     ],
-    imageSrc: bodhgayaImg,
+    imageSrc: "https://static.buddhadhaam.org/tong-kbp-wcpnpwvdWzI-unsplash.jpg",
     focusAreas: ['Heritage Preservation', 'Spiritual Practices'],
     spiritualPractices: 'Meditation under the Bodhi Tree, circumambulation of the Mahabodhi Temple, offering prayers at the Diamond Throne (Vajrasana).'
   },
@@ -63,7 +57,7 @@ const PILGRIMAGE_SITES = [
       'Arrange a local guide to understand the historical significance of the ruins',
       'Varanasi is only 10km away - many pilgrims combine these two sacred destinations'
     ],
-    imageSrc: sarnathImg,
+    imageSrc: "https://static.buddhadhaam.org/Saranath.jpg",
     focusAreas: ['Community Support', 'Food & Medical Aid'],
     spiritualPractices: 'Circumambulation of the Dhamek Stupa, meditation in the Deer Park, contemplation on the Four Noble Truths.'
   },
@@ -80,7 +74,7 @@ const PILGRIMAGE_SITES = [
       'Explore the meditation parks surrounding the main temple',
       'Visit the Mathakuar shrine where Buddha delivered his final sermon'
     ],
-    imageSrc: kushinagarImg,
+    imageSrc: "https://static.buddhadhaam.org/Kushinagar.jpg",
     focusAreas: ['Monk Welfare', 'Sacred Ceremonies'],
     spiritualPractices: 'Silent meditation before the reclining Buddha statue, circumambulation of the Mahaparinirvana Temple, prayer at the cremation stupa.'
   }
@@ -240,7 +234,7 @@ const SacredMap = () => {
                                 className="rounded-lg w-full h-64 object-cover"
                                 onError={(e) => {
                                   const target = e.target as HTMLImageElement;
-                                  target.src = bodhgayaImg; // Fallback to Bodhgaya image if needed
+                                  target.src = "https://static.buddhadhaam.org/tong-kbp-wcpnpwvdWzI-unsplash.jpg"; // Fallback to Bodhgaya image if needed
                                 }}
                               />
                             </div>
