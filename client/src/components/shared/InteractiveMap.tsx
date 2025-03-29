@@ -13,6 +13,10 @@ interface SacredLocation {
   coordinates: [number, number]; // Explicitly define as lat/lng tuple
   initiatives: string[];
   color: string;
+  significance: string;
+  bestTimeToVisit: string;
+  nearbyAccommodation: string;
+  travelTips: string[];
 }
 
 // Define the sacred sites/work locations
@@ -23,7 +27,16 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     description: 'Birthplace of Lord Buddha',
     coordinates: [27.4833, 83.2767],
     initiatives: ['Tree Planting', 'Monastery Support'],
-    color: '#D2691E'
+    color: '#D2691E',
+    significance: 'This is where Prince Siddhartha was born to Queen Maya Devi in 563 BCE. The sacred garden and Maya Devi Temple mark the exact birthplace. A visit here connects you directly with the beginning of Buddha\'s journey.',
+    bestTimeToVisit: 'October to May, avoiding the monsoon season. Buddha Jayanti (May) is a special time to visit.',
+    nearbyAccommodation: 'Several monasteries offer basic accommodation for pilgrims. Hotels like Buddha Maya Garden and Lumbini Hotel Kasai provide comfortable stays.',
+    travelTips: [
+      'Visit the Ashoka Pillar which confirmed this as Buddha\'s birthplace',
+      'Allow time to visit the World Peace Pagoda',
+      'Bring modest clothing suitable for temple visits',
+      'Many monasteries built by different Buddhist nations can be toured in a single day'
+    ]
   },
   {
     id: 2,
@@ -31,7 +44,16 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     description: 'Where Buddha delivered his first sermon',
     coordinates: [25.3800, 83.0200],
     initiatives: ['Food & Medical Aid', 'Water Distribution'],
-    color: '#9D2933'
+    color: '#9D2933',
+    significance: 'After attaining enlightenment, Buddha came to Sarnath to deliver his first teaching on the Four Noble Truths. This event is known as "turning the wheel of Dharma" and marks the foundation of Buddhist teachings.',
+    bestTimeToVisit: 'October to March for pleasant weather. The Dhammachakra Day celebrations (July/August) commemorate Buddha\'s first sermon.',
+    nearbyAccommodation: 'The Thai Monastery and Tibetan Monastery offer pilgrim accommodation. Budget hotels are available in Varanasi city.',
+    travelTips: [
+      'Visit the Dhamek Stupa, marking where Buddha taught the Four Noble Truths',
+      'The Archaeological Museum houses the famous lion capital of the Ashoka Pillar',
+      'Arrange a local guide to understand the historical significance of the ruins',
+      'Varanasi is only 10km away - many pilgrims combine these two sacred destinations'
+    ]
   },
   {
     id: 3,
@@ -39,7 +61,16 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     description: 'Where Buddha attained enlightenment',
     coordinates: [24.6961, 84.9911],
     initiatives: ['Stupa Restoration', 'Tripitaka Chanting'],
-    color: '#D4AF37'
+    color: '#D4AF37',
+    significance: 'The most sacred site for Buddhists worldwide, where Prince Siddhartha meditated under the Bodhi Tree for 49 days and attained enlightenment, becoming Buddha. The Mahabodhi Temple Complex is a UNESCO World Heritage site.',
+    bestTimeToVisit: 'November to February offers pleasant weather. The Kagyu Monlam prayer festival (December/January) is a powerful time to visit.',
+    nearbyAccommodation: 'Many international Buddhist monasteries offer accommodation for pilgrims. Hotels like Hotel Bodhgaya Regency and Oaks Bodhgaya provide comfortable stays nearby.',
+    travelTips: [
+      'Meditate under the Bodhi Tree, a descendant of the original tree',
+      'Circumambulate the Mahabodhi Temple, especially at sunrise or sunset',
+      'Visit the Giant Buddha statue and surrounding gardens',
+      'Explore the international monasteries built in various national architectural styles'
+    ]
   },
   {
     id: 4,
@@ -47,7 +78,16 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     description: 'Where Buddha attained Mahaparinirvana',
     coordinates: [26.7400, 83.8900],
     initiatives: ['Monk Support', 'Sacred Ceremonies'],
-    color: '#8B4513'
+    color: '#8B4513',
+    significance: 'The place where Buddha attained Mahaparinirvana (left his physical body) at the age of 80. The Mahaparinirvana Temple houses a 6-meter long reclining Buddha statue depicting his final moments.',
+    bestTimeToVisit: 'October to March for comfortable weather. Buddha Purnima (May) sees special ceremonies at the Mahaparinirvana Temple.',
+    nearbyAccommodation: 'The Japanese Temple and other monasteries offer pilgrim accommodation. Lotus Nikko Hotel and Hotel Skyland provide comfortable stays.',
+    travelTips: [
+      'Visit the Ramabhar Stupa marking the cremation site of Lord Buddha',
+      'Spend time in quiet contemplation at the Mahaparinirvana Temple',
+      'Explore the meditation parks surrounding the main temple',
+      'Visit the Mathakuar shrine where Buddha delivered his final sermon'
+    ]
   }
 ];
 
@@ -120,14 +160,22 @@ const InteractiveMap = ({ className = '' }: InteractiveMapProps) => {
 
         // Create popup content with HTML
         const popupContent = `
-          <div class="map-popup p-3">
+          <div class="map-popup p-3 max-w-[300px]">
             <h3 class="text-xl font-bold text-[${location.color}]">${location.name}</h3>
             <p class="text-gray-700 mb-2">${location.description}</p>
+            <p class="text-sm text-gray-600 mb-3">${location.significance.substring(0, 100)}...</p>
+            <div class="mb-2">
+              <p class="font-medium text-[#8B4513] text-sm">Best Time to Visit:</p>
+              <p class="text-sm text-gray-600">${location.bestTimeToVisit.split('.')[0]}</p>
+            </div>
             <div>
-              <p class="font-medium text-[#8B4513]">Our Initiatives:</p>
-              <ul class="list-disc ml-5">
+              <p class="font-medium text-[#8B4513] text-sm">Our Initiatives:</p>
+              <ul class="list-disc ml-5 text-sm text-gray-700">
                 ${location.initiatives.map(init => `<li>${init}</li>`).join('')}
               </ul>
+            </div>
+            <div class="mt-2 text-center">
+              <a href="#${location.name.toLowerCase()}" class="text-sm font-medium text-blue-600 hover:underline">View Travel Guide</a>
             </div>
           </div>
         `;
@@ -165,7 +213,7 @@ const InteractiveMap = ({ className = '' }: InteractiveMapProps) => {
         </div>
         <div 
           ref={mapContainerRef} 
-          className="h-[500px] w-full relative"
+          className="h-[350px] w-full relative"
           style={{ position: 'relative' }}
         />
         <div className="p-4 bg-[#FFF8EA] border-t border-[#D2691E]/20">
