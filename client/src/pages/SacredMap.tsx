@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import lumbiniImg from '@assets/Lumbini1.jpg';
 import sarnathImg from '@assets/Saranath.jpg';
 import kushinagarImg from '@assets/Kushinagar.jpg';
+import bodhgayaImg from '@assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg';
 
 // Pilgrimage sites data
 const PILGRIMAGE_SITES = [
@@ -45,7 +46,7 @@ const PILGRIMAGE_SITES = [
       'Visit the Giant Buddha statue and surrounding gardens',
       'Explore the international monasteries built in various national architectural styles'
     ],
-    imageSrc: '/src/assets/images/bodhgaya.jpg',
+    imageSrc: bodhgayaImg,
     focusAreas: ['Heritage Preservation', 'Spiritual Practices'],
     spiritualPractices: 'Meditation under the Bodhi Tree, circumambulation of the Mahabodhi Temple, offering prayers at the Diamond Throne (Vajrasana).'
   },
@@ -239,7 +240,7 @@ const SacredMap = () => {
                                 className="rounded-lg w-full h-64 object-cover"
                                 onError={(e) => {
                                   const target = e.target as HTMLImageElement;
-                                  target.src = '/src/assets/images/buddha-placeholder.jpg';
+                                  target.src = bodhgayaImg; // Fallback to Bodhgaya image if needed
                                 }}
                               />
                             </div>

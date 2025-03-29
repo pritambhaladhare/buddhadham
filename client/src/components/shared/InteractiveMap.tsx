@@ -17,6 +17,12 @@ interface SacredLocation {
   imageUrl?: string;
 }
 
+// Import images
+import lumbiniImg from '@assets/Lumbini1.jpg';
+import sarnathImg from '@assets/Saranath.jpg';
+import bodhgayaImg from '@assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg';
+import kushinagarImg from '@assets/Kushinagar.jpg';
+
 // Define the sacred sites
 const SACRED_LOCATIONS: SacredLocation[] = [
   {
@@ -26,7 +32,7 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     coordinates: [27.4833, 83.2767],
     initiatives: ['Tree Planting', 'Monastery Support'],
     color: '#D2691E',
-    imageUrl: '/attached_assets/Lumbini1.jpg'
+    imageUrl: lumbiniImg
   },
   {
     id: 2,
@@ -35,7 +41,7 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     coordinates: [25.3800, 83.0200],
     initiatives: ['Food & Medical Aid', 'Water Distribution'],
     color: '#9D2933',
-    imageUrl: '/attached_assets/Saranath.jpg'
+    imageUrl: sarnathImg
   },
   {
     id: 3,
@@ -44,7 +50,7 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     coordinates: [24.6961, 84.9911],
     initiatives: ['Stupa Restoration', 'Tripitaka Chanting'],
     color: '#D4AF37',
-    imageUrl: '/attached_assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg'
+    imageUrl: bodhgayaImg
   },
   {
     id: 4,
@@ -53,7 +59,7 @@ const SACRED_LOCATIONS: SacredLocation[] = [
     coordinates: [26.7400, 83.8900],
     initiatives: ['Monk Support', 'Sacred Ceremonies'],
     color: '#8B4513',
-    imageUrl: '/attached_assets/Kushinagar.jpg'
+    imageUrl: kushinagarImg
   }
 ];
 
