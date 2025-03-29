@@ -9,7 +9,7 @@ import {
   StaggerItem,
   FloatingElement
 } from '@/components/animation/AnimatedSection';
-import buddhaShrine from '@assets/IMG-20250327-WA0022.jpg';
+import buddhaShrine from '@assets/shrine_conservation.jpg';
 
 const ImpactStory = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
