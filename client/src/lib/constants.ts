@@ -1,14 +1,15 @@
 // Import images for consistent usage across the site
-import foodDistImg from '@assets/IMG-20250318-WA0024.jpg';
-import waterDistImg from '@assets/IMG-20250318-WA0017.jpg';
-import buddhaCarving from '@assets/IMG-20250318-WA0022.jpg';
-import monksTripitaka from '@assets/IMG-20250318-WA0049.jpg';
-import buddhaGarden from '@assets/IMG-20250318-WA0026.jpg';
-import monkGathering from '@assets/IMG-20250318-WA0050.jpg';
-import buddhaStatue from '@assets/IMG-20250318-WA0052.jpg';
+import foodDistImg from '@assets/food_aid.jpg';
+import waterDistImg from '@assets/water_aid.jpg';
+import buddhaCarving from '@assets/ancient_stupa.jpg';
+import monksTripitaka from '@assets/tripitaka_chanting.jpg';
+import buddhaGarden from '@assets/peepal_tree.jpg';
+import monkGathering from '@assets/monastic_welfare.jpg';
+import buddhaStatue from '@assets/meditation_app.jpg';
 import monkDonation from '@assets/IMG-20250327-WA0017.jpg';
 import mahabodhiTemple from '@assets/IMG-20250327-WA0018.jpg';
-import buddhaShrine from '@assets/IMG-20250327-WA0022.jpg';
+import buddhaShrine from '@assets/shrine_conservation.jpg';
+import waterRefreshments from '@assets/water_refreshments.jpg';
 
 // Color palette
 export const COLORS = {
@@ -89,7 +90,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Water & Refreshments",
     description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
-    image: waterDistImg,
+    image: waterRefreshments,
     highlights: [
       "Distributes over 2598+ water bottles daily to pilgrims and monks", 
       "Cooling refreshments during hot summer months at pilgrimage sites",
