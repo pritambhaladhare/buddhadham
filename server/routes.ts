@@ -1,7 +1,17 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { contactSchema, donationSchema, memberSchema, memberBenefitSchema, newsletterSchema, volunteerSchema, insertUserSchema } from "@shared/schema";
+import { 
+  contactSchema, 
+  donationSchema, 
+  memberSchema, 
+  memberBenefitSchema, 
+  memberDonationSchema, 
+  memberPaymentSchema, 
+  newsletterSchema, 
+  volunteerSchema, 
+  insertUserSchema 
+} from "@shared/schema";
 import nodemailer from "nodemailer";
 import session from "express-session";
 import memorystore from "memorystore";
@@ -452,6 +462,270 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error: any) {
       console.error("Error fetching all member benefits:", error);
       return res.status(500).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Member Recurring Donations API Routes
+  
+  // Get all recurring donations for a member
+  app.get('/api/members/:memberId/donations', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const memberId = parseInt(req.params.memberId);
+      if (isNaN(memberId)) {
+        return res.status(400).json({ success: false, message: "Invalid member ID" });
+      }
+      
+      // Check if user has access to this member's data (admin or own data)
+      const member = await storage.getMember(memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Check if user is admin or the member belongs to the authenticated user
+      if (req.user?.role !== 'admin' && member.userId !== req.user?.id) {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      const donations = await storage.getMemberDonations(memberId);
+      
+      return res.status(200).json({ 
+        success: true, 
+        donations
+      });
+    } catch (error: any) {
+      console.error("Error fetching member donations:", error);
+      return res.status(500).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Get a specific recurring donation by ID
+  app.get('/api/member-donations/:id', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const donationId = parseInt(req.params.id);
+      if (isNaN(donationId)) {
+        return res.status(400).json({ success: false, message: "Invalid donation ID" });
+      }
+      
+      // Get the donation
+      const donation = await storage.getMemberDonation(donationId);
+      if (!donation) {
+        return res.status(404).json({ success: false, message: "Donation not found" });
+      }
+      
+      // Get the member to check permissions
+      const member = await storage.getMember(donation.memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Check if user is admin or the member belongs to the authenticated user
+      if (req.user?.role !== 'admin' && member.userId !== req.user?.id) {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      return res.status(200).json({ 
+        success: true, 
+        donation
+      });
+    } catch (error: any) {
+      console.error("Error fetching member donation:", error);
+      return res.status(500).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Create a new recurring donation for a member
+  app.post('/api/members/:memberId/donations', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const memberId = parseInt(req.params.memberId);
+      if (isNaN(memberId)) {
+        return res.status(400).json({ success: false, message: "Invalid member ID" });
+      }
+      
+      // Check if the member exists
+      const member = await storage.getMember(memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Check if user is admin or the member belongs to the authenticated user
+      if (req.user?.role !== 'admin' && member.userId !== req.user?.id) {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      // Validate donation data
+      const validatedData = memberDonationSchema.parse({
+        ...req.body,
+        memberId
+      });
+      
+      // Create the donation
+      const donation = await storage.createMemberDonation(validatedData);
+      
+      // In a real implementation, you would integrate with a payment gateway to set up recurring payments
+      
+      return res.status(201).json({ 
+        success: true, 
+        message: "Recurring donation created successfully",
+        donation
+      });
+    } catch (error: any) {
+      console.error("Error creating recurring donation:", error);
+      return res.status(400).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Update a recurring donation
+  app.patch('/api/member-donations/:id', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const donationId = parseInt(req.params.id);
+      if (isNaN(donationId)) {
+        return res.status(400).json({ success: false, message: "Invalid donation ID" });
+      }
+      
+      // Get the existing donation
+      const existingDonation = await storage.getMemberDonation(donationId);
+      if (!existingDonation) {
+        return res.status(404).json({ success: false, message: "Donation not found" });
+      }
+      
+      // Get the member to check permissions
+      const member = await storage.getMember(existingDonation.memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Check if user is admin or the member belongs to the authenticated user
+      if (req.user?.role !== 'admin' && member.userId !== req.user?.id) {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      // Validate the update data
+      const validatedData = memberDonationSchema.partial().parse(req.body);
+      
+      // If memberId is provided, make sure it matches the existing donation's memberId
+      if (validatedData.memberId && validatedData.memberId !== existingDonation.memberId) {
+        return res.status(400).json({ success: false, message: "Cannot change the member of a donation" });
+      }
+      
+      // Update the donation
+      const updatedDonation = await storage.updateMemberDonation(donationId, validatedData);
+      
+      return res.status(200).json({ 
+        success: true, 
+        message: "Recurring donation updated successfully",
+        donation: updatedDonation
+      });
+    } catch (error: any) {
+      console.error("Error updating recurring donation:", error);
+      return res.status(400).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Member Payment History API Routes
+  
+  // Get payment history for a member
+  app.get('/api/members/:memberId/payments', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const memberId = parseInt(req.params.memberId);
+      if (isNaN(memberId)) {
+        return res.status(400).json({ success: false, message: "Invalid member ID" });
+      }
+      
+      // Check if the member exists
+      const member = await storage.getMember(memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Check if user is admin or the member belongs to the authenticated user
+      if (req.user?.role !== 'admin' && member.userId !== req.user?.id) {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      // Get the payment history
+      const payments = await storage.getMemberPayments(memberId);
+      
+      return res.status(200).json({ 
+        success: true, 
+        payments
+      });
+    } catch (error: any) {
+      console.error("Error fetching payment history:", error);
+      return res.status(500).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Get a specific payment by ID
+  app.get('/api/member-payments/:id', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const paymentId = parseInt(req.params.id);
+      if (isNaN(paymentId)) {
+        return res.status(400).json({ success: false, message: "Invalid payment ID" });
+      }
+      
+      // Get the payment
+      const payment = await storage.getMemberPayment(paymentId);
+      if (!payment) {
+        return res.status(404).json({ success: false, message: "Payment not found" });
+      }
+      
+      // Get the member to check permissions
+      const member = await storage.getMember(payment.memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Check if user is admin or the member belongs to the authenticated user
+      if (req.user?.role !== 'admin' && member.userId !== req.user?.id) {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      return res.status(200).json({ 
+        success: true, 
+        payment
+      });
+    } catch (error: any) {
+      console.error("Error fetching payment:", error);
+      return res.status(500).json({ success: false, message: error.message });
+    }
+  });
+  
+  // Create a new payment record
+  app.post('/api/members/:memberId/payments', authenticate, async (req: AuthenticatedRequest, res) => {
+    try {
+      const memberId = parseInt(req.params.memberId);
+      if (isNaN(memberId)) {
+        return res.status(400).json({ success: false, message: "Invalid member ID" });
+      }
+      
+      // Check if the member exists
+      const member = await storage.getMember(memberId);
+      if (!member) {
+        return res.status(404).json({ success: false, message: "Member not found" });
+      }
+      
+      // Only admins can create payment records manually
+      if (req.user?.role !== 'admin') {
+        return res.status(403).json({ success: false, message: "Access denied" });
+      }
+      
+      // Validate payment data
+      const validatedData = memberPaymentSchema.parse({
+        ...req.body,
+        memberId
+      });
+      
+      // Create the payment record
+      const payment = await storage.createMemberPayment(validatedData);
+      
+      return res.status(201).json({ 
+        success: true, 
+        message: "Payment record created successfully",
+        payment
+      });
+    } catch (error: any) {
+      console.error("Error creating payment record:", error);
+      return res.status(400).json({ success: false, message: error.message });
     }
   });
 

@@ -151,6 +151,67 @@ export const donationSchema = createInsertSchema(donations).pick({
 export type InsertDonation = z.infer<typeof donationSchema>;
 export type Donation = typeof donations.$inferSelect;
 
+// Member recurring donations table
+export const memberDonations = pgTable("member_donations", {
+  id: serial("id").primaryKey(),
+  memberId: integer("member_id").references(() => members.id).notNull(),
+  amount: numeric("amount").notNull(),
+  frequency: text("frequency").notNull(), // monthly, quarterly, annually
+  status: text("status").notNull().default("active"), // active, paused, cancelled
+  paymentMethod: text("payment_method").notNull().default("card"), // card, bank, paypal
+  lastPaymentDate: date("last_payment_date").notNull(),
+  nextPaymentDate: date("next_payment_date").notNull(),
+  transactionId: text("transaction_id"),
+  notes: text("notes"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull()
+});
+
+export const memberDonationSchema = createInsertSchema(memberDonations).pick({
+  memberId: true,
+  amount: true,
+  frequency: true,
+  status: true,
+  paymentMethod: true,
+  lastPaymentDate: true,
+  nextPaymentDate: true,
+  transactionId: true,
+  notes: true
+});
+
+export type InsertMemberDonation = z.infer<typeof memberDonationSchema>;
+export type MemberDonation = typeof memberDonations.$inferSelect;
+
+// Member payment history table
+export const memberPayments = pgTable("member_payments", {
+  id: serial("id").primaryKey(),
+  memberId: integer("member_id").references(() => members.id).notNull(),
+  donationId: integer("donation_id").references(() => memberDonations.id),
+  amount: numeric("amount").notNull(),
+  paymentDate: date("payment_date").notNull(),
+  status: text("status").notNull().default("completed"), // completed, failed, refunded
+  transactionId: text("transaction_id"),
+  paymentMethod: text("payment_method").notNull(),
+  receiptUrl: text("receipt_url"),
+  notes: text("notes"),
+  createdAt: timestamp("created_at").defaultNow().notNull()
+});
+
+export const memberPaymentSchema = createInsertSchema(memberPayments).pick({
+  memberId: true,
+  donationId: true,
+  amount: true,
+  paymentDate: true,
+  status: true,
+  transactionId: true,
+  paymentMethod: true,
+  receiptUrl: true,
+  notes: true
+});
+
+export type InsertMemberPayment = z.infer<typeof memberPaymentSchema>;
+export type MemberPayment = typeof memberPayments.$inferSelect;
+
 // Volunteer applications table
 export const volunteerApplications = pgTable("volunteer_applications", {
   id: serial("id").primaryKey(),

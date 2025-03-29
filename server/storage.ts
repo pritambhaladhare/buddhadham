@@ -2,6 +2,8 @@ import {
   users, type User, type InsertUser, 
   members, type Member, type InsertMember,
   memberBenefits, type MemberBenefit, type InsertMemberBenefit,
+  memberDonations, type MemberDonation, type InsertMemberDonation,
+  memberPayments, type MemberPayment, type InsertMemberPayment,
   type InsertContactMessage, type ContactMessage, 
   type InsertNewsletter, type Newsletter, 
   type InsertDonation, type Donation, 
@@ -30,6 +32,17 @@ export interface IStorage {
   updateMemberBenefit(id: number, benefit: Partial<InsertMemberBenefit>): Promise<MemberBenefit>;
   getAllMemberBenefits(): Promise<MemberBenefit[]>;
   
+  // Member Recurring Donations
+  getMemberDonations(memberId: number): Promise<MemberDonation[]>;
+  getMemberDonation(id: number): Promise<MemberDonation | undefined>;
+  createMemberDonation(donation: InsertMemberDonation): Promise<MemberDonation>;
+  updateMemberDonation(id: number, donation: Partial<InsertMemberDonation>): Promise<MemberDonation>;
+  
+  // Member Payment History
+  getMemberPayments(memberId: number): Promise<MemberPayment[]>;
+  getMemberPayment(id: number): Promise<MemberPayment | undefined>;
+  createMemberPayment(payment: InsertMemberPayment): Promise<MemberPayment>;
+  
   // Contact form
   createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
   getContactMessages(): Promise<ContactMessage[]>;
@@ -51,6 +64,8 @@ export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private members: Map<number, Member>;
   private memberBenefits: Map<number, MemberBenefit>;
+  private memberDonations: Map<number, MemberDonation>;
+  private memberPayments: Map<number, MemberPayment>;
   private contactMessages: Map<number, ContactMessage>;
   private newsletters: Map<number, Newsletter>;
   private donations: Map<number, Donation>;
@@ -59,6 +74,8 @@ export class MemStorage implements IStorage {
   private currentUserId: number;
   private currentMemberId: number;
   private currentMemberBenefitId: number;
+  private currentMemberDonationId: number;
+  private currentMemberPaymentId: number;
   private currentContactMessageId: number;
   private currentNewsletterId: number;
   private currentDonationId: number;
@@ -68,6 +85,8 @@ export class MemStorage implements IStorage {
     this.users = new Map();
     this.members = new Map();
     this.memberBenefits = new Map();
+    this.memberDonations = new Map();
+    this.memberPayments = new Map();
     this.contactMessages = new Map();
     this.newsletters = new Map();
     this.donations = new Map();
@@ -76,6 +95,8 @@ export class MemStorage implements IStorage {
     this.currentUserId = 1;
     this.currentMemberId = 1;
     this.currentMemberBenefitId = 1;
+    this.currentMemberDonationId = 1;
+    this.currentMemberPaymentId = 1;
     this.currentContactMessageId = 1;
     this.currentNewsletterId = 1;
     this.currentDonationId = 1;
@@ -294,6 +315,106 @@ export class MemStorage implements IStorage {
   
   async getVolunteerApplications(): Promise<VolunteerApplication[]> {
     return Array.from(this.volunteerApplications.values());
+  }
+  
+  // Member Recurring Donation methods
+  async getMemberDonations(memberId: number): Promise<MemberDonation[]> {
+    return Array.from(this.memberDonations.values()).filter(
+      (donation) => donation.memberId === memberId
+    );
+  }
+  
+  async getMemberDonation(id: number): Promise<MemberDonation | undefined> {
+    return this.memberDonations.get(id);
+  }
+  
+  async createMemberDonation(donation: InsertMemberDonation): Promise<MemberDonation> {
+    const id = this.currentMemberDonationId++;
+    const createdAt = new Date();
+    const updatedAt = new Date();
+    
+    // Format amount value
+    const amountValue = typeof donation.amount === 'number' ? 
+      String(donation.amount) : (donation.amount || '0');
+    
+    const newDonation: MemberDonation = { 
+      ...donation, 
+      id, 
+      createdAt, 
+      updatedAt,
+      amount: amountValue,
+      status: donation.status || 'active',
+      paymentMethod: donation.paymentMethod || 'card',
+      transactionId: donation.transactionId || null,
+      notes: donation.notes || null
+    };
+    
+    this.memberDonations.set(id, newDonation);
+    return newDonation;
+  }
+  
+  async updateMemberDonation(id: number, donationUpdate: Partial<InsertMemberDonation>): Promise<MemberDonation> {
+    const existingDonation = this.memberDonations.get(id);
+    if (!existingDonation) {
+      throw new Error("Member donation not found");
+    }
+    
+    // Format amount value if it exists in the update
+    let updatedAmount = existingDonation.amount;
+    if (donationUpdate.amount !== undefined) {
+      updatedAmount = typeof donationUpdate.amount === 'number' ? 
+        String(donationUpdate.amount) : donationUpdate.amount;
+    }
+    
+    const updatedDonation: MemberDonation = {
+      ...existingDonation,
+      ...donationUpdate,
+      amount: updatedAmount,
+      updatedAt: new Date()
+    };
+    
+    this.memberDonations.set(id, updatedDonation);
+    return updatedDonation;
+  }
+  
+  // Member Payment History methods
+  async getMemberPayments(memberId: number): Promise<MemberPayment[]> {
+    return Array.from(this.memberPayments.values())
+      .filter(payment => payment.memberId === memberId)
+      .sort((a, b) => {
+        // Sort by payment date, most recent first
+        return new Date(b.paymentDate).getTime() - new Date(a.paymentDate).getTime();
+      });
+  }
+  
+  async getMemberPayment(id: number): Promise<MemberPayment | undefined> {
+    return this.memberPayments.get(id);
+  }
+  
+  async createMemberPayment(payment: InsertMemberPayment): Promise<MemberPayment> {
+    const id = this.currentMemberPaymentId++;
+    const createdAt = new Date();
+    
+    // Format amount value
+    const amountValue = typeof payment.amount === 'number' ? 
+      String(payment.amount) : (payment.amount || '0');
+    
+    const newPayment: MemberPayment = { 
+      id, 
+      createdAt,
+      memberId: payment.memberId,
+      donationId: payment.donationId || null,
+      amount: amountValue,
+      paymentDate: payment.paymentDate,
+      status: payment.status || 'completed',
+      paymentMethod: payment.paymentMethod,
+      transactionId: payment.transactionId || null,
+      receiptUrl: payment.receiptUrl || null,
+      notes: payment.notes || null
+    };
+    
+    this.memberPayments.set(id, newPayment);
+    return newPayment;
   }
 }
 
