@@ -90,7 +90,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Water & Refreshments",
     description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
-    image: waterRefreshments,
+    image: waterDistImg,
     highlights: [
       "Distributes over 2598+ water bottles daily to pilgrims and monks", 
       "Cooling refreshments during hot summer months at pilgrimage sites",
