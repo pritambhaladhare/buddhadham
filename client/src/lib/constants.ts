@@ -51,7 +51,7 @@ export const WORK_CATEGORIES = [
     description: "Providing meals, medicines, and healthcare support to Buddhist monks at sacred pilgrimage sites.",
     image: "/src/assets/images/food-distribution.jpg",
     highlights: [
-      "Provides nutritious meals to over 500+ monks till now",
+      "Provides nutritious meals to over 1422+ monks till now",
       "Healthcare support including medical camps and emergency services",
       "Special nutritional support for elderly monks with health concerns"
     ]
@@ -61,7 +61,7 @@ export const WORK_CATEGORIES = [
     description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
     image: "/src/assets/images/water-distribution.jpg",
     highlights: [
-      "Distributes over 1,000 water bottles daily to pilgrims and monks", 
+      "Distributes over 2598+ water bottles daily to pilgrims and monks", 
       "Cooling refreshments during hot summer months at pilgrimage sites",
       "Sustainable practices including reusable bottles and water stations"
     ]
