@@ -16,6 +16,8 @@ import nodemailer from "nodemailer";
 import session from "express-session";
 import memorystore from "memorystore";
 import bcrypt from "bcryptjs";
+import passport from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 // Extend the Session interface to include user property
 declare module 'express-session' {
@@ -51,6 +53,68 @@ export async function registerRoutes(app: Express): Promise<Server> {
       secret: process.env.SESSION_SECRET || "buddha-dhaam-secret"
     })
   );
+  
+  // Initialize Passport
+  app.use(passport.initialize());
+  app.use(passport.session());
+  
+  // Configure Google OAuth Strategy
+  const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+  const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+  
+  if (GOOGLE_CLIENT_ID && GOOGLE_CLIENT_SECRET) {
+    passport.use(
+      new GoogleStrategy(
+        {
+          clientID: GOOGLE_CLIENT_ID,
+          clientSecret: GOOGLE_CLIENT_SECRET,
+          callbackURL: "/api/auth/google/callback",
+          scope: ["profile", "email"]
+        },
+        async (accessToken, refreshToken, profile, done) => {
+          try {
+            // Check if user exists with this Google ID
+            let user = await storage.getUserByEmail(profile.emails?.[0]?.value || '');
+            
+            // If user doesn't exist, create a new one
+            if (!user) {
+              // Create a random username based on display name or id
+              const username = `google_${profile.displayName?.replace(/\s+/g, '_').toLowerCase() || profile.id}`;
+              
+              // Create a new user
+              user = await storage.createUser({
+                username,
+                // Generate a long random password since they'll be using Google OAuth
+                password: Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-16),
+                email: profile.emails?.[0]?.value,
+                fullName: profile.displayName,
+                googleId: profile.id,
+                role: 'user'
+              });
+            }
+            
+            // Convert user to the format session expects
+            return done(null, {
+              id: user.id,
+              username: user.username,
+              role: user.role || 'user'
+            });
+          } catch (error) {
+            return done(error as Error);
+          }
+        }
+      )
+    );
+  }
+  
+  // Serialize and deserialize user for session management
+  passport.serializeUser((user, done) => {
+    done(null, user);
+  });
+  
+  passport.deserializeUser((user, done) => {
+    done(null, user as Express.User);
+  });
   
   // Authentication middleware
   const authenticate = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
@@ -151,6 +215,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
       user: req.user
     });
   });
+  
+  // Google OAuth routes
+  if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
+    // Route to initiate Google OAuth flow
+    app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+    // Google OAuth callback route
+    app.get('/api/auth/google/callback', 
+      passport.authenticate('google', { failureRedirect: '/login?error=google-auth-failed' }),
+      (req, res) => {
+        // If authentication is successful, set user in session
+        if (req.user) {
+          (req as any).session.user = req.user;
+        }
+        
+        // Redirect to the client-side app
+        res.redirect('/member-dashboard');
+      }
+    );
+  }
   
   // Logout
   app.post('/api/auth/logout', (req, res) => {

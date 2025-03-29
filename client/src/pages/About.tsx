@@ -79,7 +79,8 @@ const About = () => {
             <div className="w-24 h-1 bg-orange-500 mx-auto"></div>
           </div>
           
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+          {/* Namita Bhaladhare - Founder */}
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 mb-16">
             <div className="md:w-1/3">
               <div className="relative">
                 <img 
@@ -106,6 +107,40 @@ const About = () => {
                   </a>
                   <a href="#" className="text-orange-500 hover:text-orange-600">
                     <i className='bx bxl-twitter text-2xl'></i>
+                  </a>
+                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                    <i className='bx bx-envelope text-2xl'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Kumar Saurav Murti - Operations Head */}
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10">
+            <div className="md:w-1/3">
+              <div className="relative">
+                <img 
+                  src="/src/assets/images/kumar-operations-head.png" 
+                  alt="Kumar Saurav Murti – Operations Head, Buddha Dhaam" 
+                  className="rounded-lg shadow-lg mx-auto"
+                />
+                <div className="absolute -bottom-3 -left-3 w-24 h-24 bg-orange-100 rounded-full opacity-70 -z-10"></div>
+              </div>
+            </div>
+            
+            <div className="md:w-2/3">
+              <h3 className="font-heading text-2xl font-bold mb-2 text-orange-900">Kumar Saurav Murti – Operations Head</h3>
+              <div className="space-y-4 text-gray-700">
+                <p>
+                  I hold two master's degrees: an MSW from Central University of South Bihar and an MA in Sociology from the same institution. As a professional social worker, I possess a deep understanding of how to serve society with a positive approach.
+                </p>
+                <p>
+                  I am grateful for the opportunity to serve the Buddhist monk community at Bodhgaya. My primary goal is to drive positive change in society and improve the lives of underprivileged communities near the Mahabodhi Temple. I am committed to making a meaningful impact through my work.
+                </p>
+                <div className="pt-4 flex space-x-4">
+                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                    <i className='bx bxl-linkedin text-2xl'></i>
                   </a>
                   <a href="#" className="text-orange-500 hover:text-orange-600">
                     <i className='bx bx-envelope text-2xl'></i>
