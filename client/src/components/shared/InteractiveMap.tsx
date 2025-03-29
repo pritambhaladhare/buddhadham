@@ -205,7 +205,7 @@ const InteractiveMap = ({ className = '' }: InteractiveMapProps) => {
   }, []);
 
   return (
-    <FadeInSection className={`sacred-map-container ${className}`}>
+    <FadeInSection className={`pilgrimage-guide-container ${className}`}>
       <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-[#D2691E]/20 transform transition-transform hover:scale-[1.02] duration-500">
         <div className="p-6 bg-gradient-to-r from-[#8B4513] via-[#D2691E] to-[#E6BF83] text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 opacity-10">

@@ -32,10 +32,10 @@ const OurWorkSection = () => {
               Explore More Sacred Work
             </button>
           </Link>
-          <Link href="/sacred-map">
+          <Link href="/pilgrimage-guide">
             <button className="px-8 py-3 bg-[#D2691E] hover:bg-[#A0522D] text-white font-bold rounded-lg transition duration-300 shadow-md flex items-center justify-center gap-2">
               <i className='bx bx-map-alt text-xl'></i>
-              View Sacred Sites Map
+              View Pilgrimage Guide
             </button>
           </Link>
         </div>

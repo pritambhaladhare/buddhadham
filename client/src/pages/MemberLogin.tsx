@@ -138,9 +138,9 @@ export default function MemberLogin() {
             </Form>
             
             <div className="mt-4 text-sm text-center">
-              <Link href="/forgot-password" className="text-orange-600 hover:text-orange-800">
+              <span className="text-orange-600 cursor-not-allowed opacity-75" title="Coming soon">
                 {t('memberPortal.login.forgotPassword')}
-              </Link>
+              </span>
             </div>
           </CardContent>
           <CardFooter className="flex justify-center border-t p-4">

@@ -31,7 +31,7 @@ export const COLORS = {
 export const NAV_LINKS = [
   { title: "About", path: "/about" },
   { title: "Our Work", path: "/our-work" },
-  { title: "Pilgrimage Guide", path: "/sacred-map" },
+  { title: "Pilgrimage Guide", path: "/pilgrimage-guide" },
   { title: "Get Involved", path: "/get-involved" },
   { title: "Contact", path: "/contact" }
 ];

@@ -37,6 +37,7 @@ function Router() {
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
           <Route path="/sacred-map" component={SacredMap} />
+          <Route path="/pilgrimage-guide" component={SacredMap} />
           
           {/* Member Portal Routes */}
           <Route path="/member-login" component={MemberLogin} />
