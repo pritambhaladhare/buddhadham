@@ -17,11 +17,11 @@ interface SacredLocation {
   imageUrl?: string;
 }
 
-// Define image URLs
-const lumbiniImg = "https://static.buddhadhaam.org/Lumbini1.jpg";
-const sarnathImg = "https://static.buddhadhaam.org/Saranath.jpg";
-const bodhgayaImg = "https://static.buddhadhaam.org/tong-kbp-wcpnpwvdWzI-unsplash.jpg";
-const kushinagarImg = "https://static.buddhadhaam.org/Kushinagar.jpg";
+// Import images
+import lumbiniImg from '@assets/Lumbini1.jpg';
+import sarnathImg from '@assets/Saranath.jpg';
+import bodhgayaImg from '@assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg';
+import kushinagarImg from '@assets/Kushinagar.jpg';
 
 // Define the sacred sites
 const SACRED_LOCATIONS: SacredLocation[] = [

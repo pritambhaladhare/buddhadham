@@ -8,6 +8,12 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+// Import images
+import lumbiniImg from '@assets/Lumbini1.jpg';
+import sarnathImg from '@assets/Saranath.jpg';
+import kushinagarImg from '@assets/Kushinagar.jpg';
+import bodhgayaImg from '@assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg';
+
 // Pilgrimage sites data
 const PILGRIMAGE_SITES = [
   {
@@ -228,15 +234,35 @@ const SacredMap = () => {
                         <div className="p-6">
                           <div className="flex flex-col lg:flex-row gap-8 mb-8">
                             <div className="lg:w-1/2">
-                              <img 
-                                src={site.imageSrc} 
-                                alt={site.name} 
-                                className="rounded-lg w-full h-64 object-cover"
-                                onError={(e) => {
-                                  const target = e.target as HTMLImageElement;
-                                  target.src = "https://static.buddhadhaam.org/tong-kbp-wcpnpwvdWzI-unsplash.jpg"; // Fallback to Bodhgaya image if needed
-                                }}
-                              />
+                              {/* Image based on site id */}
+                              {site.id === 'lumbini' && (
+                                <img 
+                                  src={lumbiniImg} 
+                                  alt={site.name} 
+                                  className="rounded-lg w-full h-64 object-cover"
+                                />
+                              )}
+                              {site.id === 'bodhgaya' && (
+                                <img 
+                                  src={bodhgayaImg} 
+                                  alt={site.name} 
+                                  className="rounded-lg w-full h-64 object-cover"
+                                />
+                              )}
+                              {site.id === 'sarnath' && (
+                                <img 
+                                  src={sarnathImg} 
+                                  alt={site.name} 
+                                  className="rounded-lg w-full h-64 object-cover"
+                                />
+                              )}
+                              {site.id === 'kushinagar' && (
+                                <img 
+                                  src={kushinagarImg} 
+                                  alt={site.name} 
+                                  className="rounded-lg w-full h-64 object-cover"
+                                />
+                              )}
                             </div>
                             
                             <div className="lg:w-1/2">
