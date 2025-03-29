@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import mahabodhiTemple from '@assets/IMG-20250327-WA0018.jpg';
 import namitaFounder from '@assets/IMG-20250318-WA0047.jpg';
-import kumarHead from '@assets/IMG-20250318-WA0044.jpg';
+import kumarHead from '@assets/IMG-20250318-WA0017.jpg';
 
 const About = () => {
   return (

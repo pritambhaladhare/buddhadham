@@ -29,7 +29,7 @@ const PILGRIMAGE_SITES = [
       'Bring modest clothing suitable for temple visits',
       'Many monasteries built by different Buddhist nations can be toured in a single day'
     ],
-    imageSrc: "https://static.buddhadhaam.org/Lumbini1.jpg",
+    imageSrc: lumbiniImg,
     focusAreas: ['Environmental Preservation', 'Monastic Support'],
     spiritualPractices: 'Meditation in the sacred garden, circumambulation of the Maya Devi Temple, paying respects at the birthplace marker stone.'
   },
@@ -46,7 +46,7 @@ const PILGRIMAGE_SITES = [
       'Visit the Giant Buddha statue and surrounding gardens',
       'Explore the international monasteries built in various national architectural styles'
     ],
-    imageSrc: "https://static.buddhadhaam.org/tong-kbp-wcpnpwvdWzI-unsplash.jpg",
+    imageSrc: bodhgayaImg,
     focusAreas: ['Heritage Preservation', 'Spiritual Practices'],
     spiritualPractices: 'Meditation under the Bodhi Tree, circumambulation of the Mahabodhi Temple, offering prayers at the Diamond Throne (Vajrasana).'
   },
@@ -63,7 +63,7 @@ const PILGRIMAGE_SITES = [
       'Arrange a local guide to understand the historical significance of the ruins',
       'Varanasi is only 10km away - many pilgrims combine these two sacred destinations'
     ],
-    imageSrc: "https://static.buddhadhaam.org/Saranath.jpg",
+    imageSrc: sarnathImg,
     focusAreas: ['Community Support', 'Food & Medical Aid'],
     spiritualPractices: 'Circumambulation of the Dhamek Stupa, meditation in the Deer Park, contemplation on the Four Noble Truths.'
   },
@@ -80,7 +80,7 @@ const PILGRIMAGE_SITES = [
       'Explore the meditation parks surrounding the main temple',
       'Visit the Mathakuar shrine where Buddha delivered his final sermon'
     ],
-    imageSrc: "https://static.buddhadhaam.org/Kushinagar.jpg",
+    imageSrc: kushinagarImg,
     focusAreas: ['Monk Welfare', 'Sacred Ceremonies'],
     spiritualPractices: 'Silent meditation before the reclining Buddha statue, circumambulation of the Mahaparinirvana Temple, prayer at the cremation stupa.'
   }
