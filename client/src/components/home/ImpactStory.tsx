@@ -9,6 +9,7 @@ import {
   StaggerItem,
   FloatingElement
 } from '@/components/animation/AnimatedSection';
+import buddhaShrine from '@assets/IMG-20250327-WA0022.jpg';
 
 const ImpactStory = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -65,7 +66,7 @@ const ImpactStory = () => {
           >
             <div className="relative">
               <img 
-                src="/src/assets/images/buddha-shrine.jpg" 
+                src={buddhaShrine} 
                 alt="Buddha statue in shrine" 
                 className="rounded-lg shadow-xl z-10 relative" 
               />

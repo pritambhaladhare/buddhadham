@@ -1,5 +1,8 @@
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
+import mahabodhiTemple from '@assets/IMG-20250327-WA0018.jpg';
+import namitaFounder from '@assets/IMG-20250318-WA0047.jpg';
+import kumarHead from '@assets/IMG-20250318-WA0044.jpg';
 
 const About = () => {
   return (
@@ -51,7 +54,7 @@ const About = () => {
             {/* Image */}
             <div className="lg:w-1/2 relative mt-10 lg:mt-0">
               <img 
-                src="/src/assets/images/mahabodhi-temple.jpg" 
+                src={mahabodhiTemple} 
                 alt="Mahabodhi Temple - Buddha's Sacred Enlightenment Site" 
                 className="rounded-2xl shadow-xl w-full object-cover z-10 relative"
                 style={{ height: "560px" }}
@@ -84,7 +87,7 @@ const About = () => {
             <div className="md:w-1/3">
               <div className="relative">
                 <img 
-                  src="/src/assets/images/namita-founder.png" 
+                  src={namitaFounder} 
                   alt="Namita Bhaladhare – Founder, Buddha Dhaam" 
                   className="rounded-lg shadow-lg mx-auto"
                 />
@@ -121,7 +124,7 @@ const About = () => {
             <div className="md:w-1/3">
               <div className="relative">
                 <img 
-                  src="/src/assets/images/kumar-operations-head.png" 
+                  src={kumarHead} 
                   alt="Kumar Saurav Murti – Operations Head, Buddha Dhaam" 
                   className="rounded-lg shadow-lg mx-auto"
                 />

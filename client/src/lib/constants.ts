@@ -1,3 +1,15 @@
+// Import images for consistent usage across the site
+import foodDistImg from '@assets/IMG-20250318-WA0024.jpg';
+import waterDistImg from '@assets/IMG-20250318-WA0017.jpg';
+import buddhaCarving from '@assets/IMG-20250318-WA0022.jpg';
+import monksTripitaka from '@assets/IMG-20250318-WA0049.jpg';
+import buddhaGarden from '@assets/IMG-20250318-WA0026.jpg';
+import monkGathering from '@assets/IMG-20250318-WA0050.jpg';
+import buddhaStatue from '@assets/IMG-20250318-WA0052.jpg';
+import monkDonation from '@assets/IMG-20250327-WA0017.jpg';
+import mahabodhiTemple from '@assets/IMG-20250327-WA0018.jpg';
+import buddhaShrine from '@assets/IMG-20250327-WA0022.jpg';
+
 // Color palette
 export const COLORS = {
   saffron: {
@@ -67,7 +79,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Food & Medical Aid",
     description: "Providing meals, medicines, and healthcare support to Buddhist monks at sacred pilgrimage sites.",
-    image: "/src/assets/images/food-distribution.jpg",
+    image: foodDistImg,
     highlights: [
       "Provides nutritious meals to over 1422+ monks till now",
       "Healthcare support including medical camps and emergency services",
@@ -77,7 +89,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Water & Refreshments",
     description: "Distributing water bottles and fresh juice to monks and pilgrims at Mahabodhi Temple and other sacred sites.",
-    image: "/src/assets/images/water-distribution.jpg",
+    image: waterDistImg,
     highlights: [
       "Distributes over 2598+ water bottles daily to pilgrims and monks", 
       "Cooling refreshments during hot summer months at pilgrimage sites",
@@ -87,7 +99,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Ancient Stupa Preservation",
     description: "Preserving and revitalizing historic stupas and monasteries to maintain Buddhist heritage for future generations.",
-    image: "/src/assets/images/buddha-carving.jpg",
+    image: buddhaCarving,
     highlights: [
       "Careful restoration of ancient structures using traditional techniques",
       "Documentation and preservation of ancient art and carvings related to teaching of lord buddha",
@@ -97,7 +109,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Regular Tripitaka Chanting",
     description: "Organizing monks in large-scale recitations of sacred Buddhist texts to preserve spiritual traditions.",
-    image: "/src/assets/images/monks-tripitaka.jpg",
+    image: monksTripitaka,
     highlights: [
       "Gatherings of hundreds of monks for traditional chanting ceremonies",
       "Preservation of lord buddha's teachings through oral tradition",
@@ -107,7 +119,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Sacred Tree & Site Beautification",
     description: "Planting and caring for Bodhi trees while enhancing the beauty of monasteries and Buddhist pilgrimage sites.",
-    image: "/src/assets/images/buddha-garden.jpg",
+    image: buddhaGarden,
     highlights: [
       "Planting and maintaining Bodhi trees at sacred sites",
       "Educational programs about the significance of sacred trees in teaching of lord buddha",
@@ -117,7 +129,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Pilgrim & Monastic Welfare",
     description: "Supporting both resident and traveling monks with accommodation, robes, and other essential needs.",
-    image: "/src/assets/images/monk-gathering.jpg",
+    image: monkGathering,
     highlights: [
       "Providing robes, accommodations, and essentials to traveling monks",
       "Support for educational needs and study materials",
@@ -127,7 +139,7 @@ export const WORK_CATEGORIES = [
   {
     title: "Meditation App",
     description: "Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. 🙏",
-    image: "/src/assets/images/buddha-statue.jpg",
+    image: buddhaStatue,
     highlights: [
       "Offering ancient wisdom through modern digital channels",
       "Guided meditations led by experienced monks dedicated to the teaching of lord buddha",
@@ -182,19 +194,19 @@ export const LATEST_NEWS = [
     date: "MAY, 2024",
     title: "Medical Camp Serves 100+ Monks in Bodhgaya",
     description: "Our recent medical camp provided essential healthcare services to monks from across the region...",
-    image: "/src/assets/images/monk-donation.jpg"
+    image: monkDonation
   },
   {
     date: "Every fortnight",
     title: "Every purnima and amavasya serving monks in bodhgaya temple",
     description: "Our ongoing commitment to serve monks on sacred days of purnima and amavasya at the Bodhgaya temple...",
-    image: "/src/assets/images/mahabodhi-temple.jpg"
+    image: mahabodhiTemple
   },
   {
     date: "MAY 23, 2024",
     title: "Water and Fruit juice served to 690+ monk in buddha purnima",
     description: "Buddha Dhaam volunteers distributed water and fresh fruit juice to hundreds of monks during Buddha Purnima celebrations...",
-    image: "/src/assets/images/buddha-carving.jpg"
+    image: buddhaCarving
   }
 ];
 
@@ -204,13 +216,13 @@ export const TESTIMONIALS = [
     quote: "The work of Buddha Dhaam has transformed our monastery. With their support, we now have proper facilities for our monks to study and meditate. Their dedication to preserving our traditions is truly inspiring.",
     name: "Venerable Dhammapala",
     title: "Head Monk, Bodhi Monastery",
-    image: "/src/assets/images/buddha-shrine.jpg"
+    image: buddhaShrine
   },
   {
     quote: "As a long-time supporter of Buddha Dhaam, I've witnessed firsthand the impact of their work. The preservation of ancient sites and the support they provide to monks ensures that Buddhist wisdom continues to flourish in its birthplace.",
     name: "Dr. Maya Sharma",
     title: "Monthly Supporter & Professor of Buddhist Studies",
-    image: "/src/assets/images/monk-gathering.jpg"
+    image: monkGathering
   }
 ];
 
