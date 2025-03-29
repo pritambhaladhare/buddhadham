@@ -206,28 +206,81 @@ const InteractiveMap = ({ className = '' }: InteractiveMapProps) => {
 
   return (
     <FadeInSection className={`sacred-map-container ${className}`}>
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="p-4 bg-gradient-to-r from-[#FF8C00]/90 to-[#FFA500]/80 text-white">
-          <h2 className="text-2xl font-heading font-bold">Sacred Sites & Our Work</h2>
-          <p className="opacity-90">Explore the sacred locations where Buddha Dhaam is actively working</p>
+      <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-[#D2691E]/20 transform transition-transform hover:scale-[1.02] duration-500">
+        <div className="p-6 bg-gradient-to-r from-[#8B4513] via-[#D2691E] to-[#E6BF83] text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5C50.5 20 65 35 80 35C65 35.5 50 50 50 65C49.5 50 35 35 20 35C35 34.5 49.5 20 50 5Z" fill="white"/>
+            </svg>
+          </div>
+          <h2 className="text-3xl font-heading font-bold mb-2 flex items-center">
+            <span className="mr-3">Sacred Pilgrimage Path</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5 9C19.9853 9 22 6.98528 22 4.5C22 2.01472 19.9853 0 17.5 0C15.0147 0 13 2.01472 13 4.5C13 6.98528 15.0147 9 17.5 9Z" fill="white" fillOpacity="0.7"/>
+              <path d="M6.5 16C8.98528 16 11 13.9853 11 11.5C11 9.01472 8.98528 7 6.5 7C4.01472 7 2 9.01472 2 11.5C2 13.9853 4.01472 16 6.5 16Z" fill="white" fillOpacity="0.7"/>
+              <path d="M13.8 21.4C15.5673 21.4 17 19.9673 17 18.2C17 16.4327 15.5673 15 13.8 15C12.0327 15 10.6 16.4327 10.6 18.2C10.6 19.9673 12.0327 21.4 13.8 21.4Z" fill="white" fillOpacity="0.7"/>
+              <path d="M13 5L7 10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2"/>
+              <path d="M12 15L10 13" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2"/>
+            </svg>
+          </h2>
+          <p className="text-white/90 text-lg">Follow the footsteps of Lord Buddha's life journey</p>
         </div>
+        
+        <div className="p-3 bg-gradient-to-r from-[#FFF8EA] to-white border-y border-[#D2691E]/10">
+          <div className="flex flex-wrap gap-2 justify-center">
+            {SACRED_LOCATIONS.map(location => (
+              <div 
+                key={location.id}
+                className="px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1.5 hover:bg-[#D2691E]/10 cursor-pointer transition-colors"
+                style={{ color: location.color, borderColor: `${location.color}30` }}
+                onClick={() => {
+                  if (mapRef.current) {
+                    mapRef.current.setView(location.coordinates, 10);
+                    setTimeout(() => {
+                      mapRef.current?.invalidateSize();
+                    }, 100);
+                  }
+                }}
+              >
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: location.color }}></div>
+                {location.name}
+              </div>
+            ))}
+          </div>
+        </div>
+        
         <div 
           ref={mapContainerRef} 
           className="h-[350px] w-full relative"
           style={{ position: 'relative' }}
         />
+        
         <div className="p-4 bg-[#FFF8EA] border-t border-[#D2691E]/20">
-          <p className="text-sm text-[#8B4513]">
-            <span className="font-medium">Note:</span> Click on markers to learn about our initiatives in each sacred location. These four sites represent the main places in Lord Buddha's life journey.
-          </p>
+          <div className="flex items-start gap-2">
+            <div className="text-[#D2691E] mt-1">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2"/>
+                <path d="M12 8V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <circle cx="12" cy="16" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <div>
+              <p className="text-sm text-[#8B4513] leading-relaxed">
+                <span className="font-medium">Interactive Guide:</span> Click on markers to learn about each sacred location. The four main sites in Buddha's life are connected by a dotted path. Click site names above to focus the map.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       
       {!mapLoaded && (
-        <div className="flex items-center justify-center p-6 bg-white/80 absolute top-0 left-0 w-full h-full">
+        <div className="flex items-center justify-center p-6 bg-white/90 absolute top-0 left-0 w-full h-full backdrop-blur-sm">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D2691E] mx-auto mb-3"></div>
-            <p className="text-[#8B4513]">Loading sacred map...</p>
+            <div className="relative h-16 w-16 mx-auto mb-3">
+              <div className="absolute inset-0 rounded-full border-4 border-[#D2691E]/30 border-t-[#D2691E] animate-spin"></div>
+              <div className="absolute inset-3 rounded-full border-2 border-[#E6BF83]/30 border-t-[#E6BF83] animate-spin"></div>
+            </div>
+            <p className="text-[#8B4513] font-medium">Visualizing the sacred journey...</p>
           </div>
         </div>
       )}

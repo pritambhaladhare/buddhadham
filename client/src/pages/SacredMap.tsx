@@ -8,6 +8,11 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+// Import new images
+import lumbiniImg from '@assets/Lumbini1.jpg';
+import sarnathImg from '@assets/Saranath.jpg';
+import kushinagarImg from '@assets/Kushinagar.jpg';
+
 // Pilgrimage sites data
 const PILGRIMAGE_SITES = [
   {
@@ -23,7 +28,7 @@ const PILGRIMAGE_SITES = [
       'Bring modest clothing suitable for temple visits',
       'Many monasteries built by different Buddhist nations can be toured in a single day'
     ],
-    imageSrc: '/src/assets/images/lumbini.jpg',
+    imageSrc: lumbiniImg,
     focusAreas: ['Environmental Preservation', 'Monastic Support'],
     spiritualPractices: 'Meditation in the sacred garden, circumambulation of the Maya Devi Temple, paying respects at the birthplace marker stone.'
   },
@@ -57,7 +62,7 @@ const PILGRIMAGE_SITES = [
       'Arrange a local guide to understand the historical significance of the ruins',
       'Varanasi is only 10km away - many pilgrims combine these two sacred destinations'
     ],
-    imageSrc: '/src/assets/images/sarnath.jpg',
+    imageSrc: sarnathImg,
     focusAreas: ['Community Support', 'Food & Medical Aid'],
     spiritualPractices: 'Circumambulation of the Dhamek Stupa, meditation in the Deer Park, contemplation on the Four Noble Truths.'
   },
@@ -74,7 +79,7 @@ const PILGRIMAGE_SITES = [
       'Explore the meditation parks surrounding the main temple',
       'Visit the Mathakuar shrine where Buddha delivered his final sermon'
     ],
-    imageSrc: '/src/assets/images/kushinagar.jpg',
+    imageSrc: kushinagarImg,
     focusAreas: ['Monk Welfare', 'Sacred Ceremonies'],
     spiritualPractices: 'Silent meditation before the reclining Buddha statue, circumambulation of the Mahaparinirvana Temple, prayer at the cremation stupa.'
   }
@@ -112,8 +117,8 @@ const SacredMap = () => {
   return (
     <div className="min-h-screen bg-[#FFF8EA]">
       <Helmet>
-        <title>Sacred Pilgrimage Guide - Buddha Dhaam</title>
-        <meta name="description" content="A pilgrimage guide to Buddha's sacred sites: Lumbini, Bodhgaya, Sarnath, and Kushinagar. Plan your spiritual journey with travel tips, accommodation advice, and spiritual practices." />
+        <title>Footsteps of Buddha: Sacred Pilgrimage Map - Buddha Dhaam</title>
+        <meta name="description" content="Follow Buddha's sacred journey through Lumbini, Bodhgaya, Sarnath, and Kushinagar. An interactive pilgrimage guide with travel tips, accommodation advice, and spiritual practices." />
       </Helmet>
 
       {/* Hero Section */}
@@ -122,7 +127,7 @@ const SacredMap = () => {
           <div className="max-w-4xl mx-auto text-center">
             <FadeInSection>
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-[#3A2718] mb-6">
-                Sacred Pilgrimage Guide
+                Footsteps of Buddha: Sacred Journey
               </h1>
               <p className="text-xl text-[#5C4033] mb-8 max-w-2xl mx-auto">
                 Journey to the four most sacred sites in Buddhism where Lord Buddha's life unfolded. A complete travel guide for spiritual seekers.
