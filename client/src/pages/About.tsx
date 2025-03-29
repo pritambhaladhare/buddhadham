@@ -31,37 +31,12 @@ const About = () => {
                 </p>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Beyond humanitarian aid, we focus on restoring ancient monasteries and stupas, planting sacred trees, and organizing Tripitaka chanting ceremonies to protect the heritage of teaching of lord buddha. Our initiatives also include environmental sustainability, pilgrim support, and global spiritual engagement.
+                  We focus on restoring ancient monasteries and stupas, planting sacred trees, and organizing Tripitaka chanting ceremonies to protect the heritage of teaching of lord buddha. Our initiatives also include environmental sustainability, pilgrim support, and global spiritual engagement.
                 </p>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
                   By donating, volunteering, or partnering with us, you become a part of a compassionate movement dedicated to ensuring the Buddha's wisdom flourishes for generations to come. Join us in serving monks, preserving Dharma, and making a lasting impact.
                 </p>
-                
-                <div className="pt-2">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-2">
-                      <div className="text-orange-500 mt-1.5"><i className='bx bxs-leaf'></i></div>
-                      <div>
-                        <strong className="font-medium">Monks</strong>: By supporting 2500+ monks with food, shelter, healthcare, and education.
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-2">
-                      <div className="text-orange-500 mt-1.5"><i className='bx bxs-temple'></i></div>
-                      <div>
-                        <strong className="font-medium">Sacred Sites</strong>: Through preserving and restoring 6 ancient monasteries and sacred sites.
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-2">
-                      <div className="text-orange-500 mt-1.5"><i className='bx bxs-tree'></i></div>
-                      <div>
-                        <strong className="font-medium">Environment</strong>: With 108 plantation projects to protect the sacred landscapes.
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 
                 <div className="pt-6">
                   <Link href="/get-involved">
@@ -126,7 +101,7 @@ const About = () => {
                   With a humble commitment to this path, I strive to ensure that monks receive the care they need, sacred sites are protected, and Buddhist traditions continue to thrive. This work is only possible with the kindness and support of many, and I am honored to walk this journey alongside all those who share in this mission.
                 </p>
                 <div className="pt-4 flex space-x-4">
-                  <a href="#" className="text-orange-500 hover:text-orange-600">
+                  <a href="https://www.linkedin.com/in/namitabhaladhare/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600">
                     <i className='bx bxl-linkedin text-2xl'></i>
                   </a>
                   <a href="#" className="text-orange-500 hover:text-orange-600">

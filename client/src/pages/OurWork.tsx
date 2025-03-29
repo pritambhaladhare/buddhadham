@@ -48,7 +48,7 @@ const OurWork = () => {
                 </p>
                 
                 <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Beyond humanitarian aid, we focus on restoring ancient monasteries and 
+                  We focus on restoring ancient monasteries and 
                   stupas, planting sacred trees, and organizing Tripitaka chanting 
                   ceremonies to protect heritage of teaching of lord buddha. Our initiatives also include 
                   environmental sustainability, pilgrim support, and global engagement with 
