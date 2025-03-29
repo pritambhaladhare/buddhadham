@@ -172,8 +172,22 @@ const Header = () => {
               <i className='bx bx-menu text-2xl'></i>
             </motion.button>
             
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-3">
               <LanguageSwitcher />
+              
+              <Link href="/member-login">
+                <div>
+                  <AnimatedButton
+                    variant="outline"
+                    size="sm"
+                    className="border-orange-300 text-orange-700 hover:bg-orange-50"
+                  >
+                    <span className="flex items-center">
+                      <i className='bx bxs-user-circle text-lg mr-1'></i> {t('common.buttons.memberPortal')}
+                    </span>
+                  </AnimatedButton>
+                </div>
+              </Link>
               
               <Link href="/support">
                 <div>

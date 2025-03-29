@@ -146,7 +146,11 @@ export const donationSchema = createInsertSchema(donations).pick({
   city: true,
   country: true,
   message: true
-});
+}).transform((data) => ({
+  ...data,
+  // Convert amount to string if it's a number
+  amount: typeof data.amount === 'number' ? String(data.amount) : data.amount
+}));
 
 export type InsertDonation = z.infer<typeof donationSchema>;
 export type Donation = typeof donations.$inferSelect;
@@ -177,7 +181,11 @@ export const memberDonationSchema = createInsertSchema(memberDonations).pick({
   nextPaymentDate: true,
   transactionId: true,
   notes: true
-});
+}).transform((data) => ({
+  ...data,
+  // Convert amount to string if it's a number
+  amount: typeof data.amount === 'number' ? String(data.amount) : data.amount
+}));
 
 export type InsertMemberDonation = z.infer<typeof memberDonationSchema>;
 export type MemberDonation = typeof memberDonations.$inferSelect;
@@ -207,7 +215,11 @@ export const memberPaymentSchema = createInsertSchema(memberPayments).pick({
   paymentMethod: true,
   receiptUrl: true,
   notes: true
-});
+}).transform((data) => ({
+  ...data,
+  // Convert amount to string if it's a number
+  amount: typeof data.amount === 'number' ? String(data.amount) : data.amount
+}));
 
 export type InsertMemberPayment = z.infer<typeof memberPaymentSchema>;
 export type MemberPayment = typeof memberPayments.$inferSelect;

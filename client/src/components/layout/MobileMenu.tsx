@@ -167,6 +167,20 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 ))}
                 
                 <StaggerItem className="mt-6">
+                  <Link href="/member-login">
+                    <AnimatedButton
+                      variant="outline"
+                      size="md"
+                      className="w-full flex justify-center items-center space-x-2 border-orange-300 text-orange-700 mb-3"
+                      onClick={onClose}
+                    >
+                      <i className='bx bxs-user-circle'></i>
+                      <span>{t('common.buttons.memberPortal')}</span>
+                    </AnimatedButton>
+                  </Link>
+                </StaggerItem>
+                
+                <StaggerItem>
                   <Link href="/support">
                     <AnimatedButton
                       variant="primary"
