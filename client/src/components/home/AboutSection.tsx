@@ -1,5 +1,4 @@
 import { Link } from 'wouter';
-import monkMeditationImg from '@assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg';
 
 const AboutSection = () => {
   return (
@@ -29,7 +28,7 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2 relative">
             <img 
-              src={monkMeditationImg} 
+              src="https://images.unsplash.com/photo-1602939110364-e14a645fecf5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
               alt="Monks in meditation" 
               className="rounded-lg shadow-xl" 
             />
