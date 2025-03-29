@@ -72,7 +72,7 @@ const EventsNewsSection = () => {
                   <span className="text-xs text-[#9D2933] font-bold">{item.date}</span>
                   <h4 className="font-heading font-bold text-lg mb-2">{item.title}</h4>
                   <p className="mb-3 text-sm">{item.description}</p>
-                  <Link href="/news" className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
+                  <Link href="/our-work" className="text-[#E67E22] font-medium hover:text-[#C26B1D] flex items-center text-sm">
                     Read more <i className='bx bx-right-arrow-alt ml-1'></i>
                   </Link>
                 </div>
@@ -80,7 +80,7 @@ const EventsNewsSection = () => {
             ))}
             
             <div className="mt-6 text-center">
-              <Link href="/news">
+              <Link href="/our-work">
                 <span className="inline-block px-6 py-3 border-2 border-[#9D2933] text-[#9D2933] rounded-md font-bold hover:bg-[#9D2933] hover:text-white transition">
                   View All News
                 </span>

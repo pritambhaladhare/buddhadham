@@ -31,7 +31,7 @@ export const COLORS = {
 export const NAV_LINKS = [
   { title: "About", path: "/about" },
   { title: "Our Work", path: "/our-work" },
-  { title: "Sacred Map", path: "/sacred-map" },
+  { title: "Pilgrimage Guide", path: "/sacred-map" },
   { title: "Get Involved", path: "/get-involved" },
   { title: "Contact", path: "/contact" }
 ];
@@ -162,7 +162,7 @@ export const UPCOMING_EVENTS = [
 export const LATEST_NEWS = [
   {
     date: "MAY, 2024",
-    title: "Medical Camp Serves 100 Monks in Bodhgaya",
+    title: "Medical Camp Serves 100+ Monks in Bodhgaya",
     description: "Our recent medical camp provided essential healthcare services to monks from across the region...",
     image: "/src/assets/images/monk-donation.jpg"
   },
@@ -173,9 +173,9 @@ export const LATEST_NEWS = [
     image: "/src/assets/images/mahabodhi-temple.jpg"
   },
   {
-    date: "MAY 28, 2023",
-    title: "New Scholarship Program Launched for Young Monks",
-    description: "Buddha Dhaam has established a scholarship fund to support the education of novice monks...",
+    date: "MAY 23, 2024",
+    title: "Water and Fruit juice served to 690+ monk in buddha purnima",
+    description: "Buddha Dhaam volunteers distributed water and fresh fruit juice to hundreds of monks during Buddha Purnima celebrations...",
     image: "/src/assets/images/buddha-carving.jpg"
   }
 ];

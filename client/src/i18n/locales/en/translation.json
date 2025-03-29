@@ -3,12 +3,12 @@
     "siteTitle": "Buddha Dhaam",
     "siteName": "Buddha Dhaam",
     "tagline": "Serving monks and preserving dhamma",
-    "siteDescription": "Embrace the path of peace and enlightenment through the teachings of Lord Buddha and support those who walk in his footsteps.",
+    "siteDescription": "Download our app to track your daily Vipassana meditation practice and deepen your journey along the path to enlightenment.",
     "navigation": {
       "home": "Home",
       "about": "About",
       "ourWork": "Our Work",
-      "sacredMap": "Sacred Map",
+      "sacredMap": "Pilgrimage Guide",
       "getInvolved": "Get Involved",
       "contact": "Contact",
       "support": "Support",
@@ -39,7 +39,7 @@
   "home": {
     "hero": {
       "title": "Serving monks and preserving dhamma",
-      "description": "Embrace the path of peace and enlightenment through the teachings of Lord Buddha and support those who walk in his footsteps.",
+      "description": "Download our app to track your daily Vipassana meditation practice and deepen your journey along the path to enlightenment.",
       "buttonGetInvolved": "Get Involved",
       "buttonTryMeditation": "Try Free Meditation",
       "downloadOn": "Download on the",
@@ -148,7 +148,7 @@
     }
   },
   "sacredMap": {
-    "title": "Sacred Map",
+    "title": "Pilgrimage Guide",
     "description": "Explore sacred Buddhist sites across India and Nepal where our work takes place.",
     "searchPlaceholder": "Search for a sacred site",
     "sites": {
