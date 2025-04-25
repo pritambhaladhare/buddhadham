@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { NAV_LINKS } from '@/lib/constants';
 import MobileMenu from './MobileMenu';
 import DropdownMenu from './DropdownMenu';
-import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import SimplifiedMantraText from '@/components/animation/SimplifiedMantraText';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
+import logoImage from '@assets/buddha_dhaam_logo.png';
 
 const Header = () => {
   const [location] = useLocation();
@@ -107,10 +107,14 @@ const Header = () => {
                 whileHover="hover"
               >
                 <motion.div 
-                  className="w-12 h-12 flex items-center justify-center"
+                  className="w-16 h-16 flex items-center justify-center"
                   variants={logoVariants}
                 >
-                  <PeepalLeaf color="#f97316" size={36} />
+                  <img 
+                    src={logoImage} 
+                    alt="Buddha Dhaam Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </motion.div>
                 <div>
                   <motion.h1 
