@@ -1,24 +1,59 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface MeditativeSoundToggleProps {
   className?: string;
 }
 
-/**
- * A simple component that displays a meditation sound toggle button
- * This is a visual-only component with no actual audio functionality for now
- */
 const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  
+  useEffect(() => {
+    // Create audio element
+    audioRef.current = new Audio('/meditation-sounds.mp3');
+    
+    if (audioRef.current) {
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.5;
+    }
+    
+    // Cleanup function
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
   
   const toggleSound = () => {
-    // Just toggle the UI state for now
-    setIsPlaying(!isPlaying);
-    
-    // Log action
-    console.log(`Meditation sound ${!isPlaying ? 'started' : 'stopped'}`);
+    try {
+      if (!audioRef.current) {
+        console.log("Audio element not available");
+        setIsPlaying(!isPlaying);
+        return;
+      }
+      
+      if (isPlaying) {
+        audioRef.current.pause();
+        console.log("Meditation sound stopped");
+      } else {
+        audioRef.current.play()
+          .then(() => {
+            console.log("Meditation sound started");
+          })
+          .catch(err => {
+            console.error("Error playing audio:", err);
+          });
+      }
+      
+      setIsPlaying(!isPlaying);
+    } catch (error) {
+      console.error("Error toggling sound:", error);
+      setIsPlaying(!isPlaying);
+    }
   };
   
   return (
