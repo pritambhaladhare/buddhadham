@@ -8,7 +8,7 @@ import TestimonialsSection from '@/components/home/TestimonialsSection';
 import NewsletterSection from '@/components/home/NewsletterSection';
 import MeditationWidget from '@/components/home/MeditationWidget';
 import ParallaxEffect from '@/components/animation/ParallaxEffect';
-import MeditativeSoundToggle from '@/components/shared/MeditativeSoundToggle';
+
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
@@ -54,7 +54,6 @@ const Home = () => {
   
   return (
     <>
-      <MeditativeSoundToggle />
       
       {/* Ambient floating decorative elements for atmosphere */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-10">
