@@ -22,24 +22,33 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
   const soundRef = useRef<any>(null);
   
   useEffect(() => {
-    // Load sound generator script
-    const script = document.createElement('script');
-    script.src = '/meditation-sounds.js';
-    script.async = true;
-    script.onload = () => {
-      // Initialize sound generator once script is loaded
-      if (window.MeditationSound) {
-        soundRef.current = new window.MeditationSound();
-      }
-    };
-    document.body.appendChild(script);
+    // Check if script is already loaded
+    if (window.MeditationSound) {
+      soundRef.current = new window.MeditationSound();
+      return;
+    }
+    
+    // Only load the script if it's not already in the document
+    const existingScript = document.querySelector('script[src="/meditation-sounds.js"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = '/meditation-sounds.js';
+      script.async = true;
+      script.id = 'meditation-sounds-script';
+      script.onload = () => {
+        // Initialize sound generator once script is loaded
+        if (window.MeditationSound) {
+          soundRef.current = new window.MeditationSound();
+        }
+      };
+      document.body.appendChild(script);
+    }
     
     // Cleanup
     return () => {
       if (soundRef.current && soundRef.current.isPlaying) {
         soundRef.current.stop();
       }
-      document.body.removeChild(script);
     };
   }, []);
   

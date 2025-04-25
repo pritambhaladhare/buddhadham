@@ -8,7 +8,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import SimplifiedMantraText from '@/components/animation/SimplifiedMantraText';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
-import logoImage from '@/assets/images/buddha_dhaam_logo.png';
+
 
 const Header = () => {
   const [location] = useLocation();
@@ -111,7 +111,7 @@ const Header = () => {
                   variants={logoVariants}
                 >
                   <img 
-                    src={logoImage} 
+                    src="/buddha_dhaam_logo.png" 
                     alt="Buddha Dhaam Logo" 
                     className="w-full h-full object-contain"
                   />
