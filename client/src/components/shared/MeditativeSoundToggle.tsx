@@ -11,12 +11,21 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
   const audioRef = useRef<HTMLAudioElement | null>(null);
   
   useEffect(() => {
-    // Create audio element
-    audioRef.current = new Audio('/meditation-sounds.mp3');
+    // Use a freely available meditation sound
+    audioRef.current = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_017d7efc2e.mp3?filename=zen-meditation-114851.mp3');
     
     if (audioRef.current) {
       audioRef.current.loop = true;
-      audioRef.current.volume = 0.5;
+      audioRef.current.volume = 0.3; // Lower volume for peaceful effect
+      audioRef.current.preload = 'auto'; // Preload the audio
+      
+      // Add event listeners for better error handling
+      audioRef.current.addEventListener('error', (e) => {
+        console.error('Audio error:', e);
+      });
+      
+      // Start loading the audio
+      audioRef.current.load();
     }
     
     // Cleanup function
