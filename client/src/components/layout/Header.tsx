@@ -111,7 +111,7 @@ const Header = () => {
                   variants={logoVariants}
                 >
                   <img 
-                    src="/buddha_dhaam_logo.png"
+                    src="/logo.png"
                     alt="Buddha Dhaam Logo" 
                     className="w-full h-full object-contain"
                     width="64"

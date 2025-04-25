@@ -125,7 +125,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       className="w-10 h-10 flex items-center justify-center"
                     >
                       <img 
-                        src="/buddha_dhaam_logo.png"
+                        src="/logo.png"
                         alt="Buddha Dhaam Logo" 
                         className="w-full h-full object-contain"
                         width="40"
