@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface MeditativeSoundToggleProps {
@@ -8,34 +8,7 @@ interface MeditativeSoundToggleProps {
 const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  
-  useEffect(() => {
-    // Use a freely available meditation sound
-    audioRef.current = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_017d7efc2e.mp3?filename=zen-meditation-114851.mp3');
-    
-    if (audioRef.current) {
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.3; // Lower volume for peaceful effect
-      audioRef.current.preload = 'auto'; // Preload the audio
-      
-      // Add event listeners for better error handling
-      audioRef.current.addEventListener('error', (e) => {
-        console.error('Audio error:', e);
-      });
-      
-      // Start loading the audio
-      audioRef.current.load();
-    }
-    
-    // Cleanup function
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
+  const audioRef = useRef<HTMLAudioElement>(null);
   
   const toggleSound = () => {
     try {
@@ -49,13 +22,27 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
         audioRef.current.pause();
         console.log("Meditation sound stopped");
       } else {
-        audioRef.current.play()
-          .then(() => {
-            console.log("Meditation sound started");
-          })
-          .catch(err => {
-            console.error("Error playing audio:", err);
-          });
+        const playPromise = audioRef.current.play();
+        
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Meditation sound started");
+            })
+            .catch(err => {
+              console.error("Error playing audio:", err);
+              
+              // Try once more with user interaction
+              const userInteractionPlay = () => {
+                audioRef.current?.play()
+                  .then(() => console.log("Played after user interaction"))
+                  .catch(e => console.error("Still failed:", e));
+                document.removeEventListener('click', userInteractionPlay);
+              };
+              
+              document.addEventListener('click', userInteractionPlay, { once: true });
+            });
+        }
       }
       
       setIsPlaying(!isPlaying);
@@ -67,7 +54,7 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
   
   return (
     <motion.button
-      className={`fixed bottom-6 right-6 z-50 flex items-center justify-center ${expanded ? 'p-4' : 'p-3'} rounded-full bg-white/80 backdrop-blur-md shadow-lg transition-all duration-300 ${className} ${isPlaying ? 'breathing-border' : ''}`}
+      className={`fixed bottom-6 right-6 z-50 flex items-center justify-center ${expanded ? 'p-4' : 'p-3'} rounded-full ${isPlaying ? 'bg-orange-50/90' : 'bg-white/80'} backdrop-blur-md shadow-lg transition-all duration-300 ${className} ${isPlaying ? 'border-2 border-orange-300 breathing-border' : ''}`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={toggleSound}
@@ -120,6 +107,14 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
           {isPlaying ? 'Meditation Sound Playing' : 'Enable Meditation Sound'}
         </motion.span>
       )}
+      {/* Hidden audio element */}
+      <audio 
+        ref={audioRef} 
+        src="https://soundbible.com/mp3/tibetan-singing-bowl-daniel_simon.mp3" 
+        loop 
+        preload="auto"
+        style={{ display: 'none' }}
+      />
     </motion.button>
   );
 };
