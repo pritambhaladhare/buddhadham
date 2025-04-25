@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface MeditativeSoundToggleProps {
@@ -8,79 +8,26 @@ interface MeditativeSoundToggleProps {
 const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  
-  // Create audio element programmatically to avoid browser autoplay restrictions
-  useEffect(() => {
-    // Create the audio element
-    const audioElement = new Audio();
-    audioElement.src = '/meditation-sound.mp3'; // Use the Tibetan singing bowl sound
-    audioElement.loop = true;
-    audioElement.volume = 0.4;
-    audioElement.preload = 'auto';
-    
-    // Store reference
-    audioRef.current = audioElement;
-    
-    // Clean up
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = '';
-      }
-    };
-  }, []);
+  const audioRef = useRef<HTMLAudioElement>(null);
   
   const toggleSound = () => {
-    if (!audioRef.current) {
-      console.log("Audio element not available");
-      return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    
+    if (isPlaying) {
+      audio.pause();
+      console.log('Meditation sound stopped');
+    } else {
+      audio.play()
+        .then(() => {
+          console.log('Meditation sound started');
+        })
+        .catch(err => {
+          console.error('Error playing sound:', err);
+        });
     }
     
-    try {
-      if (isPlaying) {
-        audioRef.current.pause();
-        console.log("Meditation sound stopped");
-      } else {
-        // Play with user interaction (should work in all browsers)
-        try {
-          // First attempt - as direct play
-          const playPromise = audioRef.current.play();
-          
-          if (playPromise !== undefined) {
-            playPromise
-              .then(() => {
-                console.log("Meditation sound started");
-              })
-              .catch(err => {
-                console.error("First play attempt failed:", err);
-                
-                // Second attempt - load then play
-                audioRef.current?.load();
-                
-                setTimeout(() => {
-                  try {
-                    const secondAttempt = audioRef.current?.play();
-                    if (secondAttempt) {
-                      secondAttempt
-                        .then(() => console.log("Second attempt succeeded"))
-                        .catch(e => console.error("Second attempt failed:", e));
-                    }
-                  } catch (e) {
-                    console.error("Error in second attempt:", e);
-                  }
-                }, 100);
-              });
-          }
-        } catch (e) {
-          console.error("General play error:", e);
-        }
-      }
-      
-      setIsPlaying(!isPlaying);
-    } catch (error) {
-      console.error("Error toggling sound:", error);
-    }
+    setIsPlaying(!isPlaying);
   };
   
   return (
@@ -138,6 +85,7 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
           {isPlaying ? 'Meditation Sound Playing' : 'Enable Meditation Sound'}
         </motion.span>
       )}
+      <audio ref={audioRef} src="/meditation-sound.mp3" loop preload="auto" />
     </motion.button>
   );
 };
