@@ -128,6 +128,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         src="/buddha_dhaam_logo.png"
                         alt="Buddha Dhaam Logo" 
                         className="w-full h-full object-contain"
+                        width="40"
+                        height="40"
+                        style={{ maxWidth: '100%', maxHeight: '100%' }}
                       />
                     </motion.div>
                     <h3 className="font-heading text-xl font-bold text-orange-900">

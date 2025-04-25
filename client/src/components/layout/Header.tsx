@@ -114,6 +114,9 @@ const Header = () => {
                     src="/buddha_dhaam_logo.png"
                     alt="Buddha Dhaam Logo" 
                     className="w-full h-full object-contain"
+                    width="64"
+                    height="64"
+                    style={{ maxWidth: '100%', maxHeight: '100%' }}
                   />
                 </motion.div>
                 <div>
