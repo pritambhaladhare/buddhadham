@@ -8,10 +8,12 @@ interface MeditativeSoundToggleProps {
 // Define MeditationSound as a type
 declare global {
   interface Window {
-    MeditationSound: new () => {
-      start: () => void;
-      stop: () => void;
-      isPlaying: boolean;
+    MeditationSound: {
+      new(): {
+        start: () => void;
+        stop: () => void;
+        isPlaying: boolean;
+      };
     };
   }
 }
@@ -22,50 +24,60 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
   const soundRef = useRef<any>(null);
   
   useEffect(() => {
-    // Check if script is already loaded
-    if (window.MeditationSound) {
-      soundRef.current = new window.MeditationSound();
-      return;
-    }
+    // Function to create sound instance
+    const createSoundInstance = () => {
+      if (window.MeditationSound) {
+        soundRef.current = new window.MeditationSound();
+        console.log("Meditation sound instance created");
+      }
+    };
     
-    // Only load the script if it's not already in the document
-    const existingScript = document.querySelector('script[src="/meditation-sounds.js"]');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = '/meditation-sounds.js';
-      script.async = true;
-      script.id = 'meditation-sounds-script';
-      script.onload = () => {
-        // Initialize sound generator once script is loaded
-        if (window.MeditationSound) {
-          soundRef.current = new window.MeditationSound();
-        }
-      };
-      document.body.appendChild(script);
-    }
+    // Load simplified script
+    const script = document.createElement('script');
+    script.src = '/meditation-simple.js';
+    script.async = true;
+    
+    script.onload = () => {
+      console.log("Meditation sound script loaded successfully");
+      createSoundInstance();
+    };
+    
+    document.body.appendChild(script);
     
     // Cleanup
     return () => {
       if (soundRef.current && soundRef.current.isPlaying) {
-        soundRef.current.stop();
+        try {
+          soundRef.current.stop();
+        } catch (error) {
+          console.log("Error stopping sound");
+        }
       }
     };
   }, []);
   
   const toggleSound = () => {
-    if (!soundRef.current) return;
+    console.log("Toggle sound button clicked");
     
+    // Create sound instance if needed
+    if (!soundRef.current && window.MeditationSound) {
+      soundRef.current = new window.MeditationSound();
+    }
+    
+    // If still no sound instance, just toggle the visual state
+    if (!soundRef.current) {
+      console.log("No sound instance available, just toggling visual state");
+      setIsPlaying(!isPlaying);
+      return;
+    }
+    
+    // Simple toggle
     if (isPlaying) {
       soundRef.current.stop();
+      console.log("Meditation sound stopped");
     } else {
-      // Web Audio API often requires a user interaction to start
-      try {
-        soundRef.current.start();
-      } catch (error) {
-        console.error('Audio playback failed:', error);
-        // User may need to click again
-        return;
-      }
+      soundRef.current.start();
+      console.log("Meditation sound started");
     }
     
     setIsPlaying(!isPlaying);
