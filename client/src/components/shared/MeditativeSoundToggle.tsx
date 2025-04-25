@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Howl } from 'howler';
 
 interface MeditativeSoundToggleProps {
   className?: string;
@@ -8,48 +9,55 @@ interface MeditativeSoundToggleProps {
 const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const [howl, setHowl] = useState<Howl | null>(null);
+  
+  // Initialize the Howl instance on component mount
+  useEffect(() => {
+    // Use a simple meditation sound - direct URL to an mp3
+    const sound = new Howl({
+      src: ['https://assets.mixkit.co/active_storage/sfx/2533/2533.wav'],
+      html5: true, // Use HTML5 Audio for best compatibility
+      preload: true, // Preload the sound
+      loop: true, // Loop the sound
+      volume: 0.5, // Lower volume for better experience
+      onplay: () => {
+        console.log('Meditation sound started');
+      },
+      onstop: () => {
+        console.log('Meditation sound stopped');
+      },
+      onloaderror: (id, error) => {
+        console.error('Error loading sound:', error);
+      },
+      onplayerror: (id, error) => {
+        console.error('Error playing sound:', error);
+      }
+    });
+
+    setHowl(sound);
+
+    // Cleanup function
+    return () => {
+      if (sound) {
+        sound.stop();
+        sound.unload();
+      }
+    };
+  }, []);
   
   const toggleSound = () => {
-    try {
-      if (!audioRef.current) {
-        console.log("Audio element not available");
-        setIsPlaying(!isPlaying);
-        return;
-      }
-      
-      if (isPlaying) {
-        audioRef.current.pause();
-        console.log("Meditation sound stopped");
-      } else {
-        const playPromise = audioRef.current.play();
-        
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log("Meditation sound started");
-            })
-            .catch(err => {
-              console.error("Error playing audio:", err);
-              
-              // Try once more with user interaction
-              const userInteractionPlay = () => {
-                audioRef.current?.play()
-                  .then(() => console.log("Played after user interaction"))
-                  .catch(e => console.error("Still failed:", e));
-                document.removeEventListener('click', userInteractionPlay);
-              };
-              
-              document.addEventListener('click', userInteractionPlay, { once: true });
-            });
-        }
-      }
-      
-      setIsPlaying(!isPlaying);
-    } catch (error) {
-      console.error("Error toggling sound:", error);
-      setIsPlaying(!isPlaying);
+    if (!howl) {
+      console.log("Sound not available yet");
+      return;
     }
+    
+    if (isPlaying) {
+      howl.stop();
+    } else {
+      howl.play();
+    }
+    
+    setIsPlaying(!isPlaying);
   };
   
   return (
@@ -107,14 +115,6 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
           {isPlaying ? 'Meditation Sound Playing' : 'Enable Meditation Sound'}
         </motion.span>
       )}
-      {/* Hidden audio element */}
-      <audio 
-        ref={audioRef} 
-        src="https://soundbible.com/mp3/tibetan-singing-bowl-daniel_simon.mp3" 
-        loop 
-        preload="auto"
-        style={{ display: 'none' }}
-      />
     </motion.button>
   );
 };
