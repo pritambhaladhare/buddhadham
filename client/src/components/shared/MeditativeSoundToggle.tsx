@@ -1,86 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface MeditativeSoundToggleProps {
   className?: string;
 }
 
-// Define MeditationSound as a type
-declare global {
-  interface Window {
-    MeditationSound: {
-      new(): {
-        start: () => void;
-        stop: () => void;
-        isPlaying: boolean;
-      };
-    };
-  }
-}
-
+/**
+ * A simple component that displays a meditation sound toggle button
+ * This is a visual-only component with no actual audio functionality for now
+ */
 const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const soundRef = useRef<any>(null);
-  
-  useEffect(() => {
-    // Function to create sound instance
-    const createSoundInstance = () => {
-      if (window.MeditationSound) {
-        soundRef.current = new window.MeditationSound();
-        console.log("Meditation sound instance created");
-      }
-    };
-    
-    // Load simplified script
-    const script = document.createElement('script');
-    script.src = '/meditation-simple.js';
-    script.async = true;
-    
-    script.onload = () => {
-      console.log("Meditation sound script loaded successfully");
-      createSoundInstance();
-    };
-    
-    document.body.appendChild(script);
-    
-    // Cleanup
-    return () => {
-      if (soundRef.current && soundRef.current.isPlaying) {
-        try {
-          soundRef.current.stop();
-        } catch (error) {
-          console.log("Error stopping sound");
-        }
-      }
-    };
-  }, []);
   
   const toggleSound = () => {
-    console.log("Toggle sound button clicked");
-    
-    // Create sound instance if needed
-    if (!soundRef.current && window.MeditationSound) {
-      soundRef.current = new window.MeditationSound();
-    }
-    
-    // If still no sound instance, just toggle the visual state
-    if (!soundRef.current) {
-      console.log("No sound instance available, just toggling visual state");
-      setIsPlaying(!isPlaying);
-      return;
-    }
-    
-    // Simple toggle
-    if (isPlaying) {
-      soundRef.current.stop();
-      console.log("Meditation sound stopped");
-    } else {
-      soundRef.current.start();
-      console.log("Meditation sound started");
-    }
-    
+    // Just toggle the UI state for now
     setIsPlaying(!isPlaying);
+    
+    // Log action
+    console.log(`Meditation sound ${!isPlaying ? 'started' : 'stopped'}`);
   };
   
   return (

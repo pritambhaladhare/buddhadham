@@ -124,9 +124,11 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                       transition={{ duration: 1, delay: 0.3 }}
                       className="w-10 h-10 flex items-center justify-center"
                     >
-                      <div className="w-full h-full bg-orange-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">BD</span>
-                      </div>
+                      <img 
+                        src="/buddha_dhaam_logo.png"
+                        alt="Buddha Dhaam Logo" 
+                        className="w-full h-full object-contain"
+                      />
                     </motion.div>
                     <h3 className="font-heading text-xl font-bold text-orange-900">
                       {t('common.siteTitle')}

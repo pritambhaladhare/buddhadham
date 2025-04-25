@@ -110,9 +110,11 @@ const Header = () => {
                   className="w-16 h-16 flex items-center justify-center"
                   variants={logoVariants}
                 >
-                  <div className="w-full h-full bg-orange-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-lg font-bold">BD</span>
-                  </div>
+                  <img 
+                    src="/buddha_dhaam_logo.png"
+                    alt="Buddha Dhaam Logo" 
+                    className="w-full h-full object-contain"
+                  />
                 </motion.div>
                 <div>
                   <motion.h1 

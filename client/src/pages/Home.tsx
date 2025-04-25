@@ -54,8 +54,7 @@ const Home = () => {
   
   return (
     <>
-      {/* Meditation sound toggle temporarily disabled for debugging */}
-      {/* <MeditativeSoundToggle /> */}
+      <MeditativeSoundToggle />
       
       {/* Ambient floating decorative elements for atmosphere */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-10">
