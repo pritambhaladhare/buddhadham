@@ -8,7 +8,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import SimplifiedMantraText from '@/components/animation/SimplifiedMantraText';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
-import logoImage from '@assets/buddha_dhaam_logo.png';
+import logoImage from '@/assets/images/buddha_dhaam_logo.png';
 
 const Header = () => {
   const [location] = useLocation();

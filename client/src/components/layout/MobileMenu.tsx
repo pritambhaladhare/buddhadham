@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/constants';
-import PeepalLeaf from '@/assets/icons/PeepalLeaf';
 import AnimatedButton from '@/components/animation/AnimatedButton';
 import { StaggerContainer, StaggerItem } from '@/components/animation/AnimatedSection';
 import { useTranslation } from 'react-i18next';
+import logoImage from '@/assets/images/buddha_dhaam_logo.png';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -122,8 +122,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     <motion.div
                       animate={{ rotate: [0, 10, 0, -10, 0] }}
                       transition={{ duration: 1, delay: 0.3 }}
+                      className="w-10 h-10 flex items-center justify-center"
                     >
-                      <PeepalLeaf color="#f97316" size={28} />
+                      <img 
+                        src={logoImage} 
+                        alt="Buddha Dhaam Logo" 
+                        className="w-full h-full object-contain"
+                      />
                     </motion.div>
                     <h3 className="font-heading text-xl font-bold text-orange-900">
                       {t('common.siteTitle')}
