@@ -13,23 +13,23 @@ const MeditativeSoundToggle = ({ className = '' }: MeditativeSoundToggleProps) =
   
   // Initialize the Howl instance on component mount
   useEffect(() => {
-    // Use a simple meditation sound - direct URL to an mp3
+    // Use a local peaceful meditation sound - Tibetan singing bowl
     const sound = new Howl({
-      src: ['https://assets.mixkit.co/active_storage/sfx/2533/2533.wav'],
+      src: ['/meditation-sound.mp3'],
       html5: true, // Use HTML5 Audio for best compatibility
       preload: true, // Preload the sound
       loop: true, // Loop the sound
-      volume: 0.5, // Lower volume for better experience
+      volume: 0.35, // Lower volume for better experience
       onplay: () => {
         console.log('Meditation sound started');
       },
       onstop: () => {
         console.log('Meditation sound stopped');
       },
-      onloaderror: (id, error) => {
+      onloaderror: (id: number, error: any) => {
         console.error('Error loading sound:', error);
       },
-      onplayerror: (id, error) => {
+      onplayerror: (id: number, error: any) => {
         console.error('Error playing sound:', error);
       }
     });
