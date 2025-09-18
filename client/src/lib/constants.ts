@@ -5,7 +5,6 @@ import buddhaCarving from '@assets/ancient_stupa.jpg';
 import monksTripitaka from '@assets/tripitaka_chanting.jpg';
 import buddhaGarden from '@assets/peepal_tree.jpg';
 import monkGathering from '@assets/monastic_welfare.jpg';
-import buddhaStatue from '@assets/meditation_app.jpg';
 import monkDonation from '@assets/IMG-20250327-WA0017.jpg';
 import mahabodhiTemple from '@assets/IMG-20250327-WA0018.jpg';
 import buddhaShrine from '@assets/shrine_conservation.jpg';

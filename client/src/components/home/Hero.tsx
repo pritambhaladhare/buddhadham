@@ -1,15 +1,7 @@
-import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { useEffect, useState, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
-import AnimatedButton from '@/components/animation/AnimatedButton';
-import { 
-  FadeInSection, 
-  StaggerContainer, 
-  StaggerItem, 
-  FloatingElement 
-} from '@/components/animation/AnimatedSection';
+import templeHero from '@assets/temple-hero.jpg';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -97,15 +89,14 @@ const buttonHoverVariants = {
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { t } = useTranslation();
   
   useEffect(() => {
     // Set animation to visible after component mounts
     setIsVisible(true);
   }, []);
 
-  const text = t('home.hero.title');
-  const words = text.split(' ');
+  const tagline = "Join the journey: Serve with compassion, live with wisdom, preserve tradition";
+  const words = tagline.split(' ');
 
   return (
     <section className="min-h-screen bg-[var(--parchment)] text-[var(--bodhi-bark)] overflow-hidden">
@@ -141,6 +132,7 @@ const Hero = () => {
               variants={headerVariants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
+              data-testid="text-hero-tagline"
             >
               {words.map((word, idx) => (
                 <motion.span 
@@ -160,131 +152,27 @@ const Hero = () => {
               animate={isVisible ? "visible" : "hidden"}
               transition={{ delay: 0.9 }}
             >
-              {t('home.hero.description')}
+              Together, we preserve ancient wisdom and support the monastic community at sacred Buddhist sites across India and Nepal.
             </motion.p>
-            
-            {/* Buttons removed as requested */}
-            
-            <motion.div 
-              className="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start"
-              variants={fadeIn}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              transition={{ delay: 1.3 }}
-            >
-              <motion.a 
-                href="#download-app" 
-                className="flex items-center justify-center bg-[var(--monk-robe)] text-white py-3 px-6 rounded-lg border border-[var(--deep-saffron)]/20"
-                variants={buttonHoverVariants}
-                initial="idle"
-                whileHover="hover"
-              >
-                <i className='bx bxl-apple text-2xl mr-2'></i>
-                <div className="text-left">
-                  <div className="text-xs">{t('home.hero.downloadOn')}</div>
-                  <div className="text-sm font-bold">{t('home.hero.appStore')}</div>
-                </div>
-              </motion.a>
-              <motion.a 
-                href="#download-app" 
-                className="flex items-center justify-center bg-[var(--bodhi-bark)] text-white py-3 px-6 rounded-lg border border-[var(--deep-saffron)]/20"
-                variants={buttonHoverVariants}
-                initial="idle"
-                whileHover="hover"
-              >
-                <i className='bx bxl-play-store text-2xl mr-2'></i>
-                <div className="text-left">
-                  <div className="text-xs">{t('home.hero.getItOn')}</div>
-                  <div className="text-sm font-bold">{t('home.hero.googlePlay')}</div>
-                </div>
-              </motion.a>
-            </motion.div>
           </motion.div>
           
-          {/* Right content - Phone mockups */}
+          {/* Right content - Temple image */}
           <motion.div 
             className="lg:w-1/2 relative"
             variants={phoneVariants}
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
           >
-            <div className="relative">
-              {/* Main phone */}
-              <motion.div 
-                className="w-72 mx-auto lg:mx-0 lg:ml-auto relative z-10"
-                initial={{ y: 20 }}
-                animate={{ 
-                  y: [20, 0, 20],
-                  transition: {
-                    repeat: Infinity,
-                    repeatType: "mirror",
-                    duration: 4,
-                    ease: "easeInOut"
-                  }
-                }}
-              >
-                <div className="bg-[var(--ivory)] rounded-3xl shadow-xl overflow-hidden border-8 border-[var(--parchment)]">
-                  <div className="bg-[var(--monk-robe)] h-16 flex items-center justify-center relative">
-                    <span className="text-white font-bold font-heading">{t('common.siteName')}</span>
-                    <div className="absolute top-0 right-0 h-8 w-8 flex items-center justify-center">
-                      <i className='bx bxs-leaf text-[var(--saffron)] text-xl'></i>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <motion.div 
-                      className="bg-[var(--parchment)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
-                      variants={meditationCardVariants}
-                      initial="hidden"
-                      animate={isVisible ? "visible" : "hidden"}
-                      custom={0}
-                    >
-                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">{t('home.hero.meditation1Title')}</h4>
-                      <p className="text-xs text-[var(--temple-stone)]">{t('home.hero.meditation1Description')}</p>
-                    </motion.div>
-                    <motion.div 
-                      className="bg-[var(--ivory)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
-                      variants={meditationCardVariants}
-                      initial="hidden"
-                      animate={isVisible ? "visible" : "hidden"}
-                      custom={1}
-                    >
-                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">{t('home.hero.meditation2Title')}</h4>
-                      <p className="text-xs text-[var(--temple-stone)]">{t('home.hero.meditation2Description')}</p>
-                    </motion.div>
-                    <motion.div 
-                      className="bg-[var(--ivory)] rounded-lg p-3 mb-3 border border-[var(--saffron)]/20"
-                      variants={meditationCardVariants}
-                      initial="hidden"
-                      animate={isVisible ? "visible" : "hidden"}
-                      custom={2}
-                    >
-                      <h4 className="font-bold text-sm mb-1 text-[var(--bodhi-bark)]">{t('home.hero.meditation3Title')}</h4>
-                      <p className="text-xs text-[var(--temple-stone)]">{t('home.hero.meditation3Description')}</p>
-                    </motion.div>
-                    
-                    <motion.div
-                      className="bg-[var(--parchment)] rounded-lg p-3 border border-[var(--saffron)]/20"
-                      variants={meditationCardVariants}
-                      initial="hidden"
-                      animate={isVisible ? "visible" : "hidden"}
-                      custom={3}
-                    >
-                      <div className="flex justify-center items-center">
-                        <div className="w-8 h-8 bg-[var(--monk-robe)] rounded-full flex items-center justify-center mr-2">
-                          <i className='bx bx-play text-white'></i>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-bold text-sm text-[var(--bodhi-bark)]">{t('home.hero.beginPractice')}</h4>
-                          <div className="flex">
-                            <div className="h-1 bg-[var(--deep-saffron)] rounded-full w-3/4 mt-1"></div>
-                            <div className="h-1 bg-gray-200 rounded-full w-1/4 mt-1 ml-1"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
+            <div className="relative max-w-lg mx-auto lg:mx-0 lg:ml-auto">
+              <motion.img 
+                src={templeHero}
+                alt="Mahabodhi Temple at Bodhgaya"
+                className="w-full h-auto rounded-2xl shadow-xl object-cover"
+                data-testid="img-hero-temple"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              />
               
               {/* Decorative elements */}
               <motion.div 
