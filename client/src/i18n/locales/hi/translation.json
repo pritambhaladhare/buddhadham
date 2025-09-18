@@ -22,10 +22,8 @@
       "subscribe": "सदस्यता लें",
       "submit": "जमा करें",
       "donate": "दान करें",
-      "tryMeditation": "निःशुल्क ध्यान का प्रयास करें",
       "enableSound": "ध्यान ध्वनि सक्षम करें",
-      "disableSound": "ध्यान ध्वनि अक्षम करें",
-      "downloadApp": "ऐप डाउनलोड करें"
+      "disableSound": "ध्यान ध्वनि अक्षम करें"
     },
     "footer": {
       "contactUs": "संपर्क करें",
@@ -40,19 +38,7 @@
     "hero": {
       "title": "भिक्षुओं की सेवा और धम्म का संरक्षण",
       "description": "भगवान बुद्ध के उपदेशों के माध्यम से शांति और ज्ञान के मार्ग को अपनाएं और उनके पदचिह्नों पर चलने वालों का समर्थन करें।",
-      "buttonGetInvolved": "जुड़ें",
-      "buttonTryMeditation": "निःशुल्क ध्यान का प्रयास करें",
-      "downloadOn": "पर डाउनलोड करें",
-      "appStore": "ऐप स्टोर",
-      "getItOn": "इस पर प्राप्त करें",
-      "googlePlay": "गूगल प्ले",
-      "meditation1Title": "विपश्यना ध्यान",
-      "meditation1Description": "मौन जागरूकता के 20 मिनट",
-      "meditation2Title": "आनापान श्वास",
-      "meditation2Description": "श्वास जागरूकता के 10 मिनट",
-      "meditation3Title": "मेत्ता ध्यान",
-      "meditation3Description": "प्रेम-दया का विकास",
-      "beginPractice": "अभ्यास शुरू करें"
+      "buttonGetInvolved": "जुड़ें"
     },
     "ourWork": {
       "title": "हमारा कार्य",

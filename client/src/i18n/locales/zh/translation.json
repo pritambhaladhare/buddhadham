@@ -22,10 +22,8 @@
       "subscribe": "订阅",
       "submit": "提交",
       "donate": "捐赠",
-      "tryMeditation": "免费冥想体验",
       "enableSound": "开启冥想音效",
-      "disableSound": "关闭冥想音效",
-      "downloadApp": "下载应用"
+      "disableSound": "关闭冥想音效"
     },
     "footer": {
       "contactUs": "联系我们",
@@ -40,19 +38,7 @@
     "hero": {
       "title": "服务僧侣，保护佛法",
       "description": "通过佛陀的教导，拥抱和平与觉悟之路，支持那些追随佛陀脚步的人。",
-      "buttonGetInvolved": "参与",
-      "buttonTryMeditation": "免费冥想体验",
-      "downloadOn": "下载于",
-      "appStore": "App Store",
-      "getItOn": "获取于",
-      "googlePlay": "Google Play",
-      "meditation1Title": "内观禅修",
-      "meditation1Description": "20分钟静默觉知",
-      "meditation2Title": "安那般那呼吸",
-      "meditation2Description": "10分钟呼吸觉知",
-      "meditation3Title": "慈心禅修",
-      "meditation3Description": "培养慈爱和善心",
-      "beginPractice": "开始修习"
+      "buttonGetInvolved": "参与"
     },
     "ourWork": {
       "title": "我们的工作",

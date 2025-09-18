@@ -3,7 +3,7 @@
     "siteTitle": "Buddha Dhaam",
     "siteName": "Buddha Dhaam",
     "tagline": "Serving monks and preserving dhamma",
-    "siteDescription": "Download our app to track your daily Vipassana meditation practice and deepen your journey along the path to enlightenment.",
+    "siteDescription": "Serving monks and preserving Buddhist heritage across sacred sites in India and Nepal.",
     "navigation": {
       "home": "Home",
       "about": "About",
@@ -23,10 +23,8 @@
       "submit": "Submit",
       "donate": "Donate",
       "memberPortal": "Member Portal",
-      "tryMeditation": "Try Free Meditation",
       "enableSound": "Enable Meditation Sound",
-      "disableSound": "Disable Meditation Sound",
-      "downloadApp": "Download App"
+      "disableSound": "Disable Meditation Sound"
     },
     "footer": {
       "contactUs": "Contact Us",
@@ -40,20 +38,8 @@
   "home": {
     "hero": {
       "title": "Serving monks and preserving dhamma",
-      "description": "Download our app to track your daily Vipassana meditation practice and deepen your journey along the path to enlightenment.",
-      "buttonGetInvolved": "Get Involved",
-      "buttonTryMeditation": "Try Free Meditation",
-      "downloadOn": "Download on the",
-      "appStore": "App Store",
-      "getItOn": "Get it on",
-      "googlePlay": "Google Play",
-      "meditation1Title": "Vipassana Meditation",
-      "meditation1Description": "20 minutes of silent awareness",
-      "meditation2Title": "Anapana Breathing",
-      "meditation2Description": "10 minutes of breath awareness",
-      "meditation3Title": "Metta Meditation",
-      "meditation3Description": "Cultivate loving-kindness",
-      "beginPractice": "Begin Practice"
+      "description": "Together, we preserve ancient wisdom and support the monastic community at sacred Buddhist sites across India and Nepal.",
+      "buttonGetInvolved": "Get Involved"
     },
     "ourWork": {
       "title": "Our Work",

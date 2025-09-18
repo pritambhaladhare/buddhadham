@@ -22,10 +22,8 @@
       "subscribe": "สมัครรับข่าวสาร",
       "submit": "ส่ง",
       "donate": "บริจาค",
-      "tryMeditation": "ทดลองการนั่งสมาธิฟรี",
       "enableSound": "เปิดเสียงสมาธิ",
-      "disableSound": "ปิดเสียงสมาธิ",
-      "downloadApp": "ดาวน์โหลดแอป"
+      "disableSound": "ปิดเสียงสมาธิ"
     },
     "footer": {
       "contactUs": "ติดต่อเรา",
@@ -40,19 +38,7 @@
     "hero": {
       "title": "รับใช้พระสงฆ์และรักษาธรรมะ",
       "description": "ก้าวเข้าสู่เส้นทางแห่งสันติและการตรัสรู้ผ่านคำสอนขององค์พระพุทธเจ้าและสนับสนุนผู้ที่เดินตามรอยพระบาทของพระองค์",
-      "buttonGetInvolved": "เข้าร่วม",
-      "buttonTryMeditation": "ทดลองการนั่งสมาธิฟรี",
-      "downloadOn": "ดาวน์โหลดได้ที่",
-      "appStore": "แอป สโตร์",
-      "getItOn": "รับได้ที่",
-      "googlePlay": "กูเกิล เพลย์",
-      "meditation1Title": "วิปัสสนากรรมฐาน",
-      "meditation1Description": "การรับรู้ในความเงียบ 20 นาที",
-      "meditation2Title": "อานาปานสติ",
-      "meditation2Description": "การรับรู้ลมหายใจ 10 นาที",
-      "meditation3Title": "เมตตาภาวนา",
-      "meditation3Description": "ปลูกฝังความเมตตากรุณา",
-      "beginPractice": "เริ่มการปฏิบัติ"
+      "buttonGetInvolved": "เข้าร่วม"
     },
     "ourWork": {
       "title": "งานของเรา",
