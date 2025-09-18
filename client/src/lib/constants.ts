@@ -69,7 +69,7 @@ export const NAV_LINKS = [
 
 // Impact statistics
 export const IMPACT_STATS = [
-  { number: "2598+", label: "Monks Supported" },
+  { number: "4076+", label: "Monks Supported" },
   { number: "1422+", label: "Food Served" },
   { number: "100+", label: "Monk Medical Aid" },
   { number: "100+", label: "Pilgrim Medical Aid" }
