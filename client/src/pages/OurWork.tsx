@@ -98,7 +98,7 @@ const OurWork = () => {
               <div className="relative z-10">
                 <h3 className="font-heading text-xl font-bold mb-2 text-orange-900">Our Impact</h3>
                 <p className="text-gray-700 mb-4">
-                  Through our initiatives, we have supported 2,598+ monks, served 1,422+ meals, 
+                  Through our initiatives, we have supported 4,076+ monks, served 1,422+ meals, 
                   conducted 100+ medical camps, and provided healthcare to 100+ pilgrims, creating 
                   a lasting impact on the monastic community and the heritage of teaching of lord buddha.
                 </p>
@@ -107,7 +107,7 @@ const OurWork = () => {
                     className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                  >2598+ Monks</motion.span>
+                  >4076+ Monks</motion.span>
                   <motion.span 
                     className="px-3 py-1 bg-orange-500 text-white text-sm rounded-full"
                     whileHover={{ scale: 1.05 }}

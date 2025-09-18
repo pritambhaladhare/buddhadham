@@ -95,7 +95,7 @@ const Hero = () => {
     setIsVisible(true);
   }, []);
 
-  const tagline = "Join the journey: Serve with compassion, live with wisdom, preserve tradition";
+  const tagline = "Serving monks and preserving dhamma";
   const words = tagline.split(' ');
 
   return (

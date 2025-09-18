@@ -221,15 +221,6 @@ const About = () => {
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
-              <div className="text-orange-500 text-3xl mb-4 flex justify-center">
-                <i className='bx bxs-spa'></i>
-              </div>
-              <h3 className="font-heading text-xl font-bold mb-2 text-orange-900 text-center">Meditation App</h3>
-              <p className="text-gray-700 text-center">
-                Bringing ancient meditation techniques of teaching of lord buddha to modern practitioners through digital tools.
-              </p>
-            </div>
           </div>
           
           <div className="text-center mt-10">
