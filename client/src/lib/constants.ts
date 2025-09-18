@@ -137,16 +137,6 @@ export const WORK_CATEGORIES = [
       "Community building activities to strengthen monastic bonds"
     ]
   },
-  {
-    title: "Meditation App",
-    description: "Buddha Dhaam helps you track your daily Vipassana practice, keeps you motivated to meditate every day, and is absolutely free to download and use. 🙏",
-    image: buddhaStatue,
-    highlights: [
-      "Offering ancient wisdom through modern digital channels",
-      "Guided meditations led by experienced monks dedicated to the teaching of lord buddha",
-      "Teaching mindfulness practices rooted in the tradition of lord buddha"
-    ]
-  }
 ];
 
 // Donation options
