@@ -200,21 +200,6 @@ export const LATEST_NEWS = [
   }
 ];
 
-// Testimonials
-export const TESTIMONIALS = [
-  {
-    quote: "The work of Buddha Dhaam has transformed our monastery. With their support, we now have proper facilities for our monks to study and meditate. Their dedication to preserving our traditions is truly inspiring.",
-    name: "Venerable Dhammapala",
-    title: "Head Monk, Bodhi Monastery",
-    image: buddhaShrine
-  },
-  {
-    quote: "As a long-time supporter of Buddha Dhaam, I've witnessed firsthand the impact of their work. The preservation of ancient sites and the support they provide to monks ensures that Buddhist wisdom continues to flourish in its birthplace.",
-    name: "Dr. Maya Sharma",
-    title: "Monthly Supporter & Professor of Buddhist Studies",
-    image: monkGathering
-  }
-];
 
 // Footer locations
 export const LOCATIONS = [

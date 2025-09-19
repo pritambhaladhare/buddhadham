@@ -4,7 +4,6 @@ import OurWorkSection from '@/components/home/OurWorkSection';
 import ImpactStory from '@/components/home/ImpactStory';
 import SupportSection from '@/components/home/SupportSection';
 import EventsNewsSection from '@/components/home/EventsNewsSection';
-import TestimonialsSection from '@/components/home/TestimonialsSection';
 import NewsletterSection from '@/components/home/NewsletterSection';
 import MeditationWidget from '@/components/home/MeditationWidget';
 import ParallaxEffect from '@/components/animation/ParallaxEffect';
@@ -108,7 +107,6 @@ const Home = () => {
       <MeditationWidget />
       <SupportSection />
       <EventsNewsSection />
-      <TestimonialsSection />
       <NewsletterSection />
     </>
   );
