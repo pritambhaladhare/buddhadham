@@ -1,0 +1,153 @@
+2025-05-13 09:57:15,343 - semgrep.run_scan - DEBUG - semgrep version 1.2.0
+2025-05-13 09:57:15,359 - semgrep.git - DEBUG - Failed to get project url from 'git ls-remote': Command failed with exit code: 128
+-----
+Command failed with output:
+fatal: No remote configured to list refs from.
+
+
+Failed to run 'git ls-remote --get-url'. Possible reasons:
+
+- the git binary is not available
+- the current working directory is not a git repository
+- the baseline commit is not a parent of the current commit
+    (if you are running through semgrep-app, check if you are setting `SEMGREP_BRANCH` or `SEMGREP_BASELINE_COMMIT` properly)
+- the current working directory is not marked as safe
+    (fix with `git config --global --add safe.directory $(pwd)`)
+
+Try running the command yourself to debug the issue.
+2025-05-13 09:57:15,361 - semgrep.config_resolver - DEBUG - Loading local config from /home/runner/workspace/.config/.semgrep/semgrep_rules.json
+2025-05-13 09:57:15,375 - semgrep.config_resolver - DEBUG - Done loading local config from /home/runner/workspace/.config/.semgrep/semgrep_rules.json
+2025-05-13 09:57:15,379 - semgrep.config_resolver - DEBUG - Saving rules to /tmp/semgrep-yq8usd59.rules
+2025-05-13 09:57:15,693 - semgrep.semgrep_core - DEBUG - Failed to open resource semgrep-core-proprietary: [Errno 2] No such file or directory: '/tmp/_MEIlsXNrO/semgrep/bin/semgrep-core-proprietary'.
+2025-05-13 09:57:16,589 - semgrep.rule_lang - DEBUG - semgrep-core validation response: valid=True
+2025-05-13 09:57:16,589 - semgrep.rule_lang - DEBUG - semgrep-core validation succeeded
+2025-05-13 09:57:16,589 - semgrep.rule_lang - DEBUG - RPC validation succeeded
+2025-05-13 09:57:16,590 - semgrep.config_resolver - DEBUG - loaded 1 configs in 1.2295122146606445
+2025-05-13 09:57:16,826 - semgrep.run_scan - VERBOSE - running 1250 rules from 1 config /home/runner/workspace/.config/.semgrep/semgrep_rules.json_0
+2025-05-13 09:57:16,826 - semgrep.run_scan - VERBOSE - No .semgrepignore found. Using default .semgrepignore rules. See the docs for the list of default ignores: https://semgrep.dev/docs/cli-usage/#ignore-files
+2025-05-13 09:57:16,829 - semgrep.run_scan - VERBOSE - Rules:
+2025-05-13 09:57:16,829 - semgrep.run_scan - VERBOSE - <SKIPPED DATA (too many entries; use --max-log-list-entries)>
+2025-05-13 09:57:17,733 - semgrep.core_runner - DEBUG - Passing whole rules directly to semgrep_core
+2025-05-13 09:57:18,070 - semgrep.core_runner - DEBUG - Running Semgrep engine with command:
+2025-05-13 09:57:18,070 - semgrep.core_runner - DEBUG - /tmp/_MEIlsXNrO/semgrep/bin/opengrep-core -json -rules /tmp/tmprzy8e_br.json -j 8 -targets /tmp/tmpin6kx8s6 -timeout 5 -timeout_threshold 3 -max_memory 0 -fast
+2025-05-13 09:57:45,986 - semgrep.core_runner - DEBUG - --- semgrep-core stderr ---
+[00.09][[34mINFO[0m]: Executed as: /tmp/_MEIlsXNrO/semgrep/bin/opengrep-core -json -rules /tmp/tmprzy8e_br.json -j 8 -targets /tmp/tmpin6kx8s6 -timeout 5 -timeout_threshold 3 -max_memory 0 -fast
+[00.09][[34mINFO[0m]: Version: 1.2.0
+[00.09][[34mINFO[0m]: Parsing rules in /tmp/tmprzy8e_br.json
+[00.94][[34mINFO[0m]: scan: processing 557 files (skipping 0), with 487 rules (skipping 0 )
+[08.77][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/pages/About.tsx func: ???]
+[0m[11.67][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.path-traversal.path-join-resolve-traversal file: client/src/pages/MemberRegister.tsx func: MemberRegister:25824]
+[0m[14.34][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/components/home/MeditationWidget.tsx func: ???]
+[0m[17.54][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/components/ui/sidebar.tsx func: ???]
+[0m[18.56][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/pages/SacredMap.tsx func: ???]
+[0m[18.83][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.typescript.react.security.audit.react-href-var file: client/src/pages/GetInvolved.tsx func: ???]
+[0m[19.14][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/pages/SacredMap.tsx func: ???]
+[0m[19.83][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/pages/GetInvolved.tsx func: ???]
+[0m[20.83][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format file: client/src/pages/SacredMap.tsx func: ???]
+[0m[21.62][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.typescript.react.security.audit.react-unsanitized-property file: client/src/components/shared/InteractiveMap.tsx func: ???]
+[0m[21.92][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.typescript.react.security.audit.react-unsanitized-property file: client/src/components/shared/InteractiveMap.tsx func: ???]
+[0m[22.85][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/components/shared/InteractiveMap.tsx func: ???]
+[0m[23.24][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.express.security.cors-misconfiguration file: client/src/pages/SacredMap.tsx func: ???]
+[0m[23.32][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/components/shared/InteractiveMap.tsx func: ???]
+[0m[24.22][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.browser.security.raw-html-concat file: client/src/pages/SacredMap.tsx func: ???]
+[0m[24.43][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format file: client/src/components/shared/InteractiveMap.tsx func: ???]
+[0m[25.83][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.typescript.react.security.audit.react-href-var file: client/src/pages/OurWork.tsx func: ???]
+[0m[27.87][[34mINFO[0m]: Custom ignore pattern: None
+[27.87][[34mINFO[0m]: Custom ignore pattern: None
+--- end semgrep-core stderr ---
+2025-05-13 09:57:45,994 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0ee74fd49637bebe183eca7188dbde26e386314e62cc2e7ba1ee60b377b638243fcd84e6c6fa04886198ccacfa6a711bfbcc61a28f9ddc913d5b3c53083cbc90_0
+2025-05-13 09:57:45,995 - semgrep.rule_match - DEBUG - match_key = (' href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" > <script  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 1597692887c64f688db6344b8bed24533e2f8e5610a723f606b85363b14898dce5dd7e9f10e3aa0d432b79cfb674418933ae9f4461283f6c3f282453ca62e24f_0
+2025-05-13 09:57:45,995 - semgrep.rule_match - DEBUG - match_key = (' href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" > <script  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 1597692887c64f688db6344b8bed24533e2f8e5610a723f606b85363b14898dce5dd7e9f10e3aa0d432b79cfb674418933ae9f4461283f6c3f282453ca62e24f_0
+2025-05-13 09:57:45,996 - semgrep.rule_match - DEBUG - match_key = (' href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" > <script  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 1597692887c64f688db6344b8bed24533e2f8e5610a723f606b85363b14898dce5dd7e9f10e3aa0d432b79cfb674418933ae9f4461283f6c3f282453ca62e24f_0
+2025-05-13 09:57:45,996 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = 252d5e9e3e03042b085042d3b73c68eb69c19f4051b0e0598394b2319328aec1c19bc319257e0271964c432f360d6d25c2037663d24d0ece653155f447f28f20_0
+2025-05-13 09:57:45,997 - semgrep.rule_match - DEBUG - match_key = ("</p>\n         .*</?[a-zA-Z] `</p>\n        ${validatedData.message.replace(/\\n/g'<br>')}...`\n `...${validatedData.message.replace(/\\n/g'<br>')}</p>\n        `\n", PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = ed8d21526bf27ae3e3df48f5a2268f6ca8ed436553b968af0d3729b2b523ad24aac133609162759218330e2e558d4e3efb129721d9e55bc1376c656e1f8fa3c8_0
+2025-05-13 09:57:45,997 - semgrep.rule_match - DEBUG - match_key = ("</p>\n         .*</?[a-zA-Z] `</p>\n        ${validatedData.message.replace(/\\n/g'<br>')}...`\n `...${validatedData.message.replace(/\\n/g'<br>')}</p>\n        `\n", PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = ed8d21526bf27ae3e3df48f5a2268f6ca8ed436553b968af0d3729b2b523ad24aac133609162759218330e2e558d4e3efb129721d9e55bc1376c656e1f8fa3c8_0
+2025-05-13 09:57:45,998 - semgrep.rule_match - DEBUG - match_key = ("</p>\n         .*</?[a-zA-Z] `</p>\n        ${validatedData.message.replace(/\\n/g'<br>')}...`\n `...${validatedData.message.replace(/\\n/g'<br>')}</p>\n        `\n", PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = ed8d21526bf27ae3e3df48f5a2268f6ca8ed436553b968af0d3729b2b523ad24aac133609162759218330e2e558d4e3efb129721d9e55bc1376c656e1f8fa3c8_0
+2025-05-13 09:57:45,999 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:45,999 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:45,999 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,000 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,001 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,001 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,002 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,002 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_1
+2025-05-13 09:57:46,003 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,004 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,004 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,005 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_2
+2025-05-13 09:57:46,005 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,006 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,006 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_0
+2025-05-13 09:57:46,006 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/routes.ts'), 'config..semgrep.vendored-rules.javascript.express.security.injection.raw-html-format') match_id = ba677f2bb05e298e2eb279156b48995fbaf4066dbff4c420ba72dd2c858ef78a6555d4366e8cf5fb6479e556b06b731591ed5273734dc6ef3ebafb0cf50f8f1a_3
+2025-05-13 09:57:46,010 - semgrep.core_runner - DEBUG - semgrep ran in 0:00:28.276789 on 219 files
+2025-05-13 09:57:46,012 - semgrep.core_runner - DEBUG - findings summary: 6 warning, 0 error, 0 info
+2025-05-13 09:57:46,016 - semgrep.app.auth - DEBUG - Getting API token from settings file
+2025-05-13 09:57:46,016 - semgrep.app.auth - DEBUG - No API token found in settings file
+2025-05-13 09:57:46,017 - semgrep.semgrep_core - DEBUG - Failed to open resource semgrep-core-proprietary: [Errno 2] No such file or directory: '/tmp/_MEIlsXNrO/semgrep/bin/semgrep-core-proprietary'.
+2025-05-13 09:57:46,142 - semgrep.output - VERBOSE - 
+========================================
+Files skipped:
+========================================
+
+  Always skipped by Opengrep:
+
+   • <none>
+
+  Skipped by .gitignore:
+  (Disable by passing --no-git-ignore)
+
+   • <all files not listed by `git ls-files` were skipped>
+
+  Skipped by .semgrepignore:
+  - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+
+   • <none>
+
+  Skipped by --include patterns:
+
+   • <none>
+
+  Skipped by --exclude patterns:
+
+   • <none>
+
+  Files skipped due to insufficient read permissions:
+
+   • <none>
+
+  Skipped by limiting to files smaller than 1000000 bytes:
+  (Adjust with the --max-target-bytes flag)
+
+   • attached_assets/Kushinagar.jpg
+   • attached_assets/Saranath.jpg
+   • attached_assets/Tripitaka chanting.jpg
+   • attached_assets/about_temple.jpg
+   • attached_assets/harkirt-singh-eMa81GZzUU4-unsplash.jpg
+   • attached_assets/tong-kbp-e8fBolUgOtg-unsplash.jpg
+   • attached_assets/tong-kbp-wcpnpwvdWzI-unsplash.jpg
+   • attached_assets/tripitaka_chanting.jpg
+   • attached_assets/vishwjeet-kumar-PepsloMrpcU-unsplash.jpg
+   • attached_assets/vishwjeet-kumar-_RstDhmP2dU-unsplash.jpg
+   • client/src/assets/images/Kushinagar.jpg
+   • client/src/assets/images/Saranath.jpg
+   • client/src/assets/images/bodhgaya.jpg
+   • client/src/assets/images/buddha-garden.jpg
+   • client/src/assets/images/buddha-shrine.jpg
+   • client/src/assets/images/kushinagar.jpg
+   • client/src/assets/images/lumbini.jpg
+   • client/src/assets/images/mahabodhi-stupa.jpg
+   • client/src/assets/images/mahabodhi-temple.jpg
+
+  Partially analyzed due to parsing or internal Opengrep errors
+
+   • tailwind.config.ts (1 lines skipped)
+
+2025-05-13 09:57:46,143 - semgrep.output - INFO - Some files were skipped or only partially analyzed.
+  Scan was limited to files tracked by git.
+  Partially scanned: 1 files only partially analyzed due to parsing or internal Opengrep errors
+  Scan skipped: 19 files larger than 1.0 MB
+  For a full list of skipped files, run opengrep with the --verbose flag.
+
+Ran 443 rules on 219 files: 6 findings.
+2025-05-13 09:57:46,144 - semgrep.app.version - DEBUG - Version cache does not exist
+2025-05-13 09:57:46,166 - semgrep.metrics - VERBOSE - Not sending pseudonymous metrics since metrics are configured to OFF and registry usage is False
