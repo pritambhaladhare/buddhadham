@@ -1,0 +1,91 @@
+{
+  "common": {
+    "siteTitle": "佛陀法域",
+    "siteName": "佛陀法域",
+    "tagline": "服务僧侣，保护佛法",
+    "siteDescription": "通过佛陀的教导，拥抱和平与觉悟之路，支持那些追随佛陀脚步的人。",
+    "navigation": {
+      "home": "首页",
+      "about": "关于我们",
+      "ourWork": "我们的工作",
+      "sacredMap": "圣地地图",
+      "getInvolved": "参与",
+      "contact": "联系我们",
+      "support": "支持",
+      "blog": "博客",
+      "memberPortal": "会员门户"
+    },
+    "buttons": {
+      "readMore": "了解更多",
+      "getInvolved": "参与",
+      "learnMore": "了解更多",
+      "subscribe": "订阅",
+      "submit": "提交",
+      "donate": "捐赠",
+      "enableSound": "开启冥想音效",
+      "disableSound": "关闭冥想音效"
+    },
+    "footer": {
+      "contactUs": "联系我们",
+      "locations": "地点",
+      "quickLinks": "快速链接",
+      "copyright": "© {{year}} 佛陀法域。保留所有权利。",
+      "termsAndConditions": "条款与条件",
+      "privacyPolicy": "隐私政策"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "服务僧侣，保护佛法",
+      "description": "通过佛陀的教导，拥抱和平与觉悟之路，支持那些追随佛陀脚步的人。",
+      "buttonGetInvolved": "参与"
+    },
+    "ourWork": {
+      "title": "我们的工作",
+      "subtitle": "支持僧侣社区和保护圣地",
+      "description": "佛陀法域专注于直接支持僧侣和尼姑，保护佛教圣地，以及促进全球修行者的精神福祉。",
+      "viewAllWork": "查看所有工作"
+    },
+    "impactStats": {
+      "title": "我们的影响",
+      "monksSupported": "支持的僧侣数",
+      "foodServed": "提供的食物",
+      "monksMedicalAid": "僧侣医疗援助",
+      "pilgrimMedicalAid": "朝圣者医疗援助"
+    },
+    "supportSection": {
+      "title": "支持我们的使命",
+      "subtitle": "您的贡献帮助维持我们对僧侣和圣地的工作。",
+      "recurringDonation": "成为定期捐赠者，创造持久影响"
+    },
+    "eventsNews": {
+      "upcomingEvents": "即将举行的活动",
+      "latestNews": "最新消息",
+      "viewAllEvents": "查看所有活动",
+      "viewAllNews": "查看所有新闻"
+    },
+    "newsletterSection": {
+      "title": "保持联系",
+      "subtitle": "加入我们的通讯，接收我们工作和即将举行的活动的更新",
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "电子邮件地址",
+      "interests": "兴趣",
+      "monasteryRestoration": "寺院保护",
+      "monkSupport": "僧侣支持",
+      "sacredEvents": "神圣活动",
+      "volunteerOpportunities": "志愿机会"
+    }
+  },
+  "memberPortal": {
+    "login": {
+      "title": "会员登录",
+      "username": "用户名",
+      "password": "密码",
+      "forgotPassword": "忘记密码？",
+      "loginButton": "登录",
+      "noAccount": "没有账户？",
+      "signUp": "注册"
+    }
+  }
+}
